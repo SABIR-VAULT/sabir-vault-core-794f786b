@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   Lock, ShieldCheck, BarChart3, Users, Building2, Link2, Wallet,
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
-  Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert,
+  Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert, Zap,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 
