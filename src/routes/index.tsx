@@ -4,6 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert,
 } from "lucide-react";
+import { useContactDialog } from "@/components/ContactDialog";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -41,11 +42,18 @@ function Nav() {
           <a href="#solutions" className="hover:text-white transition">Solutions</a>
           <a href="#deployment" className="hover:text-white transition">Deployment</a>
         </nav>
-        <a href="#quote" className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition">
-          Request Quote
-        </a>
+        <QuoteButton label="Request Quote" title="Request Quote" className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition" />
       </div>
     </header>
+  );
+}
+
+function QuoteButton({ label, title, className, children }: { label?: string; title: string; className: string; children?: React.ReactNode }) {
+  const { open } = useContactDialog();
+  return (
+    <button type="button" onClick={() => open(title)} className={className}>
+      {children ?? label}
+    </button>
   );
 }
 
