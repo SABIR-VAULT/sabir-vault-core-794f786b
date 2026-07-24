@@ -4,6 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert,
 } from "lucide-react";
+import { useContactDialog } from "@/components/ContactDialog";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -41,11 +42,18 @@ function Nav() {
           <a href="#solutions" className="hover:text-white transition">Solutions</a>
           <a href="#deployment" className="hover:text-white transition">Deployment</a>
         </nav>
-        <a href="#quote" className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition">
-          Request Quote
-        </a>
+        <QuoteButton label="Request Quote" title="Request Quote" className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition" />
       </div>
     </header>
+  );
+}
+
+function QuoteButton({ label, title, className, children }: { label?: string; title: string; className: string; children?: React.ReactNode }) {
+  const { open } = useContactDialog();
+  return (
+    <button type="button" onClick={() => open(title)} className={className}>
+      {children ?? label}
+    </button>
   );
 }
 
@@ -69,10 +77,10 @@ function Hero() {
             <span className="text-white/90"> 100% On-Premise. Zero Cloud Leaks.</span>
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href="#quote" className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition">
+            <QuoteButton title="Request Enterprise Quote" className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition">
               Request Enterprise Quote
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </a>
+            </QuoteButton>
             <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
               Explore Architecture
             </a>
@@ -90,10 +98,10 @@ function Hero() {
 }
 
 const pillars = [
-  { icon: Lock, emoji: "🔒", title: "Local First (On-Premise)", body: "All document processing, OCR, entity extraction, and graph resolution occur entirely within your local hardware. Zero data leaves your perimeter." },
-  { icon: ShieldCheck, emoji: "🛡️", title: "Security by Design", body: "Zero-Trust file ingestion featuring automated local antivirus scanning (ClamAV) and memory-isolated pipeline execution." },
-  { icon: BarChart3, emoji: "📊", title: "Structured Intelligence", body: "Automatically converts messy document chaos into unified JSON schemas, financial audit tables, and relational graphs." },
-  { icon: Users, emoji: "👥", title: "Human-in-the-Loop", body: "Integrated with an interactive Verification Layer (Organizer) for expert review, duplicate merging, and 100% facts confirmation." },
+  { icon: Lock, title: "Local First (On-Premise)", body: "All document processing, OCR, entity extraction, and graph resolution occur entirely within your local hardware. Zero data leaves your perimeter." },
+  { icon: ShieldCheck, title: "Security by Design", body: "Zero-Trust file ingestion featuring automated local antivirus scanning (ClamAV) and memory-isolated pipeline execution." },
+  { icon: BarChart3, title: "Structured Intelligence", body: "Automatically converts messy document chaos into unified JSON schemas, financial audit tables, and relational graphs." },
+  { icon: Users, title: "Human-in-the-Loop", body: "Integrated with an interactive Verification Layer (Organizer) for expert review, duplicate merging, and 100% facts confirmation." },
 ];
 
 function Pillars() {
@@ -103,11 +111,8 @@ function Pillars() {
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {pillars.map((p, i) => (
           <div key={i} className="glass glass-hover group relative overflow-hidden rounded-2xl p-6">
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
-                <p.icon className="h-5 w-5" />
-              </div>
-              <span className="text-lg">{p.emoji}</span>
+            <div className="grid h-11 w-11 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <p.icon className="h-5 w-5" />
             </div>
             <h3 className="mt-5 text-base font-semibold text-white">{p.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
@@ -179,11 +184,11 @@ function Pipeline() {
 }
 
 const solutions = [
-  { icon: Building2, emoji: "🏢", title: "Corporate Due Diligence", body: "M&A, Cap Tables, Ownership Chains, Anti-Fraud Patterns." },
-  { icon: Link2, emoji: "🔗", title: "RWA Pre-Tokenization Clearance", body: "Real World Asset Preparation, Hash Proofs, Legal Cleanliness." },
-  { icon: Wallet, emoji: "💰", title: "Financial & Account Audit", body: "IBAN Extraction, Cash vs. Bank Flow, Asset Protection." },
-  { icon: UsersRound, emoji: "👨‍👩‍👧", title: "Family Office & Kinship Analytics", body: "Complex Kinship Graphs, In-Law Proxies, Marital Property Risks." },
-  { icon: Search, emoji: "🔍", title: "Automated Gap Analysis", body: "Missing Evidence Detection, Compliance Checklists, Risk Scoring." },
+  { icon: Building2, title: "Corporate Due Diligence", body: "M&A, Cap Tables, Ownership Chains, Anti-Fraud Patterns." },
+  { icon: Link2, title: "RWA Pre-Tokenization Clearance", body: "Real World Asset Preparation, Hash Proofs, Legal Cleanliness." },
+  { icon: Wallet, title: "Financial & Account Audit", body: "IBAN Extraction, Cash vs. Bank Flow, Asset Protection." },
+  { icon: UsersRound, title: "Family Office & Kinship Analytics", body: "Complex Kinship Graphs, In-Law Proxies, Marital Property Risks." },
+  { icon: Search, title: "Automated Gap Analysis", body: "Missing Evidence Detection, Compliance Checklists, Risk Scoring." },
 ];
 
 function Solutions() {
@@ -193,11 +198,8 @@ function Solutions() {
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {solutions.map((s, i) => (
           <div key={i} className="glass glass-hover group rounded-2xl p-7">
-            <div className="flex items-center justify-between">
-              <div className="grid h-11 w-11 place-items-center rounded-lg bg-gradient-to-br from-[#38bdf8]/15 to-[#f59e0b]/10 text-[#38bdf8]">
-                <s.icon className="h-5 w-5" />
-              </div>
-              <span className="text-lg opacity-70">{s.emoji}</span>
+            <div className="grid h-11 w-11 place-items-center rounded-lg bg-gradient-to-br from-[#38bdf8]/15 to-[#f59e0b]/10 text-[#38bdf8]">
+              <s.icon className="h-5 w-5" />
             </div>
             <h3 className="mt-6 text-lg font-semibold text-white">{s.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
@@ -251,9 +253,9 @@ function DeployCard({ icon: Icon, emoji, title, body, tag, highlight }: any) {
         <span>{emoji}</span> {title}
       </h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
-      <a href="#quote" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]">
+      <QuoteButton title={`${title} — Request Details`} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]">
         Request details <ArrowRight className="h-4 w-4" />
-      </a>
+      </QuoteButton>
     </div>
   );
 }
@@ -275,9 +277,9 @@ function Partnership() {
             </p>
           </div>
           <div className="flex flex-col gap-3 md:items-end">
-            <a href="mailto:contact@sabirvault.com" className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition">
+            <QuoteButton title="Become a Partner" className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition">
               Become a Partner <ArrowRight className="h-4 w-4" />
-            </a>
+            </QuoteButton>
             <a href="mailto:contact@sabirvault.com" className="text-sm text-muted-foreground hover:text-white transition">
               contact@sabirvault.com
             </a>
