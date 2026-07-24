@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   Lock, ShieldCheck, BarChart3, Users, Building2, Link2, Wallet,
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
-  Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert,
+  Boxes, CheckCircle2, Database, Download, Github, Mail, ShieldAlert, Zap,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 
@@ -48,10 +48,10 @@ function Nav() {
   );
 }
 
-function QuoteButton({ label, title, className, children }: { label?: string; title: string; className: string; children?: React.ReactNode }) {
+function QuoteButton({ label, title, model, className, children }: { label?: string; title: string; model?: "express" | "onprem" | "appliance"; className: string; children?: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
-    <button type="button" onClick={() => open(title)} className={className}>
+    <button type="button" onClick={() => open({ title, model })} className={className}>
       {children ?? label}
     </button>
   );
@@ -217,21 +217,28 @@ function Deployment() {
   return (
     <section id="deployment" className="relative border-y border-white/5 bg-[#0b0f19]">
       <div className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHeader eyebrow="Deployment Models" title="Two ways to bring SABIR VAULT inside." />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <SectionHeader eyebrow="Engagement Models" title="Three ways to engage with SABIR VAULT." />
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <DeployCard
+            icon={Zap}
+            model="express"
+            tag="On-Demand Service"
+            title="Express Forensic Pre-Audit"
+            body="Send us raw document archives. We process them through two-phase extraction (Express Recon + Deep Kernel), verified by a human operator, returning a digital dossier, risk analysis, and graph in hours."
+          />
           <DeployCard
             icon={Server}
-            emoji="💻"
+            model="onprem"
+            tag="Software License"
             title="Managed On-Premise Deployment"
             body="Remote installation and configuration on your existing private Mac/Server infrastructure with monthly enterprise licensing."
-            tag="Software License"
           />
           <DeployCard
             icon={Package}
-            emoji="📦"
-            title="Dedicated Hardware Appliance"
-            body="Pre-configured, air-gapped plug-and-play Mac Mini unit (SABIR VAULT Box) delivered directly to your office."
+            model="appliance"
             tag="Hardware + Software"
+            title="Dedicated Hardware Appliance"
+            body="Pre-configured, air-gapped plug-and-play Mac Mini M-series server (SABIR VAULT Box) delivered directly to your office."
             highlight
           />
         </div>
@@ -240,20 +247,18 @@ function Deployment() {
   );
 }
 
-function DeployCard({ icon: Icon, emoji, title, body, tag, highlight }: any) {
+function DeployCard({ icon: Icon, title, body, tag, highlight, model }: any) {
   return (
-    <div className={`glass glass-hover rounded-2xl p-8 ${highlight ? "ring-1 ring-[#f59e0b]/30" : ""}`}>
+    <div className={`glass glass-hover flex flex-col rounded-2xl p-8 ${highlight ? "ring-1 ring-[#f59e0b]/30" : ""}`}>
       <div className="flex items-center justify-between">
         <div className={`grid h-12 w-12 place-items-center rounded-lg ${highlight ? "bg-[#f59e0b]/10 text-[#f59e0b]" : "bg-[#38bdf8]/10 text-[#38bdf8]"}`}>
           <Icon className="h-6 w-6" />
         </div>
         <span className="text-xs uppercase tracking-widest text-muted-foreground">{tag}</span>
       </div>
-      <h3 className="mt-6 flex items-center gap-2 text-xl font-semibold text-white">
-        <span>{emoji}</span> {title}
-      </h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
-      <QuoteButton title={`${title} — Request Details`} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]">
+      <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+      <QuoteButton title={`${title} — Request Details`} model={model} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]">
         Request details <ArrowRight className="h-4 w-4" />
       </QuoteButton>
     </div>
