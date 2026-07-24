@@ -48,10 +48,10 @@ function Nav() {
   );
 }
 
-function QuoteButton({ label, title, className, children }: { label?: string; title: string; className: string; children?: React.ReactNode }) {
+function QuoteButton({ label, title, model, className, children }: { label?: string; title: string; model?: "express" | "onprem" | "appliance"; className: string; children?: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
-    <button type="button" onClick={() => open(title)} className={className}>
+    <button type="button" onClick={() => open({ title, model })} className={className}>
       {children ?? label}
     </button>
   );
