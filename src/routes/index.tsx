@@ -574,7 +574,7 @@ function TrustCenter() {
           {trustItems.map((it, i) => (
             <div key={i} className="glass flex items-start gap-3 rounded-xl p-4">
               <div className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-[#38bdf8]/10 text-[#38bdf8]">
-                <it.icon className="h-4.5 w-4.5" />
+                <it.icon className="h-4 w-4" />
               </div>
               <div className="text-sm leading-snug text-white/90">{t(it.title)}</div>
             </div>
