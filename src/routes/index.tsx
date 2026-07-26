@@ -77,7 +77,7 @@ function Nav() {
         <div className="flex items-center gap-3">
           <LangSwitcher />
           <QuoteButton
-            title={t(bi("Launch Pilot", "Запустити пілот"))}
+            title={undefined}
             model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
@@ -134,7 +134,7 @@ function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <QuoteButton
-              title={t(bi("Launch Pilot", "Запустити пілот"))}
+              title={undefined}
               model="pilot"
               className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
             >
