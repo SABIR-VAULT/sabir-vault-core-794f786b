@@ -77,10 +77,11 @@ function Nav() {
         <div className="flex items-center gap-3">
           <LangSwitcher />
           <QuoteButton
-            title={t(bi("Request Demo", "Замовити демо"))}
+            title={t(bi("Launch Pilot", "Запустити пілот"))}
+            model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
-            {t(bi("Request Demo", "Замовити демо"))}
+            {t(bi("Launch Pilot", "Запустити пілот"))}
           </QuoteButton>
         </div>
       </div>
@@ -90,7 +91,7 @@ function Nav() {
 
 function QuoteButton({
   title, model, className, children,
-}: { title: string; model?: "express" | "onprem" | "appliance"; className: string; children: React.ReactNode }) {
+}: { title: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
     <button type="button" onClick={() => open({ title, model })} className={className}>
@@ -98,6 +99,7 @@ function QuoteButton({
     </button>
   );
 }
+
 
 /* ============================================================ */
 /* HERO                                                          */
