@@ -77,10 +77,11 @@ function Nav() {
         <div className="flex items-center gap-3">
           <LangSwitcher />
           <QuoteButton
-            title={t(bi("Request Demo", "Замовити демо"))}
+            title={t(bi("Launch Pilot", "Запустити пілот"))}
+            model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
-            {t(bi("Request Demo", "Замовити демо"))}
+            {t(bi("Launch Pilot", "Запустити пілот"))}
           </QuoteButton>
         </div>
       </div>
@@ -90,7 +91,7 @@ function Nav() {
 
 function QuoteButton({
   title, model, className, children,
-}: { title: string; model?: "express" | "onprem" | "appliance"; className: string; children: React.ReactNode }) {
+}: { title: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
     <button type="button" onClick={() => open({ title, model })} className={className}>
@@ -98,6 +99,7 @@ function QuoteButton({
     </button>
   );
 }
+
 
 /* ============================================================ */
 /* HERO                                                          */
@@ -124,30 +126,26 @@ function Hero() {
               {t(bi("Trusted Decisions.", "Надійні рішення."))}
             </span>
           </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             {t(bi(
-              "Transform thousands of raw scans (JPG/PNG), PDFs, and ZIP archives into verified digital dossiers in minutes.",
-              "Перетворюйте тисячі сирих сканів (JPG/PNG), PDF та ZIP-архівів у верифіковані цифрові досьє за кілька хвилин."
-            ))}
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/80">
-            {t(bi(
-              "Local processing. Structured intelligence. Documents remain under your control.",
-              "Локальна обробка. Структурований аналітичний контур. Документи залишаються під вашим контролем."
+              "Automate digitisation, cross-verification, and forensic analysis of complex document archives (PDFs, raw scans, handwritten texts, ZIPs) into verified digital dossiers with expert quality control.",
+              "Автоматизуйте оцифровку, перехресну верифікацію та форензік-аналіз складних архівів документів (PDF, сирі скани, рукописні тексти, ZIP) у верифіковані цифрові досьє з експертним контролем якості."
             ))}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <QuoteButton
-              title={t(bi("Request Demo", "Замовити демо"))}
+              title={t(bi("Launch Pilot", "Запустити пілот"))}
+              model="pilot"
               className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
             >
-              {t(bi("Request Demo", "Замовити демо"))}
+              {t(bi("Launch Pilot", "Запустити пілот"))}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </QuoteButton>
             <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-              {t(bi("Explore Workflow", "Огляд конвеєра"))}
+              {t(bi("Pipeline Overview", "Огляд конвеєра"))}
             </a>
           </div>
+
           <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70">
             <span>{t(bi("Air-Gapped", "Ізольовано"))}</span><span>•</span>
             <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span><span>•</span>
@@ -487,14 +485,16 @@ function Deployment() {
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <DeployCard
           icon={Zap}
-          model="express"
+          model="pilot"
           tag={t(bi("On-Demand Service", "Послуга на замовлення"))}
-          title={t(bi("Express Forensic Pre-Audit", "Експрес форензик пре-аудит"))}
+          title={t(bi("Pilot Project (POC) / Pre-audit", "Пілотний проєкт (POC) / Пре-аудит"))}
           body={t(bi(
-            "Pay-per-case audit without buying hardware or software. Two-phase extraction verified by a human operator.",
-            "Аудит з оплатою за кейс без придбання обладнання чи ліцензій. Дві фази екстракції з верифікацією оператором."
+            "Trial forensic processing of your first archive or case to evaluate accuracy, speed, and pipeline compatibility before signing a full contract.",
+            "Тестова форензик-обробка вашого першого архіву або кейсу для оцінки точності, швидкості та сумісності конвеєра до укладання комплексної угоди."
           ))}
+          ctaLabel={t(bi("Launch Pilot", "Запустити пілот"))}
         />
+
         <DeployCard
           icon={Server}
           model="onprem"
@@ -521,7 +521,7 @@ function Deployment() {
   );
 }
 
-function DeployCard({ icon: Icon, title, body, tag, highlight, model }: any) {
+function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }: any) {
   const { t } = useLang();
   return (
     <div className={`glass glass-hover flex flex-col rounded-2xl p-8 ${highlight ? "ring-1 ring-[#f59e0b]/30" : ""}`}>
@@ -534,15 +534,16 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model }: any) {
       <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
       <QuoteButton
-        title={`${title} — ${t(bi("Request Details", "Запит деталей"))}`}
+        title={`${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
-        {t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
+        {ctaLabel ?? t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
       </QuoteButton>
     </div>
   );
 }
+
 
 /* ============================================================ */
 /* TRUST CENTER                                                  */
@@ -614,10 +615,12 @@ function Partnership() {
           <div className="flex flex-col gap-3 md:items-end">
             <QuoteButton
               title={t(bi("Become a Partner", "Стати партнером"))}
+              model="partner"
               className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition"
             >
               {t(bi("Become a Partner", "Стати партнером"))} <ArrowRight className="h-4 w-4" />
             </QuoteButton>
+
             <a href="mailto:contact@sabirvault.com" className="text-sm text-muted-foreground hover:text-white transition">
               contact@sabirvault.com
             </a>

@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { ArrowRight, Zap, Server, Package, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Zap, Server, Package, CheckCircle2, Handshake } from "lucide-react";
 import { useLang, bi } from "@/lib/i18n";
 
 // ============================================================
@@ -13,7 +13,7 @@ import { useLang, bi } from "@/lib/i18n";
 const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
 // ============================================================
 
-type ModelKey = "express" | "onprem" | "appliance";
+type ModelKey = "pilot" | "onprem" | "appliance" | "partner";
 
 type OpenOpts = { title?: string; model?: ModelKey };
 type Ctx = { open: (opts?: OpenOpts | string) => void };
@@ -25,6 +25,7 @@ export function useContactDialog() {
   return ctx;
 }
 
+type Bi = { en: string; ua: string };
 type ModelDef = {
   key: ModelKey;
   badge: Bi;
@@ -34,44 +35,57 @@ type ModelDef = {
   accent: string;
   concept: Bi;
   points: { label: Bi; body: Bi }[];
+  formTitle: Bi;
+  formSubtitle: Bi;
+  messagePlaceholder: Bi;
+  submitLabel: Bi;
 };
-type Bi = { en: string; ua: string };
 
 const MODELS: Record<ModelKey, ModelDef> = {
-  express: {
-    key: "express",
-    badge: bi("On-Demand Service", "Послуга на замовлення"),
-    tab: bi("On-Demand Service", "Послуга на замовлення"),
-    title: bi("Express Forensic Pre-Audit", "Експрес форензик пре-аудит"),
+  pilot: {
+    key: "pilot",
+    badge: bi("Pilot Project (POC)", "Пілотний проєкт (POC)"),
+    tab: bi("Service on Demand / Pilot", "Послуга на замовлення / Пілот"),
+    title: bi("Pilot Project & Pre-audit", "Пілотний проєкт та пре-аудит"),
     icon: Zap,
     accent: "#38bdf8",
     concept: bi(
-      "Pay-per-case audit without buying hardware or software. Zero IT friction.",
-      "Аудит з оплатою за кейс без придбання обладнання чи ліцензій. Без навантаження на ІТ."
+      "Trial forensic processing of your first archive or case with zero upfront license commitments. Evaluate accuracy, speed, and format compatibility.",
+      "Тестова форензик-обробка вашого першого архіву або кейсу без придбання ліцензій. Оцінка точності, швидкості та сумісності з вашими документами."
     ),
     points: [
       {
-        label: bi("Phase 1 — Recon Triage", "Фаза 1 — Розвідувальне сортування"),
+        label: bi("Phase 1 — Ingestion & Triage", "Фаза 1 — Прийом та сортування"),
         body: bi(
-          "Fast entity & role identification (~1 min/page), verified by a human operator.",
-          "Швидке визначення сутностей та ролей (~1 хв/сторінку), верифіковане оператором."
+          "Fast archive ingestion (ZIP/PDF/scans), handwritten OCR, and PII masking.",
+          "Швидке розпакування (ZIP/PDF/скани), OCR рукописного тексту та маскування PII."
         ),
       },
       {
-        label: bi("Phase 2 — Deep Kernel Synthesis", "Фаза 2 — Глибокий синтез"),
+        label: bi("Phase 2 — Deep Forensic Analysis", "Фаза 2 — Глибокий форензік-аналіз"),
         body: bi(
-          "Full page-by-page forensic extraction, risk check, and relation graph generation.",
-          "Постранична форензик-екстракція, перевірка ризиків та побудова графа зв'язків."
+          "Cross-verification of dates and entities, risk flagging, and D3.js knowledge graph construction.",
+          "Перехресна верифікація дат, атрибутів, перевірка ризиків та побудова графа зв'язків."
         ),
       },
       {
-        label: bi("Deliverables", "Результати"),
+        label: bi("Pilot Deliverables", "Результати пілоту"),
         body: bi(
-          "Verified Digital Dossier (35-section PDF/MD/DOCX), Interactive Relation Graph, Forensic Risk Report.",
-          "Верифіковане цифрове досьє (35 розділів PDF/MD/DOCX), інтерактивний граф зв'язків, звіт про ризики."
+          "Verified digital dossier, structured JSON/CRM export, interactive relationship graph, and risk report.",
+          "Верифіковане цифрове досьє, структуровані JSON/CRM-дані, інтерактивний граф зв'язків та звіт про ризики."
         ),
       },
     ],
+    formTitle: bi("Launch Pilot Project", "Запустити пілотний проєкт"),
+    formSubtitle: bi(
+      "Submit your case details — our team will reach out within 1 business day to set up your trial parameters.",
+      "Залиште деталі кейсу — наша команда зв'яжеться з вами протягом робочого дня для узгодження параметрів обробки."
+    ),
+    messagePlaceholder: bi(
+      "Describe estimated archive size (page count/doc types) and key verification requirements...",
+      "Вкажіть орієнтовний обсяг архіву (к-сть сторінок/типи документів) та ключові задачі перевірки..."
+    ),
+    submitLabel: bi("Launch Pilot", "Запустити пілот"),
   },
   onprem: {
     key: "onprem",
@@ -107,6 +121,16 @@ const MODELS: Record<ModelKey, ModelDef> = {
         ),
       },
     ],
+    formTitle: bi("Request Enterprise Details", "Запит корпоративних деталей"),
+    formSubtitle: bi(
+      "Share a few details and our enterprise team will get back within one business day.",
+      "Залиште контакти — наша корпоративна команда зв'яжеться з вами протягом одного робочого дня."
+    ),
+    messagePlaceholder: bi(
+      "Briefly describe your use case, document volume, or timeline.",
+      "Коротко опишіть кейс, обсяг документів або строки."
+    ),
+    submitLabel: bi("Submit Request", "Надіслати запит"),
   },
   appliance: {
     key: "appliance",
@@ -142,14 +166,69 @@ const MODELS: Record<ModelKey, ModelDef> = {
         ),
       },
     ],
+    formTitle: bi("Request Enterprise Details", "Запит корпоративних деталей"),
+    formSubtitle: bi(
+      "Share a few details and our enterprise team will get back within one business day.",
+      "Залиште контакти — наша корпоративна команда зв'яжеться з вами протягом одного робочого дня."
+    ),
+    messagePlaceholder: bi(
+      "Briefly describe your use case, document volume, or timeline.",
+      "Коротко опишіть кейс, обсяг документів або строки."
+    ),
+    submitLabel: bi("Submit Request", "Надіслати запит"),
+  },
+  partner: {
+    key: "partner",
+    badge: bi("Partner Program", "Партнерська програма"),
+    tab: bi("Partnership", "Партнерство"),
+    title: bi("Partnership & White-Label", "Партнерство та White-Label"),
+    icon: Handshake,
+    accent: "#f59e0b",
+    concept: bi(
+      "Deploy SABIR VAULT as an internal engine for your audit cases or offer pre-audit services under your own brand.",
+      "Розгортайте SABIR VAULT як внутрішній двигун для ваших аудиторських кейсів або пропонуйте послуги пре-аудиту під власним брендом."
+    ),
+    points: [
+      {
+        label: bi("White-Label & Branding", "White-Label та брендування"),
+        body: bi(
+          "Generate digital dossiers and risk reports under your company branding.",
+          "Формування цифрових досьє та звітів із вашим корпоративним брендингом."
+        ),
+      },
+      {
+        label: bi("Revenue Share & Margin", "Процент та маржа"),
+        body: bi(
+          "Flexible referral fees or wholesale usage pricing for maximum margin.",
+          "Гнучкі реферальні комісії або оптова ціна за обсяг для максимальної маржинальності."
+        ),
+      },
+      {
+        label: bi("Data Privacy", "Приватність даних"),
+        body: bi(
+          "Isolated infrastructure execution with zero third-party data exposure.",
+          "Обробка в ізольованій інфраструктурі без передачі даних третім особам."
+        ),
+      },
+    ],
+    formTitle: bi("Apply for Partnership", "Заявка на партнерство"),
+    formSubtitle: bi(
+      "Submit details — our team will reach out within 1 business day.",
+      "Залиште контакти — наша команда зв'яжеться з вами для узгодження формату співпраці."
+    ),
+    messagePlaceholder: bi(
+      "Describe your organization (law firm, audit, consulting) and intended partnership model...",
+      "Вкажіть напрямок діяльності вашої компанії (юридична, аудиторська, консалтинг) та бажаний формат співпраці..."
+    ),
+    submitLabel: bi("Submit Application", "Надіслати заявку"),
   },
 };
 
 export function ContactDialogProvider({ children }: { children: ReactNode }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [isOpen, setIsOpen] = useState(false);
   const [titleOverride, setTitleOverride] = useState<string | null>(null);
-  const [model, setModel] = useState<ModelKey>("express");
+  const [model, setModel] = useState<ModelKey>("pilot");
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
@@ -216,7 +295,12 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
 
   const active = MODELS[model];
   const Icon = active.icon;
-  const heading = titleOverride ?? t(bi("Request Enterprise Details", "Запит корпоративних деталей"));
+  const heading = titleOverride ?? t(active.formTitle);
+
+  const namePh = lang === "ua" ? "Олександр Іваненко" : "Jane Doe";
+  const companyPh = lang === "ua" ? "Юридична компанія / Фонд" : "Acme Capital";
+  const emailPh = lang === "ua" ? "alex@company.ua" : "jane@company.com";
+  const phonePh = lang === "ua" ? "+380..." : "+1...";
 
   return (
     <ContactCtx.Provider value={{ open }}>
@@ -277,17 +361,14 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
               <DialogHeader>
                 <DialogTitle className="text-xl font-semibold tracking-tight text-white">{heading}</DialogTitle>
                 <DialogDescription className="text-muted-foreground">
-                  {t(bi(
-                    "Share a few details and our enterprise team will get back within one business day.",
-                    "Залиште контакти — наша корпоративна команда зв'яжеться з вами протягом одного робочого дня."
-                  ))}
+                  {t(active.formSubtitle)}
                 </DialogDescription>
               </DialogHeader>
               <form onSubmit={onSubmit} className="mt-4 space-y-3.5">
-                <Field id="name" label={t(bi("Full Name", "Повне ім'я"))} value={form.name} onChange={(v) => setForm({ ...form, name: v })} placeholder="Jane Doe" />
-                <Field id="company" label={t(bi("Company Name", "Назва компанії"))} value={form.company} onChange={(v) => setForm({ ...form, company: v })} placeholder="Acme Capital" />
-                <Field id="email" label={t(bi("Work Email", "Робоча пошта"))} type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} placeholder="jane@acme.com" />
-                <Field id="phone" label={t(bi("Phone", "Телефон"))} type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} placeholder="+1 555 000 0000" />
+                <Field id="name" label={t(bi("Full Name", "Повне ім'я"))} value={form.name} onChange={(v) => setForm({ ...form, name: v })} placeholder={namePh} />
+                <Field id="company" label={t(bi("Company Name", "Назва компанії"))} value={form.company} onChange={(v) => setForm({ ...form, company: v })} placeholder={companyPh} />
+                <Field id="email" label={t(bi("Work Email", "Робоча пошта"))} type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} placeholder={emailPh} />
+                <Field id="phone" label={t(bi("Phone", "Телефон"))} type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} placeholder={phonePh} />
                 <div className="space-y-1.5">
                   <Label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
                     {t(bi("Model of Interest", "Обрана модель"))}
@@ -312,7 +393,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
                     id="message"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder={t(bi("Briefly describe your use case, document volume, or timeline.", "Коротко опишіть кейс, обсяг документів або строки."))}
+                    placeholder={t(active.messagePlaceholder)}
                     maxLength={1000}
                     rows={3}
                     className="border-white/10 bg-white/[0.03] text-white placeholder:text-muted-foreground/50 focus-visible:ring-[#38bdf8]"
@@ -325,7 +406,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
                 >
                   {submitting
                     ? t(bi("Sending…", "Надсилання…"))
-                    : t(bi("Submit Request", "Надіслати запит"))}
+                    : t(active.submitLabel)}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </button>
               </form>
