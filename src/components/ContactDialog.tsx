@@ -409,6 +409,17 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
                     : t(active.submitLabel)}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </button>
+                <p className="text-center text-xs text-muted-foreground/70">
+                  {lang === "ua" ? (
+                    <>Натискаючи кнопку, ви погоджуєтеся з нашою{" "}
+                      <a href="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Політикою конфіденційності</a>.
+                    </>
+                  ) : (
+                    <>By submitting this form, you agree to our{" "}
+                      <a href="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Privacy Policy</a>.
+                    </>
+                  )}
+                </p>
               </form>
             </div>
           </div>
