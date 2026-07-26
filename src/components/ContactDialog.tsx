@@ -10,7 +10,7 @@ import { useLang, bi } from "@/lib/i18n";
 // ============================================================
 // Web3Forms integration
 // PASTE YOUR WEB3FORMS ACCESS KEY BELOW (get one at https://web3forms.com):
-const WEB3FORMS_ACCESS_KEY = "fae05ba4-4be7-4fb8-8f64-3faa694f1111";
+const WEB3FORMS_ACCESS_KEY = "b81f9a95-5a96-44ba-a833-227e46f665d2";
 // ============================================================
 
 type ModelKey = "pilot" | "onprem" | "appliance" | "partner";

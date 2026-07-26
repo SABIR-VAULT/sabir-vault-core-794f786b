@@ -662,15 +662,30 @@ function Footer() {
           <span className="ml-3 text-xs text-muted-foreground">© {new Date().getFullYear()}</span>
         </div>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+          {/* Email */}
           <a href="mailto:contact@sabirvault.com" className="inline-flex items-center gap-1.5 hover:text-white transition">
             <Mail className="h-3.5 w-3.5" /> contact@sabirvault.com
           </a>
-          <a href="#" className="inline-flex items-center gap-1.5 hover:text-white transition">
+          
+          {/* GitHub Docs */}
+          <a href="https://github.com/SABIR-VAULT/sabirvault-docs" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white transition">
             <Github className="h-3.5 w-3.5" /> GitHub
           </a>
-          <a href="/privacy" className="hover:text-white transition">{t(bi("Privacy Policy", "Політика конфіденційності"))}</a>
-          <a href="#" className="hover:text-white transition">{t(bi("Security Statement", "Заява про безпеку"))}</a>
-          <a href="#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
+          
+          {/* Privacy Policy */}
+          <a href="/privacy" className="hover:text-white transition">
+            {t(bi("Privacy Policy", "Політика конфіденційності"))}
+          </a>
+          
+          {/* 🔒 Security Statement (прямая ссылка на файл безопасности!) */}
+          <a href="https://github.com/SABIR-VAULT/sabirvault-docs/blob/main/SECURITY.md" target="_blank" rel="noreferrer" className="hover:text-white transition">
+            {t(bi("Security Statement", "Заява про безпеку"))}
+          </a>
+          
+          {/* Workflow */}
+          <a href="#pipeline" className="hover:text-white transition">
+            {t(bi("Workflow", "Конвеєр"))}
+          </a>
         </div>
       </div>
     </footer>
