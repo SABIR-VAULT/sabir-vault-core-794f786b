@@ -295,7 +295,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
 
   const active = MODELS[model];
   const Icon = active.icon;
-  const heading = titleOverride ?? t(active.formTitle);
+  const heading = titleOverride ?? (model === "pilot" ? "Pilot Project (POC) & Pre-audit\u00a0" : t(active.formTitle));
 
   const namePh = lang === "ua" ? "Олександр Іваненко" : "Jane Doe";
   const companyPh = lang === "ua" ? "Юридична компанія / Фонд" : "Acme Capital";
