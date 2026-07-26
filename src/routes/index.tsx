@@ -126,30 +126,26 @@ function Hero() {
               {t(bi("Trusted Decisions.", "Надійні рішення."))}
             </span>
           </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             {t(bi(
-              "Transform thousands of raw scans (JPG/PNG), PDFs, and ZIP archives into verified digital dossiers in minutes.",
-              "Перетворюйте тисячі сирих сканів (JPG/PNG), PDF та ZIP-архівів у верифіковані цифрові досьє за кілька хвилин."
-            ))}
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/80">
-            {t(bi(
-              "Local processing. Structured intelligence. Documents remain under your control.",
-              "Локальна обробка. Структурований аналітичний контур. Документи залишаються під вашим контролем."
+              "Automate digitisation, cross-verification, and forensic analysis of complex document archives (PDFs, raw scans, handwritten texts, ZIPs) into verified digital dossiers with expert quality control.",
+              "Автоматизуйте оцифровку, перехресну верифікацію та форензік-аналіз складних архівів документів (PDF, сирі скани, рукописні тексти, ZIP) у верифіковані цифрові досьє з експертним контролем якості."
             ))}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <QuoteButton
-              title={t(bi("Request Demo", "Замовити демо"))}
+              title={t(bi("Launch Pilot", "Запустити пілот"))}
+              model="pilot"
               className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
             >
-              {t(bi("Request Demo", "Замовити демо"))}
+              {t(bi("Launch Pilot", "Запустити пілот"))}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </QuoteButton>
             <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-              {t(bi("Explore Workflow", "Огляд конвеєра"))}
+              {t(bi("Pipeline Overview", "Огляд конвеєра"))}
             </a>
           </div>
+
           <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70">
             <span>{t(bi("Air-Gapped", "Ізольовано"))}</span><span>•</span>
             <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span><span>•</span>
