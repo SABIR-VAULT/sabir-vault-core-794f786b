@@ -46,7 +46,7 @@ const MODELS: Record<ModelKey, ModelDef> = {
     key: "pilot",
     badge: bi("Pilot Project (POC)", "Пілотний проєкт (POC)"),
     tab: bi("Service on Demand / Pilot", "Послуга на замовлення / Пілот"),
-    title: bi("Pilot Project & Pre-audit", "Пілотний проєкт та пре-аудит"),
+    title: bi("Pilot Project (POC) & Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
     icon: Zap,
     accent: "#38bdf8",
     concept: bi(
@@ -295,7 +295,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
 
   const active = MODELS[model];
   const Icon = active.icon;
-  const heading = titleOverride ?? (model === "pilot" ? "Pilot Project (POC) & Pre-audit\u00a0" : t(active.formTitle));
+  const heading = titleOverride ?? t(active.title);
 
   const namePh = lang === "ua" ? "Олександр Іваненко" : "Jane Doe";
   const companyPh = lang === "ua" ? "Юридична компанія / Фонд" : "Acme Capital";
