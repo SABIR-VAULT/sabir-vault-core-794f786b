@@ -521,7 +521,7 @@ function Deployment() {
   );
 }
 
-function DeployCard({ icon: Icon, title, body, tag, highlight, model }: any) {
+function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }: any) {
   const { t } = useLang();
   return (
     <div className={`glass glass-hover flex flex-col rounded-2xl p-8 ${highlight ? "ring-1 ring-[#f59e0b]/30" : ""}`}>
@@ -534,15 +534,16 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model }: any) {
       <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
       <QuoteButton
-        title={`${title} — ${t(bi("Request Details", "Запит деталей"))}`}
+        title={`${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
-        {t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
+        {ctaLabel ?? t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
       </QuoteButton>
     </div>
   );
 }
+
 
 /* ============================================================ */
 /* TRUST CENTER                                                  */
