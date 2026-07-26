@@ -262,7 +262,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `SABIR VAULT — ${MODELS[model].title.en} inquiry`,
+          subject: "SABIR VAULT — Form Inquiry",
           from_name: "SABIR VAULT Website",
           name: form.name,
           company: form.company,
