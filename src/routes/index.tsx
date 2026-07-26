@@ -485,14 +485,16 @@ function Deployment() {
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <DeployCard
           icon={Zap}
-          model="express"
+          model="pilot"
           tag={t(bi("On-Demand Service", "Послуга на замовлення"))}
-          title={t(bi("Express Forensic Pre-Audit", "Експрес форензик пре-аудит"))}
+          title={t(bi("Pilot Project (POC) / Pre-audit", "Пілотний проєкт (POC) / Пре-аудит"))}
           body={t(bi(
-            "Pay-per-case audit without buying hardware or software. Two-phase extraction verified by a human operator.",
-            "Аудит з оплатою за кейс без придбання обладнання чи ліцензій. Дві фази екстракції з верифікацією оператором."
+            "Trial forensic processing of your first archive or case to evaluate accuracy, speed, and pipeline compatibility before signing a full contract.",
+            "Тестова форензик-обробка вашого першого архіву або кейсу для оцінки точності, швидкості та сумісності конвеєра до укладання комплексної угоди."
           ))}
+          ctaLabel={t(bi("Launch Pilot", "Запустити пілот"))}
         />
+
         <DeployCard
           icon={Server}
           model="onprem"
