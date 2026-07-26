@@ -77,7 +77,7 @@ function Nav() {
         <div className="flex items-center gap-3">
           <LangSwitcher />
           <QuoteButton
-            title={t(bi("Launch Pilot", "Запустити пілот"))}
+            title={undefined}
             model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
@@ -91,7 +91,7 @@ function Nav() {
 
 function QuoteButton({
   title, model, className, children,
-}: { title: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
+}: { title?: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
     <button type="button" onClick={() => open({ title, model })} className={className}>
@@ -134,7 +134,7 @@ function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <QuoteButton
-              title={t(bi("Launch Pilot", "Запустити пілот"))}
+              title={undefined}
               model="pilot"
               className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
             >
@@ -534,7 +534,7 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }
       <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
       <QuoteButton
-        title={`${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
+        title={model === "pilot" ? undefined : `${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
