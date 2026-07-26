@@ -46,7 +46,7 @@ const MODELS: Record<ModelKey, ModelDef> = {
     key: "pilot",
     badge: bi("Pilot Project (POC)", "Пілотний проєкт (POC)"),
     tab: bi("Service on Demand / Pilot", "Послуга на замовлення / Пілот"),
-    title: bi("Pilot Project (POC) & Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
+    title: bi("Pilot Project (POC) &Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
     icon: Zap,
     accent: "#38bdf8",
     concept: bi(
@@ -76,7 +76,7 @@ const MODELS: Record<ModelKey, ModelDef> = {
         ),
       },
     ],
-    formTitle: bi("Pilot Project (POC) & Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
+    formTitle: bi("Pilot Project (POC) &Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
     formSubtitle: bi(
       "Submit your case details — our team will reach out within 1 business day to set up your trial parameters.",
       "Залиште деталі кейсу — наша команда зв'яжеться з вами протягом робочого дня для узгодження параметрів обробки."
