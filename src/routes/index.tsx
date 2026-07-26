@@ -668,6 +668,7 @@ function Footer() {
           <a href="#" className="inline-flex items-center gap-1.5 hover:text-white transition">
             <Github className="h-3.5 w-3.5" /> GitHub
           </a>
+          <a href="/privacy" className="hover:text-white transition">{t(bi("Privacy Policy", "Політика конфіденційності"))}</a>
           <a href="#" className="hover:text-white transition">{t(bi("Security Statement", "Заява про безпеку"))}</a>
           <a href="#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
         </div>
