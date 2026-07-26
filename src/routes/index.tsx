@@ -91,7 +91,7 @@ function Nav() {
 
 function QuoteButton({
   title, model, className, children,
-}: { title: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
+}: { title?: string; model?: "pilot" | "onprem" | "appliance" | "partner"; className: string; children: React.ReactNode }) {
   const { open } = useContactDialog();
   return (
     <button type="button" onClick={() => open({ title, model })} className={className}>
