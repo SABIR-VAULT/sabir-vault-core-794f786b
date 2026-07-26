@@ -615,10 +615,12 @@ function Partnership() {
           <div className="flex flex-col gap-3 md:items-end">
             <QuoteButton
               title={t(bi("Become a Partner", "Стати партнером"))}
+              model="partner"
               className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition"
             >
               {t(bi("Become a Partner", "Стати партнером"))} <ArrowRight className="h-4 w-4" />
             </QuoteButton>
+
             <a href="mailto:contact@sabirvault.com" className="text-sm text-muted-foreground hover:text-white transition">
               contact@sabirvault.com
             </a>
