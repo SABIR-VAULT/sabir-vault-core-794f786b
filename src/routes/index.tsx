@@ -534,7 +534,7 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }
       <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
       <QuoteButton
-        title={`${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
+        title={model === "pilot" ? undefined : `${title} — ${ctaLabel ?? t(bi("Request Details", "Запит деталей"))}`}
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
