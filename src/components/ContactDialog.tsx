@@ -76,7 +76,7 @@ const MODELS: Record<ModelKey, ModelDef> = {
         ),
       },
     ],
-    formTitle: bi("Launch Pilot Project", "Запустити пілотний проєкт"),
+    formTitle: bi("Pilot Project (POC) & Pre-audit\u00a0", "Пілотний проєкт та пре-аудит"),
     formSubtitle: bi(
       "Submit your case details — our team will reach out within 1 business day to set up your trial parameters.",
       "Залиште деталі кейсу — наша команда зв'яжеться з вами протягом робочого дня для узгодження параметрів обробки."
@@ -295,7 +295,7 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
 
   const active = MODELS[model];
   const Icon = active.icon;
-  const heading = titleOverride ?? t(active.title);
+  const heading = titleOverride ?? t(active.formTitle);
 
   const namePh = lang === "ua" ? "Олександр Іваненко" : "Jane Doe";
   const companyPh = lang === "ua" ? "Юридична компанія / Фонд" : "Acme Capital";
