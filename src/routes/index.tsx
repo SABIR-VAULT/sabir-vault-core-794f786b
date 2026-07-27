@@ -146,10 +146,13 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70">
-            <span>{t(bi("Air-Gapped", "Ізольовано"))}</span><span>•</span>
-            <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span><span>•</span>
-            <span>{t(bi("Local Intelligence", "Локальний аналіз"))}</span><span>•</span>
+          <div className="mt-14 flex flex-col items-center justify-center gap-2 text-center text-xs uppercase tracking-widest text-muted-foreground/70 sm:flex-row sm:gap-4">
+            <span>{t(bi("Air-Gapped", "Ізольовано"))}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>{t(bi("Local Intelligence", "Локальний аналіз"))}</span>
+            <span className="hidden sm:inline">•</span>
             <span>{t(bi("Zero-Trust Ingestion", "Zero-Trust прийом"))}</span>
           </div>
         </div>
