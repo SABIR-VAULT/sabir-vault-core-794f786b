@@ -126,7 +126,7 @@ function Hero() {
               {t(bi("Trusted Decisions.", "Надійні рішення."))}
             </span>
           </h1>
-          <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
               "Automate digitisation, cross-verification, and forensic analysis of complex document archives (PDFs, raw scans, handwritten texts, ZIPs) into verified digital dossiers with expert quality control.",
               "Автоматизуйте оцифровку, перехресну верифікацію та форензік-аналіз складних архівів документів (PDF, сирі скани, рукописні тексти, ZIP) у верифіковані цифрові досьє з експертним контролем якості."
