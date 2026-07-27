@@ -119,7 +119,7 @@ function Hero() {
               {t(bi("Enterprise Digital Dossier Platform", "Корпоративна платформа цифрових досьє"))}
             </span>
           </div>
-          <h1 className="mt-8 text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
+          <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
             {t(bi("Structured Documents.", "Структуровані документи."))}
             <br />
             <span className="text-gradient-cyan">
