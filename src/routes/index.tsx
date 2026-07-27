@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   return (
-    <div className="min-h-screen text-foreground">
+    <div className="min-h-screen overflow-x-hidden text-foreground">
       <Nav />
       <Hero />
       <Introduction />
@@ -119,14 +119,14 @@ function Hero() {
               {t(bi("Enterprise Digital Dossier Platform", "Корпоративна платформа цифрових досьє"))}
             </span>
           </div>
-          <h1 className="mt-8 text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
+          <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
             {t(bi("Structured Documents.", "Структуровані документи."))}
             <br />
             <span className="text-gradient-cyan">
               {t(bi("Trusted Decisions.", "Надійні рішення."))}
             </span>
           </h1>
-          <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
               "Automate digitisation, cross-verification, and forensic analysis of complex document archives (PDFs, raw scans, handwritten texts, ZIPs) into verified digital dossiers with expert quality control.",
               "Автоматизуйте оцифровку, перехресну верифікацію та форензік-аналіз складних архівів документів (PDF, сирі скани, рукописні тексти, ZIP) у верифіковані цифрові досьє з експертним контролем якості."

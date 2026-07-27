@@ -9,8 +9,8 @@ import { useLang, bi } from "@/lib/i18n";
 
 // ============================================================
 // Web3Forms integration
-// PASTE YOUR WEB3FORMS ACCESS KEY BELOW (get one at https://web3forms.com):
-const WEB3FORMS_ACCESS_KEY = "b81f9a95-5a96-44ba-a833-227e46f665d2";
+// Set VITE_WEB3_API_KEY in your local .env (see .env.example).
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3_API_KEY as string;
 // ============================================================
 
 type ModelKey = "pilot" | "onprem" | "appliance" | "partner";
