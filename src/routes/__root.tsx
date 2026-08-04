@@ -103,6 +103,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "SABIR VAULT",
+          operatingSystem: "macOS, On-Premise, Web, Air-Gapped Appliance",
+          applicationCategory: "BusinessApplication, LegalTech, FinTech",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description:
+            "Enterprise Legal & Financial Intelligence Platform for document forensic analysis, 3-way financial reconciliation, and verified digital dossiers.",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
