@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /app/
+
+# Allow AI Search Engines for Generative Optimization (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://sabirvault.com/sitemap.xml
