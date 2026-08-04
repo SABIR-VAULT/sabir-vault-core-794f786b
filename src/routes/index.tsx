@@ -4,7 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
-  Boxes, Database,
+  Boxes, Database, Scale, Calculator, Presentation, Bot,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -66,7 +66,10 @@ function Nav() {
           <div className="grid h-8 w-8 place-items-center rounded-md bg-gradient-to-br from-[#38bdf8] to-[#f59e0b]">
             <div className="h-3 w-3 rounded-sm bg-[#090d16]" />
           </div>
-          <span className="text-sm font-semibold tracking-[0.2em] text-white">SABIR VAULT</span>
+          <div className="flex flex-col leading-none">
+            <span className="text-sm font-semibold tracking-[0.2em] text-white">SABIR VAULT</span>
+            <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.32em] text-muted-foreground/70">Digital Dossiers</span>
+          </div>
         </div>
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
           <a href="#pillars" className="hover:text-white transition">{t(bi("Platform", "Платформа"))}</a>
@@ -116,20 +119,26 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-[#38bdf8]" />
             <span className="tracking-wide">
-              {t(bi("Enterprise Digital Dossier Platform", "Корпоративна платформа цифрових досьє"))}
+              {t(bi("🔐 VERIFIED DIGITAL DOSSIERS", "🔐 ВЕРИФІКОВАНІ ЦИФРОВІ ДОСЬЄ"))}
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("Structured Documents.", "Структуровані документи."))}
+            {t(bi("Legal & Financial", "Платформа Правової та"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Trusted Decisions.", "Надійні рішення."))}
+              {t(bi("Intelligence Platform", "Фінансової Розвідки"))}
             </span>
           </h1>
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
+          <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold uppercase tracking-[0.12em] text-[#38bdf8]/90 break-words md:text-base">
             {t(bi(
-              "Automate digitisation, cross-verification, and forensic analysis of complex document archives (PDFs, raw scans, handwritten texts, ZIPs) into verified digital dossiers with expert quality control.",
-              "Автоматизуйте оцифровку, перехресну верифікацію та форензік-аналіз складних архівів документів (PDF, сирі скани, рукописні тексти, ZIP) у верифіковані цифрові досьє з експертним контролем якості."
+              "Unstructured Document Chaos ➔ Verified Digital Dossiers.",
+              "Від Хаосу Документів ➔ До Верифікованих Цифрових Досьє."
+            ))}
+          </p>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
+            {t(bi(
+              "Automate 3-way financial reconciliation, legal risk analysis, and forensic audit of complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into court-ready dossiers and executive board presentations.",
+              "Автоматизуйте 3-сторонню фінансову звірку, аналіз юридичних ризиків та форензик-аудит складних архівів документів (PDF, скани, банківські виписки, рукописи, XLSX) у судові досьє та презентації для Ради Директорів."
             ))}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -165,6 +174,33 @@ function Hero() {
 /* INTRODUCTION                                                  */
 /* ============================================================ */
 
+const audiences: { icon: any; title: Bi; body: Bi }[] = [
+  {
+    icon: Scale,
+    title: bi("For Legal Counsel", "Юристам та Адвокатам"),
+    body: bi(
+      "Instantly uncovers court precedents, capacity risks, family estate networks, and missing compliance documents.",
+      "Миттєво виявляє судові прецеденти, ризики недієздатності, родинні мережі майна та відсутні комплаєнс-документи."
+    ),
+  },
+  {
+    icon: Calculator,
+    title: bi("For CFOs & Auditors", "Фінансовим Директорам"),
+    body: bi(
+      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, and tax risks.",
+      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти та податкові ризики."
+    ),
+  },
+  {
+    icon: Building2,
+    title: bi("For Business Owners & Board", "Власникам та Раді Директорів"),
+    body: bi(
+      "Delivers a single, interwoven dashboard where every financial KPI is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
+      "Створює єдиний переплетений дашборд, де кожний фінансовий показник підтверджений юридичним документом з SHA-256 печаткою цілісності."
+    ),
+  },
+];
+
 function Introduction() {
   const { t } = useLang();
   return (
@@ -180,6 +216,17 @@ function Introduction() {
             "SABIR VAULT перетворює великі колекції документів на структуровані цифрові досьє. Замість ручного перегляду тисяч сторінок фахівці отримують упорядковані докази, структуровані датасети, графи зв'язків і готові до експорту звіти. Платформа готує перевірену інформацію. Професійні висновки залишаються за кваліфікованими спеціалістами."
           ))}
         </p>
+      </div>
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        {audiences.map((a, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6">
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <a.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-4 text-sm font-semibold text-white">{t(a.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(a.body)}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -333,6 +380,9 @@ const deliverables: { icon: any; title: Bi }[] = [
   { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256)", "Криптографічний сертифікат автентичності (SHA-256)") },
   { icon: KeyRound, title: bi("Standalone Encrypted Container (.enc)", "Запечатаний зашифрований контейнер (.enc)") },
   { icon: Boxes, title: bi("Structured JSON Dataset & CRM Profile", "Структуровані JSON-дані та CRM-анкета") },
+  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching & Off-Balance Liabilities)", "Фінансово-Податковий Аудит-Пакет CFO (Потрійна звірка та Позабалансові борги)") },
+  { icon: Presentation, title: bi("Board-Ready Presentation Deck (Interactive HTML & PDF Slides)", "Презентаційний Пакет для Ради Директорів (Інтерактивні HTML/PDF Слайди)") },
+  { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "Інтерактивний AI Co-Pilot (Живий чат по верифікованій базі фактів)") },
 ];
 
 function Deliverables() {
