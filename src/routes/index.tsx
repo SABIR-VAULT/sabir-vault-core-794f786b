@@ -591,7 +591,7 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
-        {ctaLabel ?? t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
+        {ctaLabel ?? (<>{t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" /></>)}
       </QuoteButton>
     </div>
   );
