@@ -540,19 +540,19 @@ function Deployment() {
           icon={Zap}
           model="pilot"
           tag={t(bi("On-Demand Service", "Послуга на замовлення"))}
-          title={t(bi("Pilot Project (POC) / Pre-audit", "Пілотний проєкт (POC) / Пре-аудит"))}
+          title={t(bi("SABIR VAULT Pre-Audit (POC)", "Пре-аудит SABIR VAULT (POC)"))}
           body={t(bi(
-            "Trial forensic processing of your first archive or case to evaluate accuracy, speed, and pipeline compatibility before signing a full contract.",
-            "Тестова форензик-обробка вашого першого архіву або кейсу для оцінки точності, швидкості та сумісності конвеєра до укладання комплексної угоди."
+            "Trial forensic processing of your document archive before a major transaction, M&A deal, or dispute. Receive a complete situation map, missing evidence report, and verified digital dossier.",
+            "Тестова форензик-обробка вашого архіву перед укладанням угоди, купівлею компанії або судовим процесом. Отримайте ситуаційну карту, звіт про відсутні докази та верифіковане цифрове досьє."
           ))}
-          ctaLabel={t(bi("Launch Pilot", "Запустити пілот"))}
+          ctaLabel={t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
         />
 
         <DeployCard
           icon={Server}
           model="onprem"
           tag={t(bi("Software License", "Ліцензія на ПЗ"))}
-          title={t(bi("Managed On-Premise Deployment", "Керована локальна інсталяція"))}
+          title={t(bi("Managed On-Premise Deployment", "Керована локальна інсталяція (Managed On-Premise)"))}
           body={t(bi(
             "Installation and configuration on your existing private infrastructure with monthly enterprise licensing.",
             "Інсталяція та налаштування на вашій приватній інфраструктурі з щомісячною корпоративною ліцензією."
@@ -562,10 +562,10 @@ function Deployment() {
           icon={Package}
           model="appliance"
           tag={t(bi("Hardware + Software", "Обладнання + ПЗ"))}
-          title={t(bi("Dedicated Hardware Appliance", "Виділений апаратний модуль"))}
+          title={t(bi("Dedicated Hardware Appliance (SABIR VAULT Box)", "Виділений апаратний модуль (SABIR VAULT Box)"))}
           body={t(bi(
-            "Pre-configured, air-gapped plug-and-play Mac Mini unit (SABIR VAULT Box) delivered directly to your office.",
-            "Попередньо налаштований ізольований plug-and-play Mac Mini (SABIR VAULT Box) з доставкою у ваш офіс."
+            "Pre-configured, air-gapped plug-and-play Mac Mini unit delivered directly to your office for maximum isolation.",
+            "Попередньо налаштований ізольований plug-and-play Mac Mini з доставкою у ваш офіс для максимальної ізоляції."
           ))}
           highlight
         />
