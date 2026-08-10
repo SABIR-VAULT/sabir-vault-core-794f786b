@@ -123,36 +123,40 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("Legal & Financial", "Платформа Правової та"))}
+            {t(bi("From Document Chaos to a", "Від хаосу документів —"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Intelligence Platform", "Фінансової Розвідки"))}
+              {t(bi("Verified Picture of Your Business", "до верифікованої картини бізнесу"))}
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold uppercase tracking-[0.12em] text-[#38bdf8]/90 break-words md:text-base">
             {t(bi(
-              "Unstructured Document Chaos ➔ Verified Digital Dossiers.",
-              "Від Хаосу Документів ➔ До Верифікованих Цифрових Досьє."
+              "See what is actually happening inside your business — across legal & financial evidence.",
+              "Побачте реальний стан вашого бізнесу на основі правових та фінансових доказів."
             ))}
           </p>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
-              "Automate 3-way financial reconciliation, legal risk analysis, and forensic audit of complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into court-ready dossiers and executive board presentations.",
-              "Автоматизуйте 3-сторонню фінансову звірку, аналіз юридичних ризиків та форензик-аудит складних архівів документів (PDF, скани, банківські виписки, рукописи, XLSX) у судові досьє та презентації для Ради Директорів."
+              "SABIR VAULT is an enterprise situational intelligence and pre-audit platform. It transforms complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into verified digital dossiers and court-ready dashboards in minutes instead of weeks of manual work.",
+              "SABIR VAULT — це платформа ситуаційної розвідки та пре-аудиту. Вона перетворює розрізнені архіви договорів, виписок, сканів та Excel на підтверджені цифрові досьє та дашборди за хвилини замість тижнів ручної роботи."
             ))}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <QuoteButton
-              title={undefined}
-              model="pilot"
-              className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
-            >
-              {t(bi("Launch Pilot", "Запустити пілот"))}
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </QuoteButton>
-            <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-              {t(bi("Pipeline Overview", "Огляд конвеєра"))}
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <QuoteButton
+                title={undefined}
+                model="pilot"
+                className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
+              >
+                {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
+              </QuoteButton>
+              <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
+                {t(bi("Pipeline Overview", "Огляд конвеєра"))}
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {t(bi("Give us the archive. Get the situation map.", "Надайте архів. Отримайте ситуаційну карту."))}
+            </p>
           </div>
 
           <div className="mt-14 flex flex-col items-center justify-center gap-2 text-center text-xs uppercase tracking-widest text-muted-foreground/70 sm:flex-row sm:gap-4">
