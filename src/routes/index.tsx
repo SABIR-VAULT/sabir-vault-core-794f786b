@@ -373,16 +373,13 @@ function Pipeline() {
 /* ============================================================ */
 
 const deliverables: { icon: any; title: Bi }[] = [
-  { icon: FileText, title: bi("Verified Digital Dossier", "Верифіковане цифрове досьє") },
-  { icon: ScrollText, title: bi("Executive Word (.docx) Export Package", "Преміальний Word-пакет із підсвіткою ризиків") },
-  { icon: Network, title: bi("D3.js Interactive Relationship Graph", "Інтерактивний D3.js граф зв'язків") },
-  { icon: Landmark, title: bi("Court-Ready Evidence Package", "Доказовий пакет для суду з цитатами сторінок") },
-  { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256)", "Криптографічний сертифікат автентичності (SHA-256)") },
-  { icon: KeyRound, title: bi("Standalone Encrypted Container (.enc)", "Запечатаний зашифрований контейнер (.enc)") },
-  { icon: Boxes, title: bi("Structured JSON Dataset & CRM Profile", "Структуровані JSON-дані та CRM-анкета") },
-  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching & Off-Balance Liabilities)", "Фінансово-Податковий Аудит-Пакет CFO (Потрійна звірка та Позабалансові борги)") },
-  { icon: Presentation, title: bi("Board-Ready Presentation Deck (Interactive HTML & PDF Slides)", "Презентаційний Пакет для Ради Директорів (Інтерактивні HTML/PDF Слайди)") },
-  { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "Інтерактивний AI Co-Pilot (Живий чат по верифікованій базі фактів)") },
+  { icon: FileText, title: bi("Verified Digital Dossier (Word .docx + HTML Dashboard)", "Верифіковане цифрове досьє (Word .docx + HTML-дашборд)") },
+  { icon: Network, title: bi("D3.js Interactive Relationship Graph (UBO, family & corporate networks)", "Інтерактивний D3.js граф зв'язків (UBO, родинні та бізнес-мережі)") },
+  { icon: Landmark, title: bi("Court-Ready Evidence Package with page-accurate quotes", "Доказовий пакет для суду з цитатами та посиланнями на сторінки") },
+  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching + Off-balance liabilities)", "Фінансово-податковий аудит-пакет CFO (3-Way Matching + позабалансові борги)") },
+  { icon: Presentation, title: bi("Board-Ready Presentation Package (Interactive Slides)", "Презентаційний пакет для Ради Директорів (інтерактивні слайди)") },
+  { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "AI Co-Pilot — живий чат по верифікованій базі фактів") },
+  { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256 Tamper Seal)", "Криптографічна печатка цілісності (SHA-256 Tamper Seal)") },
 ];
 
 function Deliverables() {
