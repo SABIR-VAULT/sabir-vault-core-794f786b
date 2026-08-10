@@ -84,7 +84,7 @@ function Nav() {
             model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
-            {t(bi("Launch Pilot", "Запустити пілот"))}
+            {t(bi("🔓 Start a Pre-Audit", "🔓 Запустити Пре-аудит"))}
           </QuoteButton>
         </div>
       </div>
