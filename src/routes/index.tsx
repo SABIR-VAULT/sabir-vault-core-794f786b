@@ -11,6 +11,20 @@ import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog
 import { useLang, bi, type Bi } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "SABIR VAULT | Enterprise Pre-Audit & Document Intelligence Platform" },
+      { name: "description", content: "Turn document chaos into a verified picture of your business. SABIR VAULT automates 3-way financial matching, legal forensics, and pre-audit dossiers. 100% Air-Gapped." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://sabirvault.com/" },
+      { property: "og:title", content: "SABIR VAULT — See What Is Actually Happening Inside Your Business" },
+      { property: "og:description", content: "Enterprise situational intelligence and pre-audit platform. Reconstruct entities, financial flows, and legal evidence from raw document archives in minutes." },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SABIR VAULT — See What Is Actually Happening Inside Your Business" },
+      { name: "twitter:description", content: "Enterprise situational intelligence and pre-audit platform. Reconstruct entities, financial flows, and legal evidence from raw document archives in minutes." },
+    ],
+    links: [{ rel: "canonical", href: "https://sabirvault.com/" }],
+  }),
   component: Landing,
 });
 
