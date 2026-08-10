@@ -236,6 +236,7 @@ function Introduction() {
               <a.icon className="h-5 w-5" />
             </div>
             <div className="mt-4 text-sm font-semibold text-white">{t(a.title)}</div>
+            <p className="mt-2 text-sm italic leading-relaxed text-[#38bdf8]/90">{t(a.question)}</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(a.body)}</p>
           </div>
         ))}
