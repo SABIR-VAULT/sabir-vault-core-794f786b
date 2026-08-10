@@ -174,29 +174,41 @@ function Hero() {
 /* INTRODUCTION                                                  */
 /* ============================================================ */
 
-const audiences: { icon: any; title: Bi; body: Bi }[] = [
+const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   {
     icon: Scale,
-    title: bi("For Legal Counsel", "Юристам та Адвокатам"),
+    title: bi("For Legal Counsel & Attorneys", "Юристам та Адвокатам"),
+    question: bi(
+      "\u201CWho is connected to whom — and what proves it?\u201D",
+      "\u201CХто з ким пов'язаний — і чим це підтверджено?\u201D"
+    ),
     body: bi(
-      "Instantly uncovers court precedents, capacity risks, family estate networks, and missing compliance documents.",
-      "Миттєво виявляє судові прецеденти, ризики недієздатності, родинні мережі майна та відсутні комплаєнс-документи."
+      "Reconstructs hidden beneficiaries (UBO), family and business networks, conflicting obligations, and documentary evidence with exact quotes from source materials.",
+      "Реконструює прихованих бенефіціарів (UBO), родинні та бізнес-мережі, суперечливі зобов'язання та документальні докази з точними цитатами першоджерел."
     ),
   },
   {
     icon: Calculator,
-    title: bi("For CFOs & Auditors", "Фінансовим Директорам"),
+    title: bi("For CFOs & Financial Auditors", "Фінансовим Директорам (CFO) & Аудиторам"),
+    question: bi(
+      "\u201CWhere is the money actually going?\u201D",
+      "\u201CКуди насправді йдуть гроші?\u201D"
+    ),
     body: bi(
-      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, and tax risks.",
-      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти та податкові ризики."
+      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, VAT frauds, and financial discrepancies prior to official audits.",
+      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти, ПДВ-скрутки та фінансові розбіжності до офіційної перевірки."
     ),
   },
   {
     icon: Building2,
-    title: bi("For Business Owners & Board", "Власникам та Раді Директорів"),
+    title: bi("For Business Owners & Board of Directors", "Власникам та Раді Директорів"),
+    question: bi(
+      "\u201CWhat is actually happening inside the business?\u201D",
+      "\u201CЩо насправді відбувається всередині бізнесу?\u201D"
+    ),
     body: bi(
-      "Delivers a single, interwoven dashboard where every financial KPI is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
-      "Створює єдиний переплетений дашборд, де кожний фінансовий показник підтверджений юридичним документом з SHA-256 печаткою цілісності."
+      "Delivers a single verified picture of assets, liabilities, people, money, and risks, where every metric is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
+      "Створює єдину підтверджену картину активів, боргів, людей, грошей та ризиків, де кожний показник підтверджений юридичним документом із SHA-256 печаткою цілісності."
     ),
   },
 ];
@@ -212,8 +224,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "SABIR VAULT transforms large document collections into structured digital dossiers. Instead of manually reviewing thousands of pages, professionals receive organized evidence, structured datasets, relationship graphs and export-ready reports. The platform prepares verified information. Qualified specialists remain responsible for professional conclusions.",
-            "SABIR VAULT перетворює великі колекції документів на структуровані цифрові досьє. Замість ручного перегляду тисяч сторінок фахівці отримують упорядковані докази, структуровані датасети, графи зв'язків і готові до експорту звіти. Платформа готує перевірену інформацію. Професійні висновки залишаються за кваліфікованими спеціалістами."
+            "SABIR VAULT transforms unstructured document archives into a verified picture of a business, deal, or asset. Instead of manually reviewing thousands of pages, leaders and professionals receive organized evidence, 3-way financial reconciliation, D3.js relationship graphs, and ready-to-export digital dossiers. Every conclusion is traceable back to the source document page.",
+            "SABIR VAULT перетворює розрізнений документальний архів на перевірену ситуаційну картину бізнесу, справи чи активу. Замість ручного перегляду тисяч сторінок керівники та фахівці отримують впорядковані докази, 3-сторонню звірку грошей, D3.js графи прихованих зв'язків та цифрові досьє, де кожний висновок можна простежити до сторінки оригінального скана."
           ))}
         </p>
       </div>
