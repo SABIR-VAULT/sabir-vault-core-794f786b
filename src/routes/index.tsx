@@ -84,7 +84,7 @@ function Nav() {
             model="pilot"
             className="rounded-md bg-[#38bdf8] px-4 py-2 text-xs font-semibold text-[#090d16] hover:bg-[#7dd3fc] transition"
           >
-            {t(bi("Launch Pilot", "Запустити пілот"))}
+            {t(bi("🔓 Start a Pre-Audit", "🔓 Запустити Пре-аудит"))}
           </QuoteButton>
         </div>
       </div>
@@ -123,36 +123,40 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("Legal & Financial", "Платформа Правової та"))}
+            {t(bi("From Document Chaos to a", "Від хаосу документів —"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Intelligence Platform", "Фінансової Розвідки"))}
+              {t(bi("Verified Picture of Your Business", "до верифікованої картини бізнесу"))}
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold uppercase tracking-[0.12em] text-[#38bdf8]/90 break-words md:text-base">
             {t(bi(
-              "Unstructured Document Chaos ➔ Verified Digital Dossiers.",
-              "Від Хаосу Документів ➔ До Верифікованих Цифрових Досьє."
+              "See what is actually happening inside your business — across legal & financial evidence.",
+              "Побачте реальний стан вашого бізнесу на основі правових та фінансових доказів."
             ))}
           </p>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
-              "Automate 3-way financial reconciliation, legal risk analysis, and forensic audit of complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into court-ready dossiers and executive board presentations.",
-              "Автоматизуйте 3-сторонню фінансову звірку, аналіз юридичних ризиків та форензик-аудит складних архівів документів (PDF, скани, банківські виписки, рукописи, XLSX) у судові досьє та презентації для Ради Директорів."
+              "SABIR VAULT is an enterprise situational intelligence and pre-audit platform. It transforms complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into verified digital dossiers and court-ready dashboards in minutes instead of weeks of manual work.",
+              "SABIR VAULT — це платформа ситуаційної розвідки та пре-аудиту. Вона перетворює розрізнені архіви договорів, виписок, сканів та Excel на підтверджені цифрові досьє та дашборди за хвилини замість тижнів ручної роботи."
             ))}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <QuoteButton
-              title={undefined}
-              model="pilot"
-              className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
-            >
-              {t(bi("Launch Pilot", "Запустити пілот"))}
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </QuoteButton>
-            <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-              {t(bi("Pipeline Overview", "Огляд конвеєра"))}
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <QuoteButton
+                title={undefined}
+                model="pilot"
+                className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
+              >
+                {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
+              </QuoteButton>
+              <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
+                {t(bi("Pipeline Overview", "Огляд конвеєра"))}
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {t(bi("Give us the archive. Get the situation map.", "Надайте архів. Отримайте ситуаційну карту."))}
+            </p>
           </div>
 
           <div className="mt-14 flex flex-col items-center justify-center gap-2 text-center text-xs uppercase tracking-widest text-muted-foreground/70 sm:flex-row sm:gap-4">
@@ -174,29 +178,41 @@ function Hero() {
 /* INTRODUCTION                                                  */
 /* ============================================================ */
 
-const audiences: { icon: any; title: Bi; body: Bi }[] = [
+const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   {
     icon: Scale,
-    title: bi("For Legal Counsel", "Юристам та Адвокатам"),
+    title: bi("For Legal Counsel & Attorneys", "Юристам та Адвокатам"),
+    question: bi(
+      "\u201CWho is connected to whom — and what proves it?\u201D",
+      "\u201CХто з ким пов'язаний — і чим це підтверджено?\u201D"
+    ),
     body: bi(
-      "Instantly uncovers court precedents, capacity risks, family estate networks, and missing compliance documents.",
-      "Миттєво виявляє судові прецеденти, ризики недієздатності, родинні мережі майна та відсутні комплаєнс-документи."
+      "Reconstructs hidden beneficiaries (UBO), family and business networks, conflicting obligations, and documentary evidence with exact quotes from source materials.",
+      "Реконструює прихованих бенефіціарів (UBO), родинні та бізнес-мережі, суперечливі зобов'язання та документальні докази з точними цитатами першоджерел."
     ),
   },
   {
     icon: Calculator,
-    title: bi("For CFOs & Auditors", "Фінансовим Директорам"),
+    title: bi("For CFOs & Financial Auditors", "Фінансовим Директорам (CFO) & Аудиторам"),
+    question: bi(
+      "\u201CWhere is the money actually going?\u201D",
+      "\u201CКуди насправді йдуть гроші?\u201D"
+    ),
     body: bi(
-      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, and tax risks.",
-      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти та податкові ризики."
+      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, VAT frauds, and financial discrepancies prior to official audits.",
+      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти, ПДВ-скрутки та фінансові розбіжності до офіційної перевірки."
     ),
   },
   {
     icon: Building2,
-    title: bi("For Business Owners & Board", "Власникам та Раді Директорів"),
+    title: bi("For Business Owners & Board of Directors", "Власникам та Раді Директорів"),
+    question: bi(
+      "\u201CWhat is actually happening inside the business?\u201D",
+      "\u201CЩо насправді відбувається всередині бізнесу?\u201D"
+    ),
     body: bi(
-      "Delivers a single, interwoven dashboard where every financial KPI is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
-      "Створює єдиний переплетений дашборд, де кожний фінансовий показник підтверджений юридичним документом з SHA-256 печаткою цілісності."
+      "Delivers a single verified picture of assets, liabilities, people, money, and risks, where every metric is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
+      "Створює єдину підтверджену картину активів, боргів, людей, грошей та ризиків, де кожний показник підтверджений юридичним документом із SHA-256 печаткою цілісності."
     ),
   },
 ];
@@ -212,8 +228,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "SABIR VAULT transforms large document collections into structured digital dossiers. Instead of manually reviewing thousands of pages, professionals receive organized evidence, structured datasets, relationship graphs and export-ready reports. The platform prepares verified information. Qualified specialists remain responsible for professional conclusions.",
-            "SABIR VAULT перетворює великі колекції документів на структуровані цифрові досьє. Замість ручного перегляду тисяч сторінок фахівці отримують упорядковані докази, структуровані датасети, графи зв'язків і готові до експорту звіти. Платформа готує перевірену інформацію. Професійні висновки залишаються за кваліфікованими спеціалістами."
+            "SABIR VAULT transforms unstructured document archives into a verified picture of a business, deal, or asset. Instead of manually reviewing thousands of pages, leaders and professionals receive organized evidence, 3-way financial reconciliation, D3.js relationship graphs, and ready-to-export digital dossiers. Every conclusion is traceable back to the source document page.",
+            "SABIR VAULT перетворює розрізнений документальний архів на перевірену ситуаційну картину бізнесу, справи чи активу. Замість ручного перегляду тисяч сторінок керівники та фахівці отримують впорядковані докази, 3-сторонню звірку грошей, D3.js графи прихованих зв'язків та цифрові досьє, де кожний висновок можна простежити до сторінки оригінального скана."
           ))}
         </p>
       </div>
@@ -224,6 +240,7 @@ function Introduction() {
               <a.icon className="h-5 w-5" />
             </div>
             <div className="mt-4 text-sm font-semibold text-white">{t(a.title)}</div>
+            <p className="mt-2 text-sm italic leading-relaxed text-[#38bdf8]/90">{t(a.question)}</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(a.body)}</p>
           </div>
         ))}
@@ -324,6 +341,12 @@ function Pipeline() {
           eyebrow={t(bi("Workflow", "Конвеєр обробки"))}
           title={t(bi("A deterministic pipeline. End to end.", "Детермінований конвеєр від початку до кінця."))}
         />
+        <p className="mt-4 max-w-4xl text-sm font-semibold uppercase tracking-[0.1em] text-[#38bdf8]/90 break-words">
+          {t(bi(
+            "Archive ➔ Facts ➔ Entities & Assets ➔ Relationships ➔ Verification ➔ Situation Map ➔ Decision",
+            "Архів ➔ Факти ➔ Суб'єкти та Об'єкти ➔ Зв'язки ➔ Верифікація ➔ Ситуаційна Карта ➔ Рішення"
+          ))}
+        </p>
         <div className="glass mt-14 rounded-2xl p-8 md:p-12">
           <div className="hidden lg:block">
             <div className="relative">
@@ -373,16 +396,13 @@ function Pipeline() {
 /* ============================================================ */
 
 const deliverables: { icon: any; title: Bi }[] = [
-  { icon: FileText, title: bi("Verified Digital Dossier", "Верифіковане цифрове досьє") },
-  { icon: ScrollText, title: bi("Executive Word (.docx) Export Package", "Преміальний Word-пакет із підсвіткою ризиків") },
-  { icon: Network, title: bi("D3.js Interactive Relationship Graph", "Інтерактивний D3.js граф зв'язків") },
-  { icon: Landmark, title: bi("Court-Ready Evidence Package", "Доказовий пакет для суду з цитатами сторінок") },
-  { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256)", "Криптографічний сертифікат автентичності (SHA-256)") },
-  { icon: KeyRound, title: bi("Standalone Encrypted Container (.enc)", "Запечатаний зашифрований контейнер (.enc)") },
-  { icon: Boxes, title: bi("Structured JSON Dataset & CRM Profile", "Структуровані JSON-дані та CRM-анкета") },
-  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching & Off-Balance Liabilities)", "Фінансово-Податковий Аудит-Пакет CFO (Потрійна звірка та Позабалансові борги)") },
-  { icon: Presentation, title: bi("Board-Ready Presentation Deck (Interactive HTML & PDF Slides)", "Презентаційний Пакет для Ради Директорів (Інтерактивні HTML/PDF Слайди)") },
-  { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "Інтерактивний AI Co-Pilot (Живий чат по верифікованій базі фактів)") },
+  { icon: FileText, title: bi("Verified Digital Dossier (Word .docx + HTML Dashboard)", "Верифіковане цифрове досьє (Word .docx + HTML-дашборд)") },
+  { icon: Network, title: bi("D3.js Interactive Relationship Graph (UBO, family & corporate networks)", "Інтерактивний D3.js граф зв'язків (UBO, родинні та бізнес-мережі)") },
+  { icon: Landmark, title: bi("Court-Ready Evidence Package with page-accurate quotes", "Доказовий пакет для суду з цитатами та посиланнями на сторінки") },
+  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching + Off-balance liabilities)", "Фінансово-податковий аудит-пакет CFO (3-Way Matching + позабалансові борги)") },
+  { icon: Presentation, title: bi("Board-Ready Presentation Package (Interactive Slides)", "Презентаційний пакет для Ради Директорів (інтерактивні слайди)") },
+  { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "AI Co-Pilot — живий чат по верифікованій базі фактів") },
+  { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256 Tamper Seal)", "Криптографічна печатка цілісності (SHA-256 Tamper Seal)") },
 ];
 
 function Deliverables() {
@@ -540,19 +560,19 @@ function Deployment() {
           icon={Zap}
           model="pilot"
           tag={t(bi("On-Demand Service", "Послуга на замовлення"))}
-          title={t(bi("Pilot Project (POC) / Pre-audit", "Пілотний проєкт (POC) / Пре-аудит"))}
+          title={t(bi("SABIR VAULT Pre-Audit (POC)", "Пре-аудит SABIR VAULT (POC)"))}
           body={t(bi(
-            "Trial forensic processing of your first archive or case to evaluate accuracy, speed, and pipeline compatibility before signing a full contract.",
-            "Тестова форензик-обробка вашого першого архіву або кейсу для оцінки точності, швидкості та сумісності конвеєра до укладання комплексної угоди."
+            "Trial forensic processing of your document archive before a major transaction, M&A deal, or dispute. Receive a complete situation map, missing evidence report, and verified digital dossier.",
+            "Тестова форензик-обробка вашого архіву перед укладанням угоди, купівлею компанії або судовим процесом. Отримайте ситуаційну карту, звіт про відсутні докази та верифіковане цифрове досьє."
           ))}
-          ctaLabel={t(bi("Launch Pilot", "Запустити пілот"))}
+          ctaLabel={t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
         />
 
         <DeployCard
           icon={Server}
           model="onprem"
           tag={t(bi("Software License", "Ліцензія на ПЗ"))}
-          title={t(bi("Managed On-Premise Deployment", "Керована локальна інсталяція"))}
+          title={t(bi("Managed On-Premise Deployment", "Керована локальна інсталяція (Managed On-Premise)"))}
           body={t(bi(
             "Installation and configuration on your existing private infrastructure with monthly enterprise licensing.",
             "Інсталяція та налаштування на вашій приватній інфраструктурі з щомісячною корпоративною ліцензією."
@@ -562,10 +582,10 @@ function Deployment() {
           icon={Package}
           model="appliance"
           tag={t(bi("Hardware + Software", "Обладнання + ПЗ"))}
-          title={t(bi("Dedicated Hardware Appliance", "Виділений апаратний модуль"))}
+          title={t(bi("Dedicated Hardware Appliance (SABIR VAULT Box)", "Виділений апаратний модуль (SABIR VAULT Box)"))}
           body={t(bi(
-            "Pre-configured, air-gapped plug-and-play Mac Mini unit (SABIR VAULT Box) delivered directly to your office.",
-            "Попередньо налаштований ізольований plug-and-play Mac Mini (SABIR VAULT Box) з доставкою у ваш офіс."
+            "Pre-configured, air-gapped plug-and-play Mac Mini unit delivered directly to your office for maximum isolation.",
+            "Попередньо налаштований ізольований plug-and-play Mac Mini з доставкою у ваш офіс для максимальної ізоляції."
           ))}
           highlight
         />
@@ -591,7 +611,7 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }
         model={model}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#38bdf8]"
       >
-        {ctaLabel ?? t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" />
+        {ctaLabel ?? (<>{t(bi("Request Details", "Запит деталей"))} <ArrowRight className="h-4 w-4" /></>)}
       </QuoteButton>
     </div>
   );
@@ -671,7 +691,7 @@ function Partnership() {
               model="partner"
               className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition"
             >
-              {t(bi("Become a Partner", "Стати партнером"))} <ArrowRight className="h-4 w-4" />
+              {t(bi("🤝 Become a Partner ➔", "🤝 Стати партнером ➔"))}
             </QuoteButton>
 
             <a href="mailto:contact@sabirvault.com" className="text-sm text-muted-foreground hover:text-white transition">
