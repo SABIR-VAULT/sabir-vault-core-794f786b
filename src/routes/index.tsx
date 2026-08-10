@@ -324,6 +324,12 @@ function Pipeline() {
           eyebrow={t(bi("Workflow", "Конвеєр обробки"))}
           title={t(bi("A deterministic pipeline. End to end.", "Детермінований конвеєр від початку до кінця."))}
         />
+        <p className="mt-4 max-w-4xl text-sm font-semibold uppercase tracking-[0.1em] text-[#38bdf8]/90 break-words">
+          {t(bi(
+            "Archive ➔ Facts ➔ Entities & Assets ➔ Relationships ➔ Verification ➔ Situation Map ➔ Decision",
+            "Архів ➔ Факти ➔ Суб'єкти та Об'єкти ➔ Зв'язки ➔ Верифікація ➔ Ситуаційна Карта ➔ Рішення"
+          ))}
+        </p>
         <div className="glass mt-14 rounded-2xl p-8 md:p-12">
           <div className="hidden lg:block">
             <div className="relative">
