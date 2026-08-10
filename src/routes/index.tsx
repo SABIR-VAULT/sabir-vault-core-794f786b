@@ -671,7 +671,7 @@ function Partnership() {
               model="partner"
               className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#090d16] hover:bg-[#fbbf24] transition"
             >
-              {t(bi("Become a Partner", "Стати партнером"))} <ArrowRight className="h-4 w-4" />
+              {t(bi("🤝 Become a Partner ➔", "🤝 Стати партнером ➔"))}
             </QuoteButton>
 
             <a href="mailto:contact@sabirvault.com" className="text-sm text-muted-foreground hover:text-white transition">
