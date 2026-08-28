@@ -172,9 +172,9 @@ function Hero() {
             <span className="hidden sm:inline">•</span>
             <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Local Intelligence", "Локальний аналіз"))}</span>
+            <span>{t(bi("Legal Clearance", "Юридичне очищення"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Zero-Trust Ingestion", "Zero-Trust прийом"))}</span>
+            <span>{t(bi("Zero-Trust", "Zero-Trust"))}</span>
           </div>
         </div>
       </div>
