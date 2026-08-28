@@ -137,22 +137,16 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("From Document Chaos to a", "Від хаосу документів —"))}
+            {t(bi("Deterministic Financial & Legal", "Детермінована фінансова та юридична"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Verified Picture of Your Business", "до верифікованої картини бізнесу"))}
+              {t(bi("Intelligence (Pre-Audit)", "розвідка (Pre-Audit)"))}
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold uppercase tracking-[0.12em] text-[#38bdf8]/90 break-words md:text-base">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
-              "See what is actually happening inside your business — across legal & financial evidence.",
-              "Побачте реальний стан вашого бізнесу на основі правових та фінансових доказів."
-            ))}
-          </p>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
-            {t(bi(
-              "SABIR VAULT is an enterprise situational intelligence and pre-audit platform. It transforms complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into verified digital dossiers and court-ready dashboards in minutes instead of weeks of manual work.",
-              "SABIR VAULT — це платформа ситуаційної розвідки та пре-аудиту. Вона перетворює розрізнені архіви договорів, виписок, сканів та Excel на підтверджені цифрові досьє та дашборди за хвилини замість тижнів ручної роботи."
+              "Transform the chaos of unstructured documents (PDF, photos, Excel) into a 100% verified graph of relationships and risks. Built for deep due diligence in M&A, corporate fraud investigation, and legal clearance for Real World Assets (RWA). The flexible core replaces weeks of manual review with scalable batch processing, adapting to any industry with zero code.",
+              "Перетворіть хаос неструктурованих документів (PDF, фото, Excel) на 100% верифікований граф зв'язків та ризиків. Створено для глибокого due diligence в M&A, розслідування корпоративного шахрайства та юридичного очищення активів (RWA). Гнучке ядро системи замінює тижні ручного аналізу на масштабовану пакетну обробку, адаптуючись під будь-яку індустрію без написання коду."
             ))}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3">
