@@ -188,39 +188,39 @@ function Hero() {
 
 const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   {
-    icon: Scale,
-    title: bi("For Legal Counsel & Attorneys", "Юристам та Адвокатам"),
+    icon: Link2,
+    title: bi("For RWA Platforms & Investment Funds (Legal Clearance)", "Для RWA Платформ та Інвестфондів (Legal Clearance)"),
     question: bi(
-      "\u201CWho is connected to whom — and what proves it?\u201D",
-      "\u201CХто з ким пов'язаний — і чим це підтверджено?\u201D"
+      "\u201CIs it safe to tokenize this asset?\u201D",
+      "\u201CЧи безпечно токенізувати цей актив?\u201D"
     ),
     body: bi(
-      "Reconstructs hidden beneficiaries (UBO), family and business networks, conflicting obligations, and documentary evidence with exact quotes from source materials.",
-      "Реконструює прихованих бенефіціарів (UBO), родинні та бізнес-мережі, суперечливі зобов'язання та документальні докази з точними цитатами першоджерел."
+      "Instantly analyzes the chain of ownership. Detects hidden arrests, unclosed mortgages, Asset Stripping, and risks of litigation by former spouses. Generates a cryptographic Proof-of-Clearance for the blockchain.",
+      "Миттєво аналізує ланцюг зміни власності. Виявляє приховані арешти, незакриті іпотеки, продаж активу за безцінь (Asset Stripping). Формує криптографічний Proof-of-Clearance для блокчейну."
+    ),
+  },
+  {
+    icon: Scale,
+    title: bi("For Legal Counsel, M&A & Security Officers", "Для Адвокатів, M&A та СБ"),
+    question: bi(
+      "\u201CWho is connected to whom, and what proves it?\u201D",
+      "\u201CХто з ким пов'язаний і чим це доводиться?\u201D"
+    ),
+    body: bi(
+      "Automatically builds a relationship graph of relatives and businesses. Finds \u201Cproxy hops\u201D, fictitious divorces, and forged signatures of deceased individuals. Provides exact quotes from primary source documents.",
+      "Автоматично будує граф зв'язків. Знаходить прихованих бенефіціарів (Proxy Hop), фіктивні розлучення та підписи мертвих людей. Надає точні цитати з первинних документів."
     ),
   },
   {
     icon: Calculator,
-    title: bi("For CFOs & Financial Auditors", "Фінансовим Директорам (CFO) & Аудиторам"),
+    title: bi("For CFOs & Financial Auditors (AML & Fraud)", "Для CFO та Фінансових Аудиторів (AML & Fraud)"),
     question: bi(
       "\u201CWhere is the money actually going?\u201D",
       "\u201CКуди насправді йдуть гроші?\u201D"
     ),
     body: bi(
-      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, VAT frauds, and financial discrepancies prior to official audits.",
-      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти, ПДВ-скрутки та фінансові розбіжності до офіційної перевірки."
-    ),
-  },
-  {
-    icon: Building2,
-    title: bi("For Business Owners & Board of Directors", "Власникам та Раді Директорів"),
-    question: bi(
-      "\u201CWhat is actually happening inside the business?\u201D",
-      "\u201CЩо насправді відбувається всередині бізнесу?\u201D"
-    ),
-    body: bi(
-      "Delivers a single verified picture of assets, liabilities, people, money, and risks, where every metric is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
-      "Створює єдину підтверджену картину активів, боргів, людей, грошей та ризиків, де кожний показник підтверджений юридичним документом із SHA-256 печаткою цілісності."
+      "Performs 3-way matching (Invoice \u2194 Act \u2194 Payment). Detects VAT frauds, unknown promissory note debts, circular transactions (AML carousels), and payment structuring below monitoring thresholds.",
+      "Автоматично зводить баланс. Знаходить ПДВ-діри, невідомі борги за векселями, кругові транзакції (AML-каруселі) та структурування платежів під поріг фінмоніторингу."
     ),
   },
 ];
