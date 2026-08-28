@@ -4,7 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
-  Boxes, Database, Scale, Calculator, Presentation, Bot,
+  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -34,7 +34,9 @@ function Landing() {
       <Nav />
       <Hero />
       <Introduction />
+      <UniversalCore />
       <Pillars />
+      <Roi />
       <Pipeline />
       <Deliverables />
       <Solutions />
@@ -236,8 +238,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "SABIR VAULT transforms unstructured document archives into a verified picture of a business, deal, or asset. Instead of manually reviewing thousands of pages, leaders and professionals receive organized evidence, 3-way financial reconciliation, D3.js relationship graphs, and ready-to-export digital dossiers. Every conclusion is traceable back to the source document page.",
-            "SABIR VAULT перетворює розрізнений документальний архів на перевірену ситуаційну картину бізнесу, справи чи активу. Замість ручного перегляду тисяч сторінок керівники та фахівці отримують впорядковані докази, 3-сторонню звірку грошей, D3.js графи прихованих зв'язків та цифрові досьє, де кожний висновок можна простежити до сторінки оригінального скана."
+            "It is a hardware-software complex for deep financial and legal forensics. We don't just extract text. Our system uses deterministic math and local AI to read your unstructured archives and find logical contradictions, fraud schemes, and hidden encumbrances.",
+            "Це програмно-апаратний комплекс для глибокої фінансової та юридичної розвідки (Forensics). Наша система використовує детерміновану математику та локальний ШІ, щоб читати ваші неструктуровані архіви (PDF, фото, рукописи, Excel) і знаходити там логічні суперечності, шахрайські схеми та приховані обтяження."
           ))}
         </p>
       </div>
@@ -250,6 +252,100 @@ function Introduction() {
             <div className="mt-4 text-sm font-semibold text-white">{t(a.title)}</div>
             <p className="mt-2 text-sm italic leading-relaxed text-[#38bdf8]/90">{t(a.question)}</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(a.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================ */
+/* UNIVERSAL CORE                                                */
+/* ============================================================ */
+
+const universalCore: { icon: any; title: Bi; body: Bi }[] = [
+  {
+    icon: Globe,
+    title: bi("Multi-Jurisdictional", "Мульти-юрисдикційність"),
+    body: bi(
+      "Supports 77+ countries. To teach the engine to parse German contracts (BGB) or US trusts, simply load one JSON config. No Python code changes required.",
+      "Підтримує 77+ країн. Щоб навчити движок розбирати німецькі контракти (BGB), достатньо завантажити один JSON-конфіг. Жодних змін у коді."
+    ),
+  },
+  {
+    icon: Puzzle,
+    title: bi("Plugin Architecture", "Плагінна Архітектура"),
+    body: bi(
+      "Today you look for VAT frauds, tomorrow you analyze medical certificates. Add new \u201CShields\u201D and risk \u201CTransistors\u201D as plugins just by updating config files.",
+      "Сьогодні ви шукаєте ПДВ-скрутки, а завтра аналізуєте тендери. Додавайте нові \"Щити\" та \"Транзистори\" (радари ризиків) як плагіни."
+    ),
+  },
+];
+
+function UniversalCore() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-5xl px-6 py-20">
+      <SectionHeader
+        eyebrow={t(bi("Universal Core", "Універсальне Ядро"))}
+        title={t(bi("Universal Core (Zero-Code Scalability)", "Універсальне Ядро (Zero-Code Scalability)"))}
+      />
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {universalCore.map((c, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6">
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <c.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-4 text-sm font-semibold text-white">{t(c.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(c.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================ */
+/* ROI                                                           */
+/* ============================================================ */
+
+const roi: { metric: Bi; title: Bi; body: Bi }[] = [
+  {
+    metric: bi("20-50x", "20-50x"),
+    title: bi("Time Savings", "Економія часу"),
+    body: bi(
+      "Weeks of manual reconciliation replaced by scalable batch processing.",
+      "Тижні ручної звірки замінюються на пакетну машинну обробку."
+    ),
+  },
+  {
+    metric: bi("100%", "100%"),
+    title: bi("Deterministic Accuracy", "Детермінована точність"),
+    body: bi(
+      "Mathematical elimination of human error in date and financial gap reconciliation.",
+      "Математичне виключення людського фактору при звірці дат і фінансових розривів."
+    ),
+  },
+  {
+    metric: bi("$0", "$0"),
+    title: bi("Data Leakage Losses", "Втрат через витік даних"),
+    body: bi(
+      "Fully autonomous local execution with zero Cloud API usage.",
+      "Повністю автономна локальна робота без Cloud API."
+    ),
+  },
+];
+
+function Roi() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-20">
+      <div className="grid gap-4 md:grid-cols-3">
+        {roi.map((r, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6 text-center">
+            <div className="text-3xl font-semibold text-gradient-cyan" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>{t(r.metric)}</div>
+            <div className="mt-2 text-sm font-semibold text-white">{t(r.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(r.body)}</p>
           </div>
         ))}
       </div>
