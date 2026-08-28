@@ -4,7 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
-  Boxes, Database, Scale, Calculator, Presentation, Bot,
+  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -34,7 +34,9 @@ function Landing() {
       <Nav />
       <Hero />
       <Introduction />
+      <UniversalCore />
       <Pillars />
+      <Roi />
       <Pipeline />
       <Deliverables />
       <Solutions />
@@ -137,22 +139,16 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("From Document Chaos to a", "Від хаосу документів —"))}
+            {t(bi("Deterministic Financial & Legal", "Детермінована фінансова та юридична"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Verified Picture of Your Business", "до верифікованої картини бізнесу"))}
+              {t(bi("Intelligence (Pre-Audit)", "розвідка (Pre-Audit)"))}
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold uppercase tracking-[0.12em] text-[#38bdf8]/90 break-words md:text-base">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
-              "See what is actually happening inside your business — across legal & financial evidence.",
-              "Побачте реальний стан вашого бізнесу на основі правових та фінансових доказів."
-            ))}
-          </p>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
-            {t(bi(
-              "SABIR VAULT is an enterprise situational intelligence and pre-audit platform. It transforms complex document archives (PDFs, raw scans, bank statements, handwritten texts, XLSX) into verified digital dossiers and court-ready dashboards in minutes instead of weeks of manual work.",
-              "SABIR VAULT — це платформа ситуаційної розвідки та пре-аудиту. Вона перетворює розрізнені архіви договорів, виписок, сканів та Excel на підтверджені цифрові досьє та дашборди за хвилини замість тижнів ручної роботи."
+              "Transform the chaos of unstructured documents (PDF, photos, Excel) into a 100% verified graph of relationships and risks. Built for deep due diligence in M&A, corporate fraud investigation, and legal clearance for Real World Assets (RWA). The flexible core replaces weeks of manual review with scalable batch processing, adapting to any industry with zero code.",
+              "Перетворіть хаос неструктурованих документів (PDF, фото, Excel) на 100% верифікований граф зв'язків та ризиків. Створено для глибокого due diligence в M&A, розслідування корпоративного шахрайства та юридичного очищення активів (RWA). Гнучке ядро системи замінює тижні ручного аналізу на масштабовану пакетну обробку, адаптуючись під будь-яку індустрію без написання коду."
             ))}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3">
@@ -178,9 +174,9 @@ function Hero() {
             <span className="hidden sm:inline">•</span>
             <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Local Intelligence", "Локальний аналіз"))}</span>
+            <span>{t(bi("Legal Clearance", "Юридичне очищення"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Zero-Trust Ingestion", "Zero-Trust прийом"))}</span>
+            <span>{t(bi("Zero-Trust", "Zero-Trust"))}</span>
           </div>
         </div>
       </div>
@@ -194,39 +190,39 @@ function Hero() {
 
 const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   {
-    icon: Scale,
-    title: bi("For Legal Counsel & Attorneys", "Юристам та Адвокатам"),
+    icon: Link2,
+    title: bi("For RWA Platforms & Investment Funds (Legal Clearance)", "Для RWA Платформ та Інвестфондів (Legal Clearance)"),
     question: bi(
-      "\u201CWho is connected to whom — and what proves it?\u201D",
-      "\u201CХто з ким пов'язаний — і чим це підтверджено?\u201D"
+      "\u201CIs it safe to tokenize this asset?\u201D",
+      "\u201CЧи безпечно токенізувати цей актив?\u201D"
     ),
     body: bi(
-      "Reconstructs hidden beneficiaries (UBO), family and business networks, conflicting obligations, and documentary evidence with exact quotes from source materials.",
-      "Реконструює прихованих бенефіціарів (UBO), родинні та бізнес-мережі, суперечливі зобов'язання та документальні докази з точними цитатами першоджерел."
+      "Instantly analyzes the chain of ownership. Detects hidden arrests, unclosed mortgages, Asset Stripping, and risks of litigation by former spouses. Generates a cryptographic Proof-of-Clearance for the blockchain.",
+      "Миттєво аналізує ланцюг зміни власності. Виявляє приховані арешти, незакриті іпотеки, продаж активу за безцінь (Asset Stripping). Формує криптографічний Proof-of-Clearance для блокчейну."
+    ),
+  },
+  {
+    icon: Scale,
+    title: bi("For Legal Counsel, M&A & Security Officers", "Для Адвокатів, M&A та СБ"),
+    question: bi(
+      "\u201CWho is connected to whom, and what proves it?\u201D",
+      "\u201CХто з ким пов'язаний і чим це доводиться?\u201D"
+    ),
+    body: bi(
+      "Automatically builds a relationship graph of relatives and businesses. Finds \u201Cproxy hops\u201D, fictitious divorces, and forged signatures of deceased individuals. Provides exact quotes from primary source documents.",
+      "Автоматично будує граф зв'язків. Знаходить прихованих бенефіціарів (Proxy Hop), фіктивні розлучення та підписи мертвих людей. Надає точні цитати з первинних документів."
     ),
   },
   {
     icon: Calculator,
-    title: bi("For CFOs & Financial Auditors", "Фінансовим Директорам (CFO) & Аудиторам"),
+    title: bi("For CFOs & Financial Auditors (AML & Fraud)", "Для CFO та Фінансових Аудиторів (AML & Fraud)"),
     question: bi(
       "\u201CWhere is the money actually going?\u201D",
       "\u201CКуди насправді йдуть гроші?\u201D"
     ),
     body: bi(
-      "Performs 3-way matching (Invoice ↔ Act ↔ Bank Payment), detects off-balance liabilities, unclosed acts, VAT frauds, and financial discrepancies prior to official audits.",
-      "Виконує 3-сторонню звірку (Рахунок ↔ Акт ↔ Банківська виписка), виявляє позабалансові борги, незакриті акти, ПДВ-скрутки та фінансові розбіжності до офіційної перевірки."
-    ),
-  },
-  {
-    icon: Building2,
-    title: bi("For Business Owners & Board of Directors", "Власникам та Раді Директорів"),
-    question: bi(
-      "\u201CWhat is actually happening inside the business?\u201D",
-      "\u201CЩо насправді відбувається всередині бізнесу?\u201D"
-    ),
-    body: bi(
-      "Delivers a single verified picture of assets, liabilities, people, money, and risks, where every metric is linked to its underlying legal proof with cryptographic SHA-256 integrity.",
-      "Створює єдину підтверджену картину активів, боргів, людей, грошей та ризиків, де кожний показник підтверджений юридичним документом із SHA-256 печаткою цілісності."
+      "Performs 3-way matching (Invoice \u2194 Act \u2194 Payment). Detects VAT frauds, unknown promissory note debts, circular transactions (AML carousels), and payment structuring below monitoring thresholds.",
+      "Автоматично зводить баланс. Знаходить ПДВ-діри, невідомі борги за векселями, кругові транзакції (AML-каруселі) та структурування платежів під поріг фінмоніторингу."
     ),
   },
 ];
@@ -242,8 +238,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "SABIR VAULT transforms unstructured document archives into a verified picture of a business, deal, or asset. Instead of manually reviewing thousands of pages, leaders and professionals receive organized evidence, 3-way financial reconciliation, D3.js relationship graphs, and ready-to-export digital dossiers. Every conclusion is traceable back to the source document page.",
-            "SABIR VAULT перетворює розрізнений документальний архів на перевірену ситуаційну картину бізнесу, справи чи активу. Замість ручного перегляду тисяч сторінок керівники та фахівці отримують впорядковані докази, 3-сторонню звірку грошей, D3.js графи прихованих зв'язків та цифрові досьє, де кожний висновок можна простежити до сторінки оригінального скана."
+            "It is a hardware-software complex for deep financial and legal forensics. We don't just extract text. Our system uses deterministic math and local AI to read your unstructured archives and find logical contradictions, fraud schemes, and hidden encumbrances.",
+            "Це програмно-апаратний комплекс для глибокої фінансової та юридичної розвідки (Forensics). Наша система використовує детерміновану математику та локальний ШІ, щоб читати ваші неструктуровані архіви (PDF, фото, рукописи, Excel) і знаходити там логічні суперечності, шахрайські схеми та приховані обтяження."
           ))}
         </p>
       </div>
@@ -256,6 +252,100 @@ function Introduction() {
             <div className="mt-4 text-sm font-semibold text-white">{t(a.title)}</div>
             <p className="mt-2 text-sm italic leading-relaxed text-[#38bdf8]/90">{t(a.question)}</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(a.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================ */
+/* UNIVERSAL CORE                                                */
+/* ============================================================ */
+
+const universalCore: { icon: any; title: Bi; body: Bi }[] = [
+  {
+    icon: Globe,
+    title: bi("Multi-Jurisdictional", "Мульти-юрисдикційність"),
+    body: bi(
+      "Supports 77+ countries. To teach the engine to parse German contracts (BGB) or US trusts, simply load one JSON config. No Python code changes required.",
+      "Підтримує 77+ країн. Щоб навчити движок розбирати німецькі контракти (BGB), достатньо завантажити один JSON-конфіг. Жодних змін у коді."
+    ),
+  },
+  {
+    icon: Puzzle,
+    title: bi("Plugin Architecture", "Плагінна Архітектура"),
+    body: bi(
+      "Today you look for VAT frauds, tomorrow you analyze medical certificates. Add new \u201CShields\u201D and risk \u201CTransistors\u201D as plugins just by updating config files.",
+      "Сьогодні ви шукаєте ПДВ-скрутки, а завтра аналізуєте тендери. Додавайте нові \"Щити\" та \"Транзистори\" (радари ризиків) як плагіни."
+    ),
+  },
+];
+
+function UniversalCore() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-5xl px-6 py-20">
+      <SectionHeader
+        eyebrow={t(bi("Universal Core", "Універсальне Ядро"))}
+        title={t(bi("Universal Core (Zero-Code Scalability)", "Універсальне Ядро (Zero-Code Scalability)"))}
+      />
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {universalCore.map((c, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6">
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <c.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-4 text-sm font-semibold text-white">{t(c.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(c.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================ */
+/* ROI                                                           */
+/* ============================================================ */
+
+const roi: { metric: Bi; title: Bi; body: Bi }[] = [
+  {
+    metric: bi("20-50x", "20-50x"),
+    title: bi("Time Savings", "Економія часу"),
+    body: bi(
+      "Weeks of manual reconciliation replaced by scalable batch processing.",
+      "Тижні ручної звірки замінюються на пакетну машинну обробку."
+    ),
+  },
+  {
+    metric: bi("100%", "100%"),
+    title: bi("Deterministic Accuracy", "Детермінована точність"),
+    body: bi(
+      "Mathematical elimination of human error in date and financial gap reconciliation.",
+      "Математичне виключення людського фактору при звірці дат і фінансових розривів."
+    ),
+  },
+  {
+    metric: bi("$0", "$0"),
+    title: bi("Data Leakage Losses", "Втрат через витік даних"),
+    body: bi(
+      "Fully autonomous local execution with zero Cloud API usage.",
+      "Повністю автономна локальна робота без Cloud API."
+    ),
+  },
+];
+
+function Roi() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-20">
+      <div className="grid gap-4 md:grid-cols-3">
+        {roi.map((r, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6 text-center">
+            <div className="text-3xl font-semibold text-gradient-cyan" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>{t(r.metric)}</div>
+            <div className="mt-2 text-sm font-semibold text-white">{t(r.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(r.body)}</p>
           </div>
         ))}
       </div>
