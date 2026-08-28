@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhitepaperRouteImport } from './routes/whitepaper'
+import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhitepaperRoute = WhitepaperRouteImport.update({
   id: '/whitepaper',
   path: '/whitepaper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityServiceRoute = SecurityServiceRouteImport.update({
+  id: '/security-service',
+  path: '/security-service',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/whitepaper'
+  fullPaths: '/' | '/privacy' | '/security-service' | '/whitepaper'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/whitepaper'
-  id: '__root__' | '/' | '/privacy' | '/whitepaper'
+  to: '/' | '/privacy' | '/security-service' | '/whitepaper'
+  id: '__root__' | '/' | '/privacy' | '/security-service' | '/whitepaper'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyRoute: typeof PrivacyRoute
+  SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/whitepaper'
       fullPath: '/whitepaper'
       preLoaderRoute: typeof WhitepaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-service': {
+      id: '/security-service'
+      path: '/security-service'
+      fullPath: '/security-service'
+      preLoaderRoute: typeof SecurityServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyRoute: PrivacyRoute,
+  SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
 }
 export const routeTree = rootRouteImport
