@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Lock, ShieldCheck, BarChart3, Users, Building2, Link2, Wallet,
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
-  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle,
+  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Shield,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -91,6 +91,7 @@ function Nav() {
           <a href="#pillars" className="hover:text-white transition">{t(bi("Platform", "Платформа"))}</a>
           <a href="#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
           <a href="#solutions" className="hover:text-white transition">{t(bi("Solutions", "Рішення"))}</a>
+          <Link to="/security-service" className="hover:text-white transition">{t(bi("For Security Service", "Для СБ"))}</Link>
           <a href="#deployment" className="hover:text-white transition">{t(bi("Engagement", "Співпраця"))}</a>
         </nav>
         <div className="flex items-center gap-3">
@@ -160,9 +161,10 @@ function Hero() {
               >
                 {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
               </QuoteButton>
-              <a href="#pipeline" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-                {t(bi("Pipeline Overview", "Огляд конвеєра"))}
-              </a>
+              <Link to="/security-service" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
+                <Shield className="h-4 w-4" />
+                {t(bi("🛡️ For Security Service", "🛡️ Для Служби Безпеки"))}
+              </Link>
             </div>
             <p className="text-xs text-muted-foreground">
               {t(bi("Give us the archive. Get the situation map.", "Надайте архів. Отримайте ситуаційну карту."))}
