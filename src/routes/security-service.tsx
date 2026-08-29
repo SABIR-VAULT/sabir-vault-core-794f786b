@@ -341,6 +341,23 @@ function Hero() {
               "Система не виносить вердиктів — вона виявляє ознаки та зв'язки, які потребують обов'язкової перевірки, і подає їх офіцеру СБ готовим сюжетом розслідування з первинними доказами."
             ))}
           </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => open({ title: t(bi("Request Demo", "Запитати демо")), model: "pilot" })}
+              className="group inline-flex items-center gap-2 rounded-md bg-[#38bdf8] px-6 py-3 text-sm font-semibold text-[#090d16] shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] transition"
+            >
+              <Play className="h-4 w-4" />
+              {t(bi("🎬 Request Demo", "🎬 Запитати демо"))}
+            </button>
+            <button
+              type="button"
+              onClick={() => open({ model: "pilot" })}
+              className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white"
+            >
+              {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Розпочати Пре-Аудит ➔"))}
+            </button>
+          </div>
         </div>
       </div>
     </section>
