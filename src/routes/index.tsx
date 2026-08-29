@@ -162,7 +162,6 @@ function Hero() {
                 {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
               </QuoteButton>
               <Link to="/security-service" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-                <Shield className="h-4 w-4" />
                 {t(bi("🛡️ For Security Service", "🛡️ Для Служби Безпеки"))}
               </Link>
             </div>

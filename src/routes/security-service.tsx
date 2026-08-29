@@ -300,8 +300,8 @@ function Header() {
           <a href="/#pillars" className="hover:text-white transition">{t(bi("Platform", "Платформа"))}</a>
           <a href="/#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
           <a href="/#solutions" className="hover:text-white transition">{t(bi("Solutions", "Рішення"))}</a>
-          <a href="/#deployment" className="hover:text-white transition">{t(bi("Engagement", "Співпраця"))}</a>
           <Link to="/security-service" className="text-white transition">{t(bi("For Security Service", "Для СБ"))}</Link>
+          <a href="/#deployment" className="hover:text-white transition">{t(bi("Engagement", "Співпраця"))}</a>
           <Link to="/whitepaper" className="hover:text-white transition">{t(bi("White Paper", "Верифікація"))}</Link>
         </nav>
         <div className="flex items-center gap-3">
