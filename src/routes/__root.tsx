@@ -122,6 +122,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
         }),
       },
+      {
+        defer: true,
+        src: "https://static.cloudflareinsights.com/beacon.min.js",
+        "data-cf-beacon": '{"token": "875ffdd4e3f1450ca6f06e1c3472f945"}',
+      },
     ],
   }),
 
