@@ -265,7 +265,6 @@ function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
 
 function SecurityServicePage() {
   const { t } = useLang();
-  const { open } = useContactDialog();
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#090d16] text-foreground">
@@ -322,6 +321,7 @@ function Header() {
 
 function Hero() {
   const { t } = useLang();
+  const { open } = useContactDialog();
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40" />
