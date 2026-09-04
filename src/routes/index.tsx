@@ -504,7 +504,7 @@ const deliverables: { icon: any; title: Bi }[] = [
   { icon: FileText, title: bi("Verified Digital Dossier (Word .docx + HTML Dashboard)", "Верифіковане цифрове досьє (Word .docx + HTML-дашборд)") },
   { icon: Network, title: bi("D3.js Interactive Relationship Graph (UBO, family & corporate networks)", "Інтерактивний D3.js граф зв'язків (UBO, родинні та бізнес-мережі)") },
   { icon: Landmark, title: bi("Court-Ready Evidence Package with page-accurate quotes", "Доказовий пакет для суду з цитатами та посиланнями на сторінки") },
-  { icon: Calculator, title: bi("CFO Financial & Tax Audit Package (3-Way Matching + Off-balance liabilities)", "Фінансово-податковий аудит-пакет CFO (3-Way Matching + позабалансові борги)") },
+  { icon: Calculator, title: bi("CFO Financial, Tax & Logistics Audit Package (3-Way Matching + TTP Validation)", "Аудиторський пакет для CFO та Логістики (3-Way Matching + Валідація ТТН)") },
   { icon: Presentation, title: bi("Board-Ready Presentation Package (Interactive Slides)", "Презентаційний пакет для Ради Директорів (інтерактивні слайди)") },
   { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "AI Co-Pilot — живий чат по верифікованій базі фактів") },
   { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256 Tamper Seal)", "Криптографічна печатка цілісності (SHA-256 Tamper Seal)") },
