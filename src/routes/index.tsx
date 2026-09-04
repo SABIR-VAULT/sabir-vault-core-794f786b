@@ -4,7 +4,7 @@ import {
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
-  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle,
+  Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Truck,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
