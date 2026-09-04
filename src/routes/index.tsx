@@ -34,6 +34,7 @@ function Landing() {
       <Nav />
       <Hero />
       <Introduction />
+      <ForensicPillars />
       <UniversalCore />
       <Pillars />
       <Roi />
