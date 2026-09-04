@@ -191,42 +191,139 @@ function Hero() {
 
 const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   {
-    icon: Link2,
-    title: bi("For RWA Platforms & Investment Funds (Legal Clearance)", "Для RWA Платформ та Інвестфондів (Legal Clearance)"),
+    icon: Landmark,
+    title: bi("FinTech, Neobanks & Credit Conveyors (KYB & Risk Automation)", "FinTech, Необанки та Кредитні конвеєри (KYB та автоматизація ризиків)"),
     question: bi(
-      "\u201CIs it safe to tokenize this asset?\u201D",
-      "\u201CЧи безпечно токенізувати цей актив?\u201D"
+      "\u201CHow do we instantly verify corporate borrowers without risk of fraud?\u201D",
+      "\u201CЯк миттєво перевіряти корпоративних позичальників без ризику шахрайства?\u201D"
     ),
     body: bi(
-      "Instantly analyzes the chain of ownership. Detects hidden arrests, unclosed mortgages, Asset Stripping, and risks of litigation by former spouses. Generates a cryptographic Proof-of-Clearance for the blockchain.",
-      "Миттєво аналізує ланцюг зміни власності. Виявляє приховані арешти, незакриті іпотеки, продаж активу за безцінь (Asset Stripping). Формує криптографічний Proof-of-Clearance для блокчейну."
+      "Automates Know-Your-Business (KYB) checks for corporate lending. Cross-examines charters, financial statements, and bank records to detect payment structuring below thresholds, nominee directors, and AML carousels before loan approval.",
+      "Автоматизує Know-Your-Business (KYB) перевірки для корпоративного кредитування. Звіряє статути, фінансову звітність та банківські виписки для виявлення дроблення платежів, номінальних директорів та AML-каруселей до видачі кредиту."
+    ),
+  },
+  {
+    icon: Truck,
+    title: bi("Supply Chain, Trading & Logistics (TTP & Cargo Verification)", "Ланцюг постачання, Трейдинг та Логістика (Верифікація ТТН і вантажів)"),
+    question: bi(
+      "\u201CAre these shipments, acts, and invoices real or air-money?\u201D",
+      "\u201CЧи ці поставки, акти та рахунки реальні, чи це \u2018повітряні\u2019 гроші?\u201D"
+    ),
+    body: bi(
+      "Performs deep 3-way cross-matching between Contracts, Invoices, Bank Statements, and TTPs (Waybills). Automatically flags impossible delivery speeds, phantom carriers, duplicate waybills, and VAT fraud schemes.",
+      "Проводить глибокий 3-Way Matching між Договорами, Рахунками, Виписками та ТТН. Автоматично підсвічує неможливу швидкість доставки, фантомних перевізників, дубльовані ТТН та схеми з ПДВ."
+    ),
+  },
+  {
+    icon: Calculator,
+    title: bi("CFOs & Financial Auditors (AML & Corporate Fraud)", "CFO та Фінансові аудитори (AML та корпоративний фрод)"),
+    question: bi(
+      "\u201CWhere is the money actually going?\u201D",
+      "\u201CКуди насправді ідуть гроші?\u201D"
+    ),
+    body: bi(
+      "Uncovers off-balance promissory notes, delta leaks, asset stripping before insolvency, fictitious debts, and circular money transfers (A \u2192 B \u2192 C \u2192 A) hidden across thousands of primary receipts.",
+      "Виявляє забалансові векселі, витік маржі (Delta Leak), виведення активів перед банкрутством, фіктивні борги та кругові транзакції (A \u2192 B \u2192 C \u2192 A), заховані серед тисяч первинних документів."
     ),
   },
   {
     icon: Scale,
-    title: bi("For Legal Counsel, M&A & Security Officers", "Для Адвокатів, M&A та СБ"),
+    title: bi("Legal Counsel, M&A & Security Officers", "Юристи, M&A та Служба безпеки"),
     question: bi(
       "\u201CWho is connected to whom, and what proves it?\u201D",
       "\u201CХто з ким пов'язаний і чим це доводиться?\u201D"
     ),
     body: bi(
-      "Automatically builds a relationship graph of relatives and businesses. Finds \u201Cproxy hops\u201D, fictitious divorces, and forged signatures of deceased individuals. Provides exact quotes from primary source documents.",
-      "Автоматично будує граф зв'язків. Знаходить прихованих бенефіціарів (Proxy Hop), фіктивні розлучення та підписи мертвих людей. Надає точні цитати з первинних документів."
+      "Automatically constructs interactive relationship networks of relatives, affiliates, and proxy companies. Identifies \u201Cproxy hops\u201D, time inversion anomalies, forged signatures, and post-resignation unauthorized approvals.",
+      "Автоматично будує інтерактивні мережі зв'язків родичів, афілійованих осіб та прокси-компаній. Знаходить \u201Cпрокси-стрибки\u201D, часові аномалії, підроблені підписи та затвердження документів після звільнення."
     ),
   },
   {
-    icon: Calculator,
-    title: bi("For CFOs & Financial Auditors (AML & Fraud)", "Для CFO та Фінансових Аудиторів (AML & Fraud)"),
+    icon: Link2,
+    title: bi("RWA Platforms & Investment Funds (Legal Clearance)", "RWA-платформи та Інвестфонди (Legal Clearance)"),
     question: bi(
-      "\u201CWhere is the money actually going?\u201D",
-      "\u201CКуди насправді йдуть гроші?\u201D"
+      "\u201CIs it safe to tokenize or acquire this asset?\u201D",
+      "\u201CЧи безпечно токенізувати або купувати цей актив?\u201D"
     ),
     body: bi(
-      "Performs 3-way matching (Invoice \u2194 Act \u2194 Payment). Detects VAT frauds, unknown promissory note debts, circular transactions (AML carousels), and payment structuring below monitoring thresholds.",
-      "Автоматично зводить баланс. Знаходить ПДВ-діри, невідомі борги за векселями, кругові транзакції (AML-каруселі) та структурування платежів під поріг фінмоніторингу."
+      "Analyzes the entire chain of title and encumbrances. Detects hidden arrests, unclosed mortgages, marital dispute risks, and asset stripping. Generates a cryptographic Proof-of-Clearance.",
+      "Аналізує весь ланцюг прав власності та обтяжень. Виявляє приховані арешти, незакриті застави, ризики позовів від колишнього подружжя та виведення активів. Генерує криптографічний Proof-of-Clearance."
     ),
   },
 ];
+
+const forensicPillars: { icon: any; title: Bi; body: Bi }[] = [
+  {
+    icon: Scale,
+    title: bi("\u2696\uFE0F Legal Core", "\u2696\uFE0F Юридичний контур"),
+    body: bi(
+      "Power conflicts, date inversion, invalid proxies, and post-resignation signatures.",
+      "Конфлікти повноважень, інверсія дат, недійсні довіреності та підписи після звільнення."
+    ),
+  },
+  {
+    icon: Wallet,
+    title: bi("\uD83D\uDCB0 Financial Contour", "\uD83D\uDCB0 Фінансовий контур"),
+    body: bi(
+      "\u201CInvoice \u2194 Act \u2194 Payment\u201D gaps, VAT frauds, AML carousels, and threshold structuring.",
+      "Розриви \u201CІнвойс \u2194 Акт \u2194 Оплата\u201D, скрутки ПДВ, AML-каруселі та дроблення сум під моніторинг."
+    ),
+  },
+  {
+    icon: UsersRound,
+    title: bi("\uD83D\uDC65 HR & Operations", "\uD83D\uDC65 Кадри та Операції"),
+    body: bi(
+      "Hidden proxy networks, nominee directors (\u201CMillionaire Mother-in-Law\u201D), and insider conflicts.",
+      "Приховані прокси-мережі, номінальні директори (\u201CТеща-мільйонер\u201D) та внутрішній фрод."
+    ),
+  },
+  {
+    icon: Truck,
+    title: bi("\uD83D\uDE9B Supply Chain & Logistics", "\uD83D\uDE9B Логістика та Товарний облік"),
+    body: bi(
+      "Phantom carriers, impossible transit speeds, recycled waybills (TTPs), and \u201Cair-money\u201D shipments.",
+      "Фантомні перевізники, неможлива швидкість за ТТН, повторні накладні та \u201Cповітряні\u201D рейси."
+    ),
+  },
+  {
+    icon: ShieldAlert,
+    title: bi("\uD83D\uDEE1\uFE0F Corporate Security", "\uD83D\uDEE1\uFE0F Служба безпеки"),
+    body: bi(
+      "Cascade risk calculation, asset stripping prior to bankruptcy, and offshore sanction links.",
+      "Каскадний розрахунок ризиків, виведення активів перед банкрутством та офшорні санкційні зв'язки."
+    ),
+  },
+];
+
+function ForensicPillars() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <SectionHeader
+        eyebrow={t(bi("Corporate Forensics", "Корпоративний форензік"))}
+        title={t(bi("The 5 Pillars of Corporate Forensics", "5 Столпів Корпоративного Форензіка"))}
+      />
+      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+        {t(bi(
+          "SABIR VAULT eliminates blind spots between corporate departments by unifying all 5 pillars of risk into a single deterministic intelligence engine:",
+          "SABIR VAULT усуває сліпі зони між відділами компанії, об'єднуючи всі 5 векторів ризику в єдиний детермінований движок:"
+        ))}
+      </p>
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {forensicPillars.map((p, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6">
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <p.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-4 text-sm font-semibold text-white">{t(p.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(p.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 
 function Introduction() {
   const { t } = useLang();
