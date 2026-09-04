@@ -612,7 +612,38 @@ const solutions: SolutionDef[] = [
       bi("Actionable remediation report.", "Прикладний звіт з рекомендаціями."),
     ],
   },
+  {
+    key: "fintech",
+    icon: Landmark,
+    eyebrow: bi("FinTech & KYB", "FinTech та KYB"),
+    title: bi("FinTech & KYB Automated Lending", "FinTech та автоматизоване KYB-кредитування"),
+    body: bi(
+      "Accelerates corporate borrower vetting, detecting hidden fraud schemes, nominee structures, and AML carousels in minutes.",
+      "Прискорює перевірку корпоративних позичальників, виявляючи приховані шахрайські схеми, номінальні структури та AML-каруселі за хвилини."
+    ),
+    bullets: [
+      bi("Automated KYB checks on charters and financial statements.", "Автоматизовані KYB-перевірки статутів та фінансової звітності."),
+      bi("Detection of payment structuring below monitoring thresholds.", "Виявлення дроблення платежів під поріг фінмоніторингу."),
+      bi("Nominee director and AML carousel signals before approval.", "Сигнали про номінальних директорів та AML-каруселі до видачі кредиту."),
+    ],
+  },
+  {
+    key: "supply",
+    icon: Truck,
+    eyebrow: bi("Supply Chain & Trade Finance", "Ланцюг постачання та Trade Finance"),
+    title: bi("Supply Chain, Waybill & Trade Finance Audit", "Аудит логістики, ТТН та Trade Finance"),
+    body: bi(
+      "Scans waybills (TTPs), invoices, and delivery acts to eliminate fake shipments, phantom carriers, and inventory fraud.",
+      "Сканує товарно-транспортні накладні (ТТН), рахунки та акти, усуваючи \u201Cповітряні\u201D поставки, фантомних перевізників та махінації з залишками."
+    ),
+    bullets: [
+      bi("3-way matching between contracts, invoices, statements and TTPs.", "3-Way Matching між договорами, рахунками, виписками та ТТН."),
+      bi("Impossible transit speed and duplicate waybill detection.", "Виявлення неможливої швидкості доставки та дубльованих ТТН."),
+      bi("Phantom carrier and VAT scheme flags.", "Позначки фантомних перевізників та схем із ПДВ."),
+    ],
+  },
 ];
+
 
 function Solutions() {
   const { t } = useLang();
