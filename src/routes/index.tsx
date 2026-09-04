@@ -140,18 +140,19 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("Deterministic Financial & Legal", "Детермінована фінансова та юридична"))}
+            {t(bi("Deterministic Financial, Legal & Supply Chain", "Детермінований аналіз фінансової, юридичної та логістичної"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Intelligence (Pre-Audit)", "розвідка (Pre-Audit)"))}
+              {t(bi("Intelligence (Pre-Audit)", "документації (Pre-Audit)"))}
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
             {t(bi(
-              "Transform the chaos of unstructured documents (PDF, photos, Excel) into a 100% verified graph of relationships and risks. Built for deep due diligence in M&A, corporate fraud investigation, and legal clearance for Real World Assets (RWA). The flexible core replaces weeks of manual review with scalable batch processing, adapting to any industry with zero code.",
-              "Перетворіть хаос неструктурованих документів (PDF, фото, Excel) на 100% верифікований граф зв'язків та ризиків. Створено для глибокого due diligence в M&A, розслідування корпоративного шахрайства та юридичного очищення активів (RWA). Гнучке ядро системи замінює тижні ручного аналізу на масштабовану пакетну обробку, адаптуючись під будь-яку індустрію без написання коду."
+              "Transform the chaos of unstructured documents (PDFs, scans, photos, Excel) into a 100% verified graph of relationships, financial flows, and risks. Built for deep due diligence in M&A, corporate fraud investigation, FinTech KYB automation, and legal clearance for Real World Assets (RWA). The flexible Zero-Code core replaces weeks of manual review with scalable batch processing, uniting Legal, Financial, HR, Logistics, and Security intelligence under one Air-Gapped roof.",
+              "Перетворіть хаос неупорядкованих документів (PDF, скани, фото, Excel) на 100% верифікований граф зв'язків, фінансових потоків і ризиків. Створено для глибокого Due Diligence в M&A, розслідування корпоративного шахрайства, автоматизації KYB у FinTech та юридичної чистоти RWA. Гнучке Zero-Code ядро замінює тижні ручної перевірки масштабованою пакетною обробкою, об'єднуючи юридичну, фінансову, кадрову, логістичну та безпекову аналітику в єдиному Air-Gapped контурі."
             ))}
           </p>
+
           <div className="mt-10 flex flex-col items-center justify-center gap-3">
             <div className="flex flex-wrap items-center justify-center gap-3">
               <QuoteButton
