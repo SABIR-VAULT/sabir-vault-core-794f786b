@@ -35,6 +35,7 @@ function Landing() {
       <Hero />
       <Introduction />
       <ForensicPillars />
+      <LiveCaseStudy />
       <UniversalCore />
       <Pillars />
       <Roi />
@@ -206,14 +207,14 @@ const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   },
   {
     icon: Truck,
-    title: bi("Supply Chain, Trading & Logistics (TTP & Cargo Verification)", "Ланцюг постачання, Трейдинг та Логістика (Верифікація ТТН і вантажів)"),
+    title: bi("Supply Chain, Trading & Logistics (TTN / CMR & Cargo Verification)", "Логістика та торгівля (ТТН / CMR і верифікація вантажів)"),
     question: bi(
       "\u201CAre these shipments, acts, and invoices real or air-money?\u201D",
       "\u201CЧи ці поставки, акти та рахунки реальні, чи це \u2018повітряні\u2019 гроші?\u201D"
     ),
     body: bi(
-      "Performs deep 3-way cross-matching between Contracts, Invoices, Bank Statements, and TTPs (Waybills). Automatically flags impossible delivery speeds, phantom carriers, duplicate waybills, and VAT fraud schemes.",
-      "Проводить глибокий 3-Way Matching між Договорами, Рахунками, Виписками та ТТН. Автоматично підсвічує неможливу швидкість доставки, фантомних перевізників, дубльовані ТТН та схеми з ПДВ."
+      "Performs deep 3-way cross-matching between Contracts, Invoices, Bank Statements, and TTN/CMR waybills. Automatically flags impossible delivery speeds, phantom carriers, duplicate waybills, and VAT fraud schemes.",
+      "Проводить глибокий 3-Way Matching між Договорами, Рахунками, Виписками та ТТН/CMR. Автоматично підсвічує неможливу швидкість доставки, фантомних перевізників, дубльовані ТТН та схеми з ПДВ."
     ),
   },
   {
@@ -283,8 +284,8 @@ const forensicPillars: { icon: any; title: Bi; body: Bi }[] = [
     icon: Truck,
     title: bi("\uD83D\uDE9B Supply Chain & Logistics", "\uD83D\uDE9B Логістика та Товарний облік"),
     body: bi(
-      "Phantom carriers, impossible transit speeds, recycled waybills (TTPs), and \u201Cair-money\u201D shipments.",
-      "Фантомні перевізники, неможлива швидкість за ТТН, повторні накладні та \u201Cповітряні\u201D рейси."
+      "Phantom carriers, impossible transit speeds, recycled waybills (TTN/CMR), and \u201Cair-money\u201D shipments.",
+      "Фантомні перевізники, неможлива швидкість за ТТН, повторні накладні (ТТН/CMR) та \u201Cповітряні\u201D рейси."
     ),
   },
   {
@@ -321,6 +322,44 @@ function ForensicPillars() {
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(p.body)}</p>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function LiveCaseStudy() {
+  const { t } = useLang();
+  const chips = [
+    bi("⚡ 150V+ risk voltage", "⚡ 150V+ напруга ризику"),
+    bi("🎯 4 criminal archetypes", "🎯 4 кримінальні архетипи"),
+    bi("👥 20 persons auto-linked", "👥 20 осіб автозв'язано"),
+    bi('🚛 240 km/h “truck”', "🚛 240 км/год «фура»"),
+    bi("💰 6M UAH 3-way matching gap", "💰 розрив 3-Way Matching 6 млн грн"),
+  ];
+
+  return (
+    <section className="mx-auto max-w-5xl px-6 py-20">
+      <SectionHeader
+        eyebrow={t(bi("Live Case Study", "Живий кейс"))}
+        title={t(bi(
+          "The Kovalenko Empire — 36 documents, 5 countries, one engine.",
+          "Імперія Коваленка — 36 документів, 5 країн, один движок."
+        ))}
+      />
+      <div className="glass mt-8 rounded-2xl p-8 md:p-10">
+        <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+          {t(bi(
+            "A synthetic end-to-end demo: a family holding across UA/PL/DE/KZ/US with phantom carriers, impossible transit speeds (240–480 km/h), recycled waybills, a 5M round-trip carousel, and assets stripped to a mother-in-law during litigation. The engine fused all 5 pillars into a single verdict.",
+            "Синтетичне end-to-end демо: сімейний холдинг у UA/PL/DE/KZ/US із фантомними перевізниками, неможливою швидкістю рейсів (240–480 км/год), повторними ТТН, каруселлю на 5 млн грн та виведенням активів на тещу під час судового процесу. Система звела всі 5 стовпів у єдиний вердикт."
+          ))}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {chips.map((chip, i) => (
+            <div key={i} className="rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm font-semibold text-white">
+              {t(chip)}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -366,10 +405,10 @@ function Introduction() {
 const universalCore: { icon: any; title: Bi; body: Bi }[] = [
   {
     icon: Globe,
-    title: bi("Multi-Jurisdictional", "Мульти-юрисдикційність"),
+    title: bi("Multi-Jurisdictional", "Мультиюрисдикційність"),
     body: bi(
-      "Supports 77+ countries. To teach the engine to parse German contracts (BGB) or US trusts, simply load one JSON config. No Python code changes required.",
-      "Підтримує 77+ країн. Щоб навчити движок розбирати німецькі контракти (BGB), достатньо завантажити один JSON-конфіг. Жодних змін у коді."
+      "5 jurisdictions shipped out of the box (UA / DE / PL / US / KZ). A new country is added in ~2 hours by loading a single JSON profile — zero Python code changes.",
+      "5 юрисдикцій з коробки (UA / DE / PL / US / KZ). Нова країна додається за ~2 години завантаженням одного JSON-профілю — без жодної зміни Python-коду."
     ),
   },
   {
@@ -420,10 +459,10 @@ const roi: { metric: Bi; title: Bi; body: Bi }[] = [
   },
   {
     metric: bi("100%", "100%"),
-    title: bi("Deterministic Accuracy", "Детермінована точність"),
+    title: bi("100% Deterministic Verification", "100% детермінована верифікація"),
     body: bi(
-      "Mathematical elimination of human error in date and financial gap reconciliation.",
-      "Математичне виключення людського фактору при звірці дат і фінансових розривів."
+      "Mathematical verification of dates, amounts & cross-document gaps — human error eliminated.",
+      "Математична перевірка дат, сум і міждокументних розривів — людську помилку виключено."
     ),
   },
   {
@@ -447,6 +486,12 @@ function Roi() {
             <div className="mt-2 text-sm font-semibold text-white">{t(r.title)}</div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(r.body)}</p>
           </div>
+        ))}
+      </div>
+      <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
+        {t(bi(
+          "214 automated regression tests · 14 risk transistors · 7 fraud archetypes · 40+ forensic modules",
+          "214 автоматизованих регрес-тестів · 14 транзисторів ризику · 7 архетипів шахрайства · 40+ форензик-модулів"
         ))}
       </div>
     </section>
@@ -603,7 +648,7 @@ const deliverables: { icon: any; title: Bi }[] = [
   { icon: FileText, title: bi("Verified Digital Dossier (Word .docx + HTML Dashboard)", "Верифіковане цифрове досьє (Word .docx + HTML-дашборд)") },
   { icon: Network, title: bi("D3.js Interactive Relationship Graph (UBO, family & corporate networks)", "Інтерактивний D3.js граф зв'язків (UBO, родинні та бізнес-мережі)") },
   { icon: Landmark, title: bi("Court-Ready Evidence Package with page-accurate quotes", "Доказовий пакет для суду з цитатами та посиланнями на сторінки") },
-  { icon: Calculator, title: bi("CFO Financial, Tax & Logistics Audit Package (3-Way Matching + TTP Validation)", "Аудиторський пакет для CFO та Логістики (3-Way Matching + Валідація ТТН)") },
+  { icon: Calculator, title: bi("CFO Financial, Tax & Logistics Audit Package (3-Way Matching + TTN/CMR Validation)", "Аудиторський пакет для CFO та логістики (3-Way Matching + валідація ТТН/CMR)") },
   { icon: Presentation, title: bi("Board-Ready Presentation Package (Interactive Slides)", "Презентаційний пакет для Ради Директорів (інтерактивні слайди)") },
   { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "AI Co-Pilot — живий чат по верифікованій базі фактів") },
   { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256 Tamper Seal)", "Криптографічна печатка цілісності (SHA-256 Tamper Seal)") },
@@ -732,11 +777,11 @@ const solutions: SolutionDef[] = [
     eyebrow: bi("Supply Chain & Trade Finance", "Ланцюг постачання та Trade Finance"),
     title: bi("Supply Chain, Waybill & Trade Finance Audit", "Аудит логістики, ТТН та Trade Finance"),
     body: bi(
-      "Scans waybills (TTPs), invoices, and delivery acts to eliminate fake shipments, phantom carriers, and inventory fraud.",
-      "Сканує товарно-транспортні накладні (ТТН), рахунки та акти, усуваючи \u201Cповітряні\u201D поставки, фантомних перевізників та махінації з залишками."
+      "Scans waybills (TTN/CMR), invoices, and delivery acts to eliminate fake shipments, phantom carriers, and inventory fraud.",
+      "Сканує ТТН/CMR, рахунки та акти, усуваючи \u201Cповітряні\u201D поставки, фантомних перевізників та махінації з залишками."
     ),
     bullets: [
-      bi("3-way matching between contracts, invoices, statements and TTPs.", "3-Way Matching між договорами, рахунками, виписками та ТТН."),
+      bi("3-way matching between contracts, invoices, statements and TTN/CMR waybills.", "3-Way Matching між договорами, рахунками, виписками та ТТН/CMR."),
       bi("Impossible transit speed and duplicate waybill detection.", "Виявлення неможливої швидкості доставки та дубльованих ТТН."),
       bi("Phantom carrier and VAT scheme flags.", "Позначки фантомних перевізників та схем із ПДВ."),
     ],
