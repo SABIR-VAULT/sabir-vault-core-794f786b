@@ -340,7 +340,7 @@ function LiveCaseStudy() {
   return (
     <section className="mx-auto max-w-5xl px-6 py-20">
       <SectionHeader
-        eyebrow={t(bi("Live Case Study", "Живий кейс"))}
+        eyebrow={t(bi("Live Case Study", "ЖИВИЙ КЕЙС"))}
         title={t(bi(
           "The Kovalenko Empire — 36 documents, 5 countries, one engine.",
           "Імперія Коваленка — 36 документів, 5 країн, один движок."
@@ -405,7 +405,7 @@ function Introduction() {
 const universalCore: { icon: any; title: Bi; body: Bi }[] = [
   {
     icon: Globe,
-    title: bi("Multi-Jurisdictional", "Мультиюрисдикційність"),
+    title: bi("Multi-Jurisdictional", "Мульти-юрисдикційність"),
     body: bi(
       "5 jurisdictions shipped out of the box (UA / DE / PL / US / KZ). A new country is added in ~2 hours by loading a single JSON profile — zero Python code changes.",
       "5 юрисдикцій з коробки (UA / DE / PL / US / KZ). Нова країна додається за ~2 години завантаженням одного JSON-профілю — без жодної зміни Python-коду."
