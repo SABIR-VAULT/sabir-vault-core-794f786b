@@ -5,6 +5,7 @@ import {
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
   Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Truck,
+  Camera, Brain, EyeOff, Building, Handshake, X, Check,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -13,15 +14,15 @@ import { useLang, bi, type Bi } from "@/lib/i18n";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SABIR VAULT | Enterprise Pre-Audit & Document Intelligence Platform" },
-      { name: "description", content: "Turn document chaos into a verified picture of your business. SABIR VAULT automates 3-way financial matching, legal forensics, and pre-audit dossiers. 100% Air-Gapped." },
+      { title: "SABIR VAULT — Corporate Forensics. It Just Works." },
+      { name: "description", content: "Air-gapped corporate forensics platform: 22 deterministic risk transistors, OrgRecon HR engine, multimodal evidence, and zero-leak DLP anonymizer. The archive goes in. The truth comes out." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://sabirvault.com/" },
-      { property: "og:title", content: "SABIR VAULT — See What Is Actually Happening Inside Your Business" },
-      { property: "og:description", content: "Enterprise situational intelligence and pre-audit platform. Reconstruct entities, financial flows, and legal evidence from raw document archives in minutes." },
+      { property: "og:title", content: "SABIR VAULT — Air-Gapped Corporate Forensics Platform" },
+      { property: "og:description", content: "Transform unstructured archives into mathematically verified graphs of legal risks, financial flows, org structures, supply chains, and multimodal evidence in 48 hours." },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "SABIR VAULT — See What Is Actually Happening Inside Your Business" },
-      { name: "twitter:description", content: "Enterprise situational intelligence and pre-audit platform. Reconstruct entities, financial flows, and legal evidence from raw document archives in minutes." },
+      { name: "twitter:title", content: "SABIR VAULT — Air-Gapped Corporate Forensics Platform" },
+      { name: "twitter:description", content: "Transform unstructured archives into mathematically verified graphs of legal risks, financial flows, org structures, supply chains, and multimodal evidence in 48 hours." },
     ],
     links: [{ rel: "canonical", href: "https://sabirvault.com/" }],
   }),
@@ -33,6 +34,9 @@ function Landing() {
     <div className="min-h-screen overflow-x-hidden text-foreground">
       <Nav />
       <Hero />
+      <TwoWays />
+      <PeriodicTable />
+      <WhatsNew />
       <Introduction />
       <ForensicPillars />
       <LiveCaseStudy />
@@ -138,22 +142,53 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-[#38bdf8]" />
             <span className="tracking-wide">
-              {t(bi("🔐 VERIFIED DIGITAL DOSSIERS", "🔐 ВЕРИФІКОВАНІ ЦИФРОВІ ДОСЬЄ"))}
+              {t(bi(
+                "🔐 AIR-GAPPED PLATFORM · PLUG-AND-PLAY · ZERO CLOUD LEAKS",
+                "🔐 АВТОНОМНА ПЛАТФОРМА · PLUG-AND-PLAY · 0 ВИТОКІВ У ХМАРУ"
+              ))}
             </span>
           </div>
           <h1 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-white break-words sm:text-5xl md:text-7xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            {t(bi("Deterministic Financial, Legal & Supply Chain", "Детермінований аналіз фінансової, юридичної та логістичної"))}
+            {t(bi("Corporate Forensics.", "Корпоративний форензік,"))}
             <br />
             <span className="text-gradient-cyan">
-              {t(bi("Intelligence (Pre-Audit)", "документації (Pre-Audit)"))}
+              {t(bi("It Just Works.", "який просто працює"))}
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold text-white/90 md:text-xl">
             {t(bi(
-              "Transform the chaos of unstructured documents (PDFs, scans, photos, Excel) into a 100% verified graph of relationships, financial flows, and risks. Built for deep due diligence in M&A, corporate fraud investigation, FinTech KYB automation, and legal clearance for Real World Assets (RWA). The flexible Zero-Code core replaces weeks of manual review with scalable batch processing, uniting Legal, Financial, HR, Logistics, and Security intelligence under one Air-Gapped roof.",
-              "Перетворіть хаос неупорядкованих документів (PDF, скани, фото, Excel) на 100% верифікований граф зв'язків, фінансових потоків і ризиків. Створено для глибокого Due Diligence в M&A, розслідування корпоративного шахрайства, автоматизації KYB у FinTech та юридичної чистоти RWA. Гнучке Zero-Code ядро замінює тижні ручної перевірки масштабованою пакетною обробкою, об'єднуючи юридичну, фінансову, кадрову, логістичну та безпекову аналітику в єдиному Air-Gapped контурі."
+              "The archive goes in. The truth comes out. In 48 hours.",
+              "Архів всередину. Правда назовні. За 48 годин."
             ))}
           </p>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground break-words md:text-lg">
+            {t(bi(
+              "No consulting army. No cloud exposure. No months of onboarding. An air-gapped box, a cable, and your document archive — our deterministic engine decomposes any corporate fraud scheme into its fundamental risk atoms.",
+              "Без армії консультантів. Без хмари. Без місяців впровадження. Автономна коробка, кабель і ваш архів — детерміноване ядро розкладає будь-яку схему шахрайства на фундаментальні атоми ризику."
+            ))}
+          </p>
+
+          <ul className="mx-auto mt-8 max-w-3xl space-y-2.5 text-left">
+            {[
+              bi(
+                "22 behavioral transistors: each catches its own fraud atom — AML carousels, phantom carriers, ghost employees, and shadow influencers.",
+                "22 транзистори поведінки: кожен ловить свій атом шахрайства — AML-каруселі, фантомних перевізників, «мертвих душ» та тіньовий вплив."
+              ),
+              bi(
+                "6 coverage vectors: Legal, Financial, HR (OrgRecon), Supply Chain, Security, and Multimodal Evidence — zero blind spots.",
+                "6 векторів покриття: юридичний, фінансовий, кадровий (OrgRecon), логістичний, безпековий та мультимодальний — жодної сліпої зони."
+              ),
+              bi(
+                "100% on-premise with zero leakage: 274 potential PII leaks on a real-world 56-document dossier ➔ 0 after anonymization.",
+                "100% локально з нульовим витоком: 274 потенційні PII-витоки на реальному досьє з 56 документів ➔ 0 після анонімізації."
+              ),
+            ].map((b, i) => (
+              <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                <span className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-white/40" />
+                <span>{t(b)}</span>
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3">
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -165,22 +200,21 @@ function Hero() {
                 {t(bi("🔓 Start a Pre-Audit ➔", "🔓 Запустити Пре-аудит ➔"))}
               </QuoteButton>
               <Link to="/security-service" className="glass glass-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white">
-                {t(bi("🛡️ For Security Service", "🛡️ Для Служби Безпеки"))}
+                {t(bi("🛡️ For Security Service", "🛡️ Для служби безпеки"))}
               </Link>
             </div>
-            <p className="text-xs text-muted-foreground">
-              {t(bi("Give us the archive. Get the situation map.", "Надайте архів. Отримайте ситуаційну карту."))}
-            </p>
           </div>
 
           <div className="mt-14 flex flex-col items-center justify-center gap-2 text-center text-xs uppercase tracking-widest text-muted-foreground/70 sm:flex-row sm:gap-4">
-            <span>{t(bi("Air-Gapped", "Ізольовано"))}</span>
+            <span>{t(bi("Plug-and-Play", "Plug-and-Play"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Deterministic Verification", "Детермінована верифікація"))}</span>
+            <span>{t(bi("22 Behavioral Transistors", "22 транзистори поведінки"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Legal Clearance", "Юридичне очищення"))}</span>
+            <span>{t(bi("6 Vectors", "6 векторів"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("Zero-Trust", "Zero-Trust"))}</span>
+            <span>{t(bi("0 Leaks", "0 витоків"))}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>{t(bi("48 Hours", "48 годин"))}</span>
           </div>
         </div>
       </div>
@@ -255,45 +289,218 @@ const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
   },
 ];
 
+const comparisonRows: { legacy: Bi; sabir: Bi }[] = [
+  {
+    legacy: bi("6 months of implementation", "6 місяців впровадження та очікування"),
+    sabir: bi("48 hours to first verified verdict", "48 годин до першого верифікованого вердикту"),
+  },
+  {
+    legacy: bi("Team of on-site consultants in your office", "Команда зовнішніх консультантів у вашому офісі"),
+    sabir: bi("Plug-and-play appliance, zero external personnel", "Plug-and-play модуль, жодного стороннього персоналу"),
+  },
+  {
+    legacy: bi("Confidential archives uploaded to third-party cloud", "Конфіденційні архіви передаються у сторонню хмару"),
+    sabir: bi("100% air-gapped, data never leaves your perimeter", "100% локально, дані ніколи не залишають ваш периметр"),
+  },
+  {
+    legacy: bi("Weeks of manual, fatigue-prone spreadsheet reviews", "Тижні ручного вичитування паперів із людським фактором"),
+    sabir: bi("22 behavioral transistors verify cross-document math instantly", "22 транзистори миттєво перевіряють математику між документами"),
+  },
+  {
+    legacy: bi("Final deliverable = a subjective consultant's opinion", "Результат = суб'єктивна «думка консультанта»"),
+    sabir: bi("Deterministic truth: every single anomaly linked to document & page", "Детермінована правда: кожен факт прив'язаний до документа і сторінки"),
+  },
+  {
+    legacy: bi("Bloated annual consulting billables", "Нескінченні погодинні рахунки консалтингових фірм"),
+    sabir: bi("Fixed appliance deployment + modular schema updates", "Фіксоване апаратне рішення + модульні оновлення схем"),
+  },
+];
+
+function TwoWays() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <SectionHeader
+        eyebrow={t(bi("Comparison", "Порівняння"))}
+        title={t(bi("Two Ways to the Truth. One Is Ours.", "Два шляхи до правди. Один — наш."))}
+      />
+      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+        {t(bi(
+          "Why enterprise security teams and boards replace legacy consulting retainers with deterministic hardware.",
+          "Чому служба безпеки та топ-менеджмент обирають детермінований комплекс замість місяців консалтингу."
+        ))}
+      </p>
+      <div className="glass mt-10 overflow-hidden rounded-2xl">
+        <div className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2">
+          <div className="bg-[#0b0f19] px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            {t(bi("Traditional Forensic Consulting", "Традиційний консалтинговий аудит"))}
+          </div>
+          <div className="bg-[#38bdf8]/[0.07] px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#38bdf8]">
+            {t(bi("SABIR VAULT Air-Gapped Engine", "Апаратний комплекс SABIR VAULT"))}
+          </div>
+          {comparisonRows.map((r, i) => (
+            <div key={i} className="contents">
+              <div className="flex gap-3 bg-[#0b0f19] px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-white/25" />
+                <span className="break-words">{t(r.legacy)}</span>
+              </div>
+              <div className="flex gap-3 bg-[#38bdf8]/[0.04] px-5 py-4 text-sm font-medium leading-relaxed text-white">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#38bdf8]" />
+                <span className="break-words">{t(r.sabir)}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PeriodicTable() {
+  const { t } = useLang();
+  const lines: { n: string; text: Bi }[] = [
+    { n: "3", text: bi("primary colors → generate billions of digital images.", "базові кольори → створюють мільярди цифрових зображень.") },
+    { n: "7", text: bi("musical notes → compose every symphony in human history.", "музичних нот → складають усі симфонії світу.") },
+    { n: "118", text: bi("chemical elements → build all matter in the known universe.", "хімічних елементів → утворюють усю матерію Всесвіту.") },
+    { n: "22", text: bi("risk transistors → detect any corporate fraud scheme.", "транзистори ризику → виявляють будь-яку схему шахрайства.") },
+  ];
+  return (
+    <section className="relative border-y border-white/5 bg-[#0b0f19]">
+      <div className="mx-auto max-w-5xl px-6 py-24">
+        <SectionHeader
+          eyebrow={t(bi("Mental Model", "Ментальна модель"))}
+          title={t(bi("The Periodic Table of Corporate Fraud", "Періодична таблиця корпоративного шахрайства"))}
+        />
+        <div className="mt-12 divide-y divide-white/5 border-y border-white/5">
+          {lines.map((l, i) => (
+            <div key={i} className="flex flex-col gap-1 py-6 sm:flex-row sm:items-baseline sm:gap-8">
+              <div
+                className={`w-24 shrink-0 text-4xl font-semibold tabular-nums md:text-5xl ${i === lines.length - 1 ? "text-gradient-cyan" : "text-white/30"}`}
+                style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}
+              >
+                {l.n}
+              </div>
+              <div className={`text-sm leading-relaxed md:text-base ${i === lines.length - 1 ? "text-white" : "text-muted-foreground"}`}>
+                {t(l.text)}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          {t(bi(
+            "Fraudsters cannot invent a new color. They can only remix the same behavioral atoms: kinship proxies, threshold structuring, post-resignation signatures, and date inversions. SABIR VAULT does not write fragile custom code for every industry scenario. Our engine decomposes any \u201Cunique\u201D corporate crime into its fundamental atomic spectrum. That is why the platform never becomes obsolete.",
+            "Шахраї не здатні вигадати новий колір. Вони можуть лише перемішувати ті самі атоми поведінки: підставних родичів, дроблення сум під порогом, підписи після звільнення та інверсію дат. SABIR VAULT не дописує крихкий код під кожну галузь. Наше ядро розкладає будь-яку «унікальну схему» на фундаментальний атомний спектр. Саме тому система не застаріває."
+          ))}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const whatsNew: { icon: any; title: Bi; body: Bi }[] = [
+  {
+    icon: EyeOff,
+    title: bi("\uD83D\uDD76\uFE0F Zero-Leak DLP Anonymizer", "\uD83D\uDD76\uFE0F Zero-Leak DLP Анонімізатор"),
+    body: bi(
+      "274 → 0 PII leaks mathematically verified on a real-world 56-document dossier with reversible key restoration.",
+      "274 → 0 витоків PII математично верифіковано на реальному досьє з 56 документів з ключем відновлення."
+    ),
+  },
+  {
+    icon: Building,
+    title: bi("\uD83C\uDFE2 SABIR OrgRecon Engine", "\uD83C\uDFE2 Двигун SABIR OrgRecon"),
+    body: bi(
+      "6 specialized HR transistors detecting ghost employees, dual reporting, span-of-control bottlenecks, and shadow influencers.",
+      "6 спеціалізованих HR-транзисторів для виявлення «мертвих душ», подвійного підпорядкування, перевантаження менеджерів та тіньового впливу."
+    ),
+  },
+  {
+    icon: Camera,
+    title: bi("\uD83D\uDCF8\uD83C\uDF99\uFE0F Multimodal Forensics", "\uD83D\uDCF8\uD83C\uDF99\uFE0F Мультимодальний форензік"),
+    body: bi(
+      "Direct triangulation across ATM surveillance frames, primary accounting papers, and audio transcripts.",
+      "Пряме перехресне зіставлення фотофіксацій банкоматів (ATM), первинних документів та аудіостенограм."
+    ),
+  },
+  {
+    icon: Brain,
+    title: bi("\uD83E\uDDE0 Human-Gated Silent Learning", "\uD83E\uDDE0 Human-Gated Тихе Навчання"),
+    body: bi(
+      "Dual-contour self-healing engine with strict human operator approval gates and a cryptographic audit trail.",
+      "Двоконтурне самонавчання системи з обов'язковим ручним затвердженням оператора та журналом аудиту."
+    ),
+  },
+];
+
+function WhatsNew() {
+  const { t } = useLang();
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <div className="inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/30 bg-[#f59e0b]/[0.07] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f59e0b]">
+        {t(bi("v7.5 Platform Release (September 2026)", "Реліз платформи v7.5 (вересень 2026)"))}
+      </div>
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {whatsNew.map((c, i) => (
+          <div key={i} className="glass glass-hover rounded-2xl p-6">
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
+              <c.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-4 text-sm font-semibold text-white">{t(c.title)}</div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(c.body)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const forensicPillars: { icon: any; title: Bi; body: Bi }[] = [
   {
     icon: Scale,
     title: bi("\u2696\uFE0F Legal Core", "\u2696\uFE0F Юридичний контур"),
     body: bi(
-      "Power conflicts, date inversion, invalid proxies, and post-resignation signatures.",
-      "Конфлікти повноважень, інверсія дат, недійсні довіреності та підписи після звільнення."
+      "Power conflicts, date inversion, invalid proxies, unclosed encumbrances, and post-resignation signatures.",
+      "Конфлікти повноважень, інверсія дат, недійсні довіреності, приховані обтяження та підписи після звільнення."
     ),
   },
   {
     icon: Wallet,
     title: bi("\uD83D\uDCB0 Financial Contour", "\uD83D\uDCB0 Фінансовий контур"),
     body: bi(
-      "\u201CInvoice \u2194 Act \u2194 Payment\u201D gaps, VAT frauds, AML carousels, and threshold structuring.",
-      "Розриви \u201CІнвойс \u2194 Акт \u2194 Оплата\u201D, скрутки ПДВ, AML-каруселі та дроблення сум під моніторинг."
+      "AML carousels, VAT frauds, off-balance promissory notes, threshold structuring, and delta discrepancies.",
+      "AML-каруселі, скрутки ПДВ, позабалансові векселі, дроблення сум під порогом моніторингу та платіжні дельта-розриви."
     ),
   },
   {
     icon: UsersRound,
-    title: bi("\uD83D\uDC65 HR & Operations", "\uD83D\uDC65 Кадри та Операції"),
+    title: bi("\uD83D\uDC65 HR & OrgRecon", "\uD83D\uDC65 Кадри та OrgRecon"),
     body: bi(
-      "Hidden proxy networks, nominee directors (\u201CMillionaire Mother-in-Law\u201D), and insider conflicts.",
-      "Приховані прокси-мережі, номінальні директори (\u201CТеща-мільйонер\u201D) та внутрішній фрод."
+      "Evidence-based org reconstruction, ghost employees, dual reporting lines, functional duplication, and span-of-control bottlenecks.",
+      "Документальна реконструкція оргструктури, «мертві душі», подвійне підпорядкування, дублювання функцій та перевантаження менеджерів."
     ),
   },
   {
     icon: Truck,
-    title: bi("\uD83D\uDE9B Supply Chain & Logistics", "\uD83D\uDE9B Логістика та Товарний облік"),
+    title: bi("\uD83D\uDE9B Supply Chain & Logistics", "\uD83D\uDE9B Логістика та товарний облік"),
     body: bi(
-      "Phantom carriers, impossible transit speeds, recycled waybills (TTN/CMR), and \u201Cair-money\u201D shipments.",
-      "Фантомні перевізники, неможлива швидкість за ТТН, повторні накладні (ТТН/CMR) та \u201Cповітряні\u201D рейси."
+      "Phantom carriers, impossible transit speeds (240+ km/h), recycled waybills (TTN/CMR), and \u201Cair-money\u201D deliveries.",
+      "Фантомні перевізники, неможлива швидкість за ТТН (240+ км/год), повторно використані накладні (TTN/CMR) та «повітряні» рейси."
     ),
   },
   {
     icon: ShieldAlert,
     title: bi("\uD83D\uDEE1\uFE0F Corporate Security", "\uD83D\uDEE1\uFE0F Служба безпеки"),
     body: bi(
-      "Cascade risk calculation, asset stripping prior to bankruptcy, and offshore sanction links.",
-      "Каскадний розрахунок ризиків, виведення активів перед банкрутством та офшорні санкційні зв'язки."
+      "Cascade risk calculations, asset stripping prior to bankruptcy, proxy networks, and offshore sanction links.",
+      "Каскадний розрахунок ризиків, виведення активів перед банкрутством, проксі-мережі та офшорні санкційні зв'язки."
+    ),
+  },
+  {
+    icon: Camera,
+    title: bi("\uD83D\uDCF8\uD83C\uDF99\uFE0F Multimodal Evidence", "\uD83D\uDCF8\uD83C\uDF99\uFE0F Мультимодальні докази"),
+    body: bi(
+      "Triangulation between physical primary invoices, ATM surveillance captures, and audio interrogation transcripts.",
+      "Зіставлення первинних документів, фотофіксацій банкоматів (ATM) та стенограм аудіозаписів."
     ),
   },
 ];
@@ -304,12 +511,12 @@ function ForensicPillars() {
     <section className="mx-auto max-w-7xl px-6 py-20">
       <SectionHeader
         eyebrow={t(bi("Corporate Forensics", "Корпоративний форензік"))}
-        title={t(bi("The 5 Pillars of Corporate Forensics", "5 Столпів Корпоративного Форензіка"))}
+        title={t(bi("The 6 Pillars of Corporate Forensics", "6 Напрямків Корпоративного Форензіка"))}
       />
       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
         {t(bi(
-          "SABIR VAULT eliminates blind spots between corporate departments by unifying all 5 pillars of risk into a single deterministic intelligence engine:",
-          "SABIR VAULT усуває сліпі зони між відділами компанії, об'єднуючи всі 5 векторів ризику в єдиний детермінований движок:"
+          "Eliminating blind spots between corporate departments by fusing 6 risk dimensions into one deterministic engine.",
+          "Усунення сліпих зон між відділами завдяки поєднанню 6 векторів ризику в єдиному детермінованому ядрі."
         ))}
       </p>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
