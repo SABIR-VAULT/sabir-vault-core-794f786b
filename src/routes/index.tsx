@@ -538,10 +538,12 @@ function LiveCaseStudy() {
   const { t } = useLang();
   const chips = [
     bi("⚡ 150V+ risk voltage", "⚡ 150V+ напруга ризику"),
-    bi("🎯 4 criminal archetypes", "🎯 4 кримінальні архетипи"),
+    bi("🧩 8+ fraud atoms detected", "🧩 8+ виявлених атомів шахрайства"),
+    bi("🕸️ 6 vectors fused in one verdict", "🕸️ 6 векторів в одному вердикті"),
     bi("👥 20 persons auto-linked", "👥 20 осіб автозв'язано"),
     bi('🚛 240 km/h “truck”', "🚛 240 км/год «фура»"),
     bi("💰 6M UAH 3-way matching gap", "💰 розрив 3-Way Matching 6 млн грн"),
+    bi("🔒 274 ➔ 0 PII leaks after anonymization", "🔒 274 ➔ 0 витоків PII після анонімізації"),
   ];
 
   return (
@@ -556,8 +558,8 @@ function LiveCaseStudy() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "A synthetic end-to-end demo: a family holding across UA/PL/DE/KZ/US with phantom carriers, impossible transit speeds (240–480 km/h), recycled waybills, a 5M round-trip carousel, and assets stripped to a mother-in-law during litigation. The engine fused all 5 pillars into a single verdict.",
-            "Синтетичне end-to-end демо: сімейний холдинг у UA/PL/DE/KZ/US із фантомними перевізниками, неможливою швидкістю рейсів (240–480 км/год), повторними ТТН, каруселлю на 5 млн грн та виведенням активів на тещу під час судового процесу. Система звела всі 5 стовпів у єдиний вердикт."
+            "A synthetic end-to-end demo: a family holding across UA/PL/DE/KZ/US with phantom carriers, impossible transit speeds (240–480 km/h), recycled TTN/CMR waybills, a round-trip carousel, ghost employees on the payroll, and assets stripped to a mother-in-law during litigation. The engine fused all 6 vectors — including ATM photo captures and audio transcripts — into a single verdict.",
+            "Синтетичне end-to-end демо: сімейний холдинг у UA/PL/DE/KZ/US із фантомними перевізниками, неможливою швидкістю рейсів (240–480 км/год), повторно використаними ТТН/CMR, каруселлю платежів, «мертвими душами» у штаті та виведенням активів на тещу під час судового процесу. Система звела всі 6 векторів — разом із фотофіксаціями банкоматів і стенограмами аудіо — в єдиний вердикт."
           ))}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -584,8 +586,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "It is a hardware-software complex for deep financial and legal forensics. We don't just extract text. Our system uses deterministic math and local AI to read your unstructured archives and find logical contradictions, fraud schemes, and hidden encumbrances.",
-            "Це програмно-апаратний комплекс для глибокої фінансової та юридичної розвідки (Forensics). Наша система використовує детерміновану математику та локальний ШІ, щоб читати ваші неструктуровані архіви (PDF, фото, рукописи, Excel) і знаходити там логічні суперечності, шахрайські схеми та приховані обтяження."
+            "An air-gapped hardware-and-software appliance for corporate forensics. You plug it in, load the archive, and get a reality map in 48 hours. Inside, 22 deterministic behavioral risk transistors decompose any scheme into its fundamental fraud atoms across six vectors — legal, financial, HR, supply chain, security, and multimodal evidence. No cloud, no consulting army, no onboarding marathon.",
+            "Автономний програмно-апаратний комплекс для корпоративного форензіка. Ви підключаєте його, завантажуєте архів і за 48 годин отримуєте карту реальності. Усередині — 22 детерміновані поведінкові транзистори ризику, що розкладають будь-яку схему на фундаментальні атоми шахрайства за шістьма векторами: юридичним, фінансовим, кадровим, логістичним, безпековим і мультимодальним. Без хмари, без армії консультантів, без місяців впровадження."
           ))}
         </p>
       </div>
@@ -626,6 +628,14 @@ const universalCore: { icon: any; title: Bi; body: Bi }[] = [
       "Сьогодні ви шукаєте ПДВ-скрутки, а завтра аналізуєте тендери. Додавайте нові \"Щити\" та \"Транзистори\" (радари ризиків) як плагіни."
     ),
   },
+  {
+    icon: Building,
+    title: bi("47 MinJust Corporate Schemas", "47 корпоративних схем МінЮсту"),
+    body: bi(
+      "SABIR OrgRecon reconstructs the real org structure from 47 official Ministry of Justice corporate registry schemas — evidence-based, not interview-based.",
+      "SABIR OrgRecon відновлює реальну оргструктуру на основі 47 офіційних корпоративних схем реєстру МінЮсту — за документами, а не за опитуваннями."
+    ),
+  },
 ];
 
 function UniversalCore() {
@@ -636,7 +646,7 @@ function UniversalCore() {
         eyebrow={t(bi("Universal Core", "Універсальне Ядро"))}
         title={t(bi("Universal Core (Zero-Code Scalability)", "Універсальне Ядро (Zero-Code Scalability)"))}
       />
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
         {universalCore.map((c, i) => (
           <div key={i} className="glass glass-hover rounded-2xl p-6">
             <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#38bdf8]/10 text-[#38bdf8]">
@@ -697,8 +707,8 @@ function Roi() {
       </div>
       <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
         {t(bi(
-          "214 automated regression tests · 14 risk transistors · 7 fraud archetypes · 40+ forensic modules",
-          "214 автоматизованих регрес-тестів · 14 транзисторів ризику · 7 архетипів шахрайства · 40+ форензик-модулів"
+          "214 automated regression tests · 22 risk transistors (16 FCE + 6 OrgRecon) · 7 fraud archetypes · 40+ forensic modules",
+          "214 автоматизованих регрес-тестів · 22 транзистори ризику (16 FCE + 6 OrgRecon) · 7 архетипів шахрайства · 40+ форензик-модулів"
         ))}
       </div>
     </section>
@@ -859,6 +869,7 @@ const deliverables: { icon: any; title: Bi }[] = [
   { icon: Presentation, title: bi("Board-Ready Presentation Package (Interactive Slides)", "Презентаційний пакет для Ради Директорів (інтерактивні слайди)") },
   { icon: Bot, title: bi("Interactive AI Co-Pilot (Grounded Q&A over verified datasets)", "AI Co-Pilot — живий чат по верифікованій базі фактів") },
   { icon: Fingerprint, title: bi("Cryptographic Proof Certificate (SHA-256 Tamper Seal)", "Криптографічна печатка цілісності (SHA-256 Tamper Seal)") },
+  { icon: UsersRound, title: bi("OrgRecon HR Evidence Report (reconstructed org chart, ghost employees, duplicated functions)", "HR-звіт OrgRecon (відновлена оргструктура, «мертві душі», дублювання функцій)") },
 ];
 
 function Deliverables() {
@@ -993,6 +1004,21 @@ const solutions: SolutionDef[] = [
       bi("Phantom carrier and VAT scheme flags.", "Позначки фантомних перевізників та схем із ПДВ."),
     ],
   },
+  {
+    key: "orgrecon",
+    icon: Building,
+    eyebrow: bi("HR Forensics & Org Design", "HR-форензік та оргдизайн"),
+    title: bi("SABIR OrgRecon — Evidence-Based Org Reconstruction", "SABIR OrgRecon — документальна реконструкція оргструктури"),
+    body: bi(
+      "Rebuilds the real organizational structure from orders, payroll records, proxies and 47 MinJust corporate schemas — then runs 6 dedicated HR risk transistors over it.",
+      "Відновлює реальну оргструктуру з наказів, зарплатних відомостей, довіреностей та 47 корпоративних схем МінЮсту — і проганяє її через 6 спеціалізованих HR-транзисторів ризику."
+    ),
+    bullets: [
+      bi("Ghost employees and payroll anomalies detected against documentary evidence.", "«Мертві душі» та аномалії фонду оплати праці, підтверджені документами."),
+      bi("Dual reporting lines, functional duplication and span-of-control bottlenecks.", "Подвійне підпорядкування, дублювання функцій та перевантаження керівників."),
+      bi("Shadow influencers: informal decision power that never appears on the official chart.", "Тіньові впливи: неформальна влада, якої немає в офіційній схемі."),
+    ],
+  },
 ];
 
 
@@ -1040,7 +1066,7 @@ function Deployment() {
     <section id="deployment" className="mx-auto max-w-7xl px-6 py-24">
       <SectionHeader
         eyebrow={t(bi("Engagement Models", "Моделі співпраці"))}
-        title={t(bi("Three ways to engage with SABIR VAULT.", "Три способи співпраці з SABIR VAULT."))}
+        title={t(bi("Four ways to engage with SABIR VAULT.", "Чотири способи співпраці з SABIR VAULT."))}
       />
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <DeployCard
@@ -1075,6 +1101,16 @@ function Deployment() {
             "Попередньо налаштований ізольований plug-and-play Mac Mini з доставкою у ваш офіс для максимальної ізоляції."
           ))}
           highlight
+        />
+        <DeployCard
+          icon={Handshake}
+          model="partner"
+          tag={t(bi("Retainer", "Ретейнер"))}
+          title={t(bi("HR & Advisory Partnership", "HR та консалтингове партнерство"))}
+          body={t(bi(
+            "An ongoing retainer for HR, legal and advisory teams: recurring OrgRecon reconstructions, quarterly risk re-scans, and white-label pre-audit delivery to your own clients.",
+            "Постійний ретейнер для HR, юридичних та консалтингових команд: регулярні реконструкції OrgRecon, щоквартальні пересканування ризиків і пре-аудит під вашим брендом для ваших клієнтів."
+          ))}
         />
       </div>
     </section>
@@ -1120,6 +1156,12 @@ const trustItems: { icon: any; title: Bi }[] = [
   { icon: GitBranch, title: bi("Live Legislative Binding (zakon.rada.gov.ua)", "Прив'язка до законодавства (zakon.rada.gov.ua)") },
   { icon: Bug, title: bi("Zero-Trust Ingestion Sandbox (ClamAV)", "Zero-Trust пісочниця прийому (ClamAV)") },
   { icon: Boxes, title: bi("CRM & Case Management Integration Ready", "Готовність до інтеграції з CRM та Case Management") },
+  { icon: EyeOff, title: bi("Zero-Leak DLP Anonymizer — 274 ➔ 0 PII leaks on a real 56-document dossier", "Анонімізатор Zero-Leak DLP — 274 ➔ 0 витоків PII на реальному досьє з 56 документів") },
+  { icon: Brain, title: bi("Human-Gated Silent Learning (no model update without operator approval)", "Тихе самонавчання з людським контролем (без затвердження оператора модель не оновлюється)") },
+  { icon: Building, title: bi("SABIR OrgRecon on 47 MinJust corporate schemas", "SABIR OrgRecon на 47 корпоративних схемах МінЮсту") },
+  { icon: Camera, title: bi("Multimodal Evidence: ATM photo captures + audio interrogation transcripts", "Мультимодальні докази: фотофіксації банкоматів та стенограми аудіозаписів") },
+  { icon: Zap, title: bi("22 Behavioral Risk Transistors (16 FCE + 6 OrgRecon)", "22 поведінкові транзистори ризику (16 FCE + 6 OrgRecon)") },
+  { icon: Server, title: bi("100% air-gapped on-premise execution on a dedicated hardware appliance", "100% автономне локальне виконання на виділеному апаратному модулі") },
 ];
 
 function TrustCenter() {
@@ -1139,6 +1181,12 @@ function TrustCenter() {
               </div>
               <div className="text-sm leading-snug text-white/90">{t(it.title)}</div>
             </div>
+          ))}
+        </div>
+        <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
+          {t(bi(
+            "22 risk transistors · 6 coverage vectors · 47 MinJust schemas · 274 ➔ 0 PII leaks · 48-hour reality map · 0 cloud calls",
+            "22 транзистори ризику · 6 векторів покриття · 47 схем МінЮсту · 274 ➔ 0 витоків PII · карта реальності за 48 годин · 0 звернень до хмари"
           ))}
         </div>
       </div>
@@ -1220,6 +1268,7 @@ function Footer() {
           </div>
           <span className="text-xs font-semibold tracking-[0.2em] text-white">SABIR VAULT</span>
           <span className="ml-3 text-xs text-muted-foreground">© {new Date().getFullYear()}</span>
+          <span className="ml-2 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[10px] font-semibold tracking-wide text-muted-foreground">v7.5-hybrid</span>
         </div>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
           {/* Email */}
