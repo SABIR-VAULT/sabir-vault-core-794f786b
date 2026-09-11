@@ -260,7 +260,7 @@ const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
     ),
     body: bi(
       "Uncovers off-balance promissory notes, delta leaks, asset stripping before insolvency, fictitious debts, and circular money transfers (A \u2192 B \u2192 C \u2192 A) hidden across thousands of primary receipts.",
-      "Виявляє забалансові векселі, витік маржі (Delta Leak), виведення активів перед банкрутством, фіктивні борги та кругові транзакції (A \u2192 B \u2192 C \u2192 A), заховані серед тисяч первинних документів."
+      "Виявляє векселі поза балансом, витік маржі (Delta Leak), виведення активів перед банкрутством, фіктивні борги та кругові транзакції (A \u2192 B \u2192 C \u2192 A), заховані серед тисяч первинних документів."
     ),
   },
   {
@@ -468,7 +468,7 @@ const forensicPillars: { icon: any; title: Bi; body: Bi }[] = [
     title: bi("\uD83D\uDCB0 Financial Contour", "\uD83D\uDCB0 Фінансовий контур"),
     body: bi(
       "AML carousels, VAT frauds, off-balance promissory notes, threshold structuring, and delta discrepancies.",
-      "AML-каруселі, скрутки ПДВ, позабалансові векселі, дроблення сум під порогом моніторингу та платіжні дельта-розриви."
+      "AML-каруселі, скрутки ПДВ, повекселі поза балансом, дроблення сум під порогом моніторингу та платіжні дельта-розриви."
     ),
   },
   {
