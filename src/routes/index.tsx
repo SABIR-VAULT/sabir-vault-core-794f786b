@@ -708,8 +708,8 @@ function Roi() {
       </div>
       <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
         {t(bi(
-          "214 automated regression tests · 22 risk transistors (16 FCE + 6 OrgRecon) · 7 fraud archetypes · 40+ forensic modules",
-          "214 автоматизованих регрес-тестів · 22 транзистори ризику (16 FCE + 6 OrgRecon) · 7 архетипів шахрайства · 40+ форензик-модулів"
+          "214 automated regression tests · 26 risk transistors (16 FCE + 10 OrgRecon) · 7 fraud archetypes · 40+ forensic modules",
+          "214 автоматизованих регрес-тестів · 26 транзисторів ризику (16 FCE + 10 OrgRecon) · 7 архетипів шахрайства · 40+ форензик-модулів"
         ))}
       </div>
     </section>
@@ -1011,8 +1011,8 @@ const solutions: SolutionDef[] = [
     eyebrow: bi("HR Forensics & Org Design", "HR-форензік та оргдизайн"),
     title: bi("SABIR OrgRecon — Evidence-Based Org Reconstruction", "SABIR OrgRecon — документальна реконструкція оргструктури"),
     body: bi(
-      "Rebuilds the real organizational structure from orders, payroll records, proxies and 47 MinJust corporate schemas — then runs 6 dedicated HR risk transistors over it.",
-      "Відновлює реальну оргструктуру з наказів, зарплатних відомостей, довіреностей та 47 корпоративних схем МінЮсту — і проганяє її через 6 спеціалізованих HR-транзисторів ризику."
+      "Rebuilds the real organizational structure from orders, payroll records, proxies and 47 MinJust corporate schemas — then runs 10 HR risk transistors over it, including 4 court-grade detectors that produce admissible evidence.",
+      "Відновлює реальну оргструктуру з наказів, зарплатних відомостей, довіреностей та 47 корпоративних схем МінЮсту — і проганяє її через 10 HR-транзисторів ризику, зокрема 4 детектори судового рівня, що дають прийнятні докази."
     ),
     bullets: [
       bi("Ghost employees and payroll anomalies detected against documentary evidence.", "«Мертві душі» та аномалії фонду оплати праці, підтверджені документами."),
@@ -1161,7 +1161,7 @@ const trustItems: { icon: any; title: Bi }[] = [
   { icon: Brain, title: bi("Human-Gated Silent Learning (no model update without operator approval)", "Тихе самонавчання з людським контролем (без затвердження оператора модель не оновлюється)") },
   { icon: Building, title: bi("SABIR OrgRecon on 47 MinJust corporate schemas", "SABIR OrgRecon на 47 корпоративних схемах МінЮсту") },
   { icon: Camera, title: bi("Multimodal Evidence: ATM photo captures + audio interrogation transcripts", "Мультимодальні докази: фотофіксації банкоматів та стенограми аудіозаписів") },
-  { icon: Zap, title: bi("22 Behavioral Risk Transistors (16 FCE + 6 OrgRecon)", "22 поведінкові транзистори ризику (16 FCE + 6 OrgRecon)") },
+  { icon: Zap, title: bi("26 Behavioral Risk Transistors (16 FCE + 10 OrgRecon)", "26 поведінкових транзисторів ризику (16 FCE + 10 OrgRecon)") },
   { icon: Server, title: bi("100% air-gapped on-premise execution on a dedicated hardware appliance", "100% автономне локальне виконання на виділеному апаратному модулі") },
 ];
 
@@ -1186,8 +1186,8 @@ function TrustCenter() {
         </div>
         <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
           {t(bi(
-            "22 risk transistors · 6 coverage vectors · 47 MinJust schemas · 274 ➔ 0 PII leaks · 48-hour reality map · 0 cloud calls",
-            "22 транзистори ризику · 6 векторів покриття · 47 схем МінЮсту · 274 ➔ 0 витоків PII · карта реальності за 48 годин · 0 звернень до хмари"
+            "26 risk transistors · 6 coverage vectors · 47 MinJust schemas · 274 ➔ 0 PII leaks · 48-hour reality map · 0 cloud calls",
+            "26 транзисторів ризику · 6 векторів покриття · 47 схем МінЮсту · 274 ➔ 0 витоків PII · карта реальності за 48 годин · 0 звернень до хмари"
           ))}
         </div>
       </div>
