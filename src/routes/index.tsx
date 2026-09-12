@@ -5,7 +5,7 @@ import {
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
   Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Truck,
-  Camera, Brain, EyeOff, Building, Handshake, X, Check,
+  Camera, Brain, EyeOff, Building, Handshake, X, Check, Wheat,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
@@ -285,6 +285,18 @@ const audiences: { icon: any; title: Bi; question: Bi; body: Bi }[] = [
     body: bi(
       "Analyzes the entire chain of title and encumbrances. Detects hidden arrests, unclosed mortgages, marital dispute risks, and asset stripping. Generates a cryptographic Proof-of-Clearance.",
       "Аналізує весь ланцюг прав власності та обтяжень. Виявляє приховані арешти, незакриті застави, ризики позовів від колишнього подружжя та виведення активів. Генерує криптографічний Proof-of-Clearance."
+    ),
+  },
+  {
+    icon: Wheat,
+    title: bi("Agroholdings & Industrial Conglomerates (Asset & Regional Security)", "Агрохолдинги та Промислові Конгломерати (Земельний банк та Безпека)"),
+    question: bi(
+      "“Are regional directors leasing assets and moving grain behind your back?”",
+      "«Чи не здають регіональні директори активи та зерно за вашою спиною?»"
+    ),
+    body: bi(
+      "Validates thousands of land lease agreements (паї), grain elevator receipts, and machinery logs. Cross-checks fuel write-offs, unauthorized sub-leasing, duplicate land registrations, and kickback procurement networks across remote regional clusters — 100% air-gapped with zero leaks to competitors.",
+      "Верифікує тисячі договорів оренди земельних паїв, складських квитанцій елеваторів та дорожніх листів техніки. Виявляє списання палива, приховану суборенду, подвійну реєстрацію паїв та відкатні схеми постачання регіональних кластерів — 100% автономно без витоку даних конкурентам."
     ),
   },
 ];
