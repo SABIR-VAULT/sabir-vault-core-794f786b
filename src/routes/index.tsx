@@ -362,7 +362,7 @@ function PeriodicTable() {
     { n: "3", text: bi("primary colors → generate billions of digital images.", "базові кольори → створюють мільярди цифрових зображень.") },
     { n: "7", text: bi("musical notes → compose every symphony in human history.", "музичних нот → складають усі симфонії світу.") },
     { n: "118", text: bi("chemical elements → build all matter in the known universe.", "хімічних елементів → утворюють усю матерію Всесвіту.") },
-    { n: "22", text: bi("risk transistors → detect any corporate fraud scheme.", "транзистори ризику → виявляють будь-яку схему шахрайства.") },
+    { n: "26", text: bi("risk transistors → detect any corporate fraud scheme.", "транзисторів ризику → виявляють будь-яку схему шахрайства.") },
   ];
   return (
     <section className="relative border-y border-white/5 bg-[#0b0f19]">
