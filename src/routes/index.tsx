@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "SABIR VAULT — Corporate Forensics. It Just Works." },
-      { name: "description", content: "Air-gapped corporate forensics platform: 22 deterministic risk transistors, OrgRecon HR engine, multimodal evidence, and zero-leak DLP anonymizer. The archive goes in. The truth comes out." },
+      { name: "description", content: "Air-gapped corporate forensics platform: 26 deterministic risk transistors, OrgRecon HR engine, multimodal evidence, and zero-leak DLP anonymizer. The archive goes in. The truth comes out." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://sabirvault.com/" },
       { property: "og:title", content: "SABIR VAULT — Air-Gapped Corporate Forensics Platform" },
@@ -171,8 +171,8 @@ function Hero() {
           <ul className="mx-auto mt-8 max-w-3xl space-y-2.5 text-left">
             {[
               bi(
-                "22 behavioral transistors: each catches its own fraud atom — AML carousels, phantom carriers, ghost employees, and shadow influencers.",
-                "22 транзистори поведінки: кожен ловить свій атом шахрайства — AML-каруселі, фантомних перевізників, «мертвих душ» та тіньовий вплив."
+                "26 behavioral transistors: each catches its own fraud atom — AML carousels, phantom carriers, ghost employees, and shadow influencers.",
+                "26 транзисторів поведінки: кожен ловить свій атом шахрайства — AML-каруселі, фантомних перевізників, «мертвих душ» та тіньовий вплив."
               ),
               bi(
                 "6 coverage vectors: Legal, Financial, HR (OrgRecon), Supply Chain, Security, and Multimodal Evidence — zero blind spots.",
@@ -208,7 +208,7 @@ function Hero() {
           <div className="mt-14 flex flex-col items-center justify-center gap-2 text-center text-xs uppercase tracking-widest text-muted-foreground/70 sm:flex-row sm:gap-4">
             <span>{t(bi("Plug-and-Play", "Plug-and-Play"))}</span>
             <span className="hidden sm:inline">•</span>
-            <span>{t(bi("22 Behavioral Transistors", "22 транзистори поведінки"))}</span>
+            <span>{t(bi("26 Behavioral Transistors", "26 транзисторів поведінки"))}</span>
             <span className="hidden sm:inline">•</span>
             <span>{t(bi("6 Vectors", "6 векторів"))}</span>
             <span className="hidden sm:inline">•</span>
@@ -304,7 +304,7 @@ const comparisonRows: { legacy: Bi; sabir: Bi }[] = [
   },
   {
     legacy: bi("Weeks of manual, fatigue-prone spreadsheet reviews", "Тижні ручного вичитування паперів із людським фактором"),
-    sabir: bi("22 behavioral transistors verify cross-document math instantly", "22 транзистори миттєво перевіряють математику між документами"),
+    sabir: bi("26 behavioral transistors verify cross-document math instantly", "26 транзисторів миттєво перевіряють математику між документами"),
   },
   {
     legacy: bi("Final deliverable = a subjective consultant's opinion", "Результат = суб'єктивна «думка консультанта»"),
@@ -362,7 +362,7 @@ function PeriodicTable() {
     { n: "3", text: bi("primary colors → generate billions of digital images.", "базові кольори → створюють мільярди цифрових зображень.") },
     { n: "7", text: bi("musical notes → compose every symphony in human history.", "музичних нот → складають усі симфонії світу.") },
     { n: "118", text: bi("chemical elements → build all matter in the known universe.", "хімічних елементів → утворюють усю матерію Всесвіту.") },
-    { n: "22", text: bi("risk transistors → detect any corporate fraud scheme.", "транзистори ризику → виявляють будь-яку схему шахрайства.") },
+    { n: "26", text: bi("risk transistors → detect any corporate fraud scheme.", "транзисторів ризику → виявляють будь-яку схему шахрайства.") },
   ];
   return (
     <section className="relative border-y border-white/5 bg-[#0b0f19]">
@@ -410,8 +410,8 @@ const whatsNew: { icon: any; title: Bi; body: Bi }[] = [
     icon: Building,
     title: bi("\uD83C\uDFE2 SABIR OrgRecon Engine", "\uD83C\uDFE2 Двигун SABIR OrgRecon"),
     body: bi(
-      "6 specialized HR transistors detecting ghost employees, dual reporting, span-of-control bottlenecks, and shadow influencers.",
-      "6 спеціалізованих HR-транзисторів для виявлення «мертвих душ», подвійного підпорядкування, перевантаження менеджерів та тіньового впливу."
+      "10 HR risk transistors (6 structural + 4 court-grade): ghost employees, dual reporting, span-of-control, shadow influencers, plus alibi contradiction (50V), pressure campaign (35V), reward anomaly (30V), protocol quorum gap (20V).",
+      "10 HR-транзисторів ризику (6 структурних + 4 судового рівня): «мертві душі», подвійне підпорядкування, перевантаження керівників, тіньовий вплив, а також протиріччя алібі (50V), кампанія тиску (35V), аномалія винагороди (30V), розрив кворуму протоколу (20V)."
     ),
   },
   {
@@ -475,8 +475,8 @@ const forensicPillars: { icon: any; title: Bi; body: Bi }[] = [
     icon: UsersRound,
     title: bi("\uD83D\uDC65 HR & OrgRecon", "\uD83D\uDC65 Кадри та OrgRecon"),
     body: bi(
-      "Evidence-based org reconstruction, ghost employees, dual reporting lines, functional duplication, and span-of-control bottlenecks.",
-      "Документальна реконструкція оргструктури, «мертві душі», подвійне підпорядкування, дублювання функцій та перевантаження менеджерів."
+      "Evidence-based org reconstruction, ghost employees, dual reporting lines, functional duplication, and span-of-control bottlenecks — plus 4 court-grade detectors: alibi contradiction, pressure campaign, reward anomaly, protocol quorum gap.",
+      "Документальна реконструкція оргструктури, «мертві душі», подвійне підпорядкування, дублювання функцій та перевантаження менеджерів — плюс 4 детектори судового рівня: протиріччя алібі, кампанія тиску, аномалія винагороди, розрив кворуму протоколу."
     ),
   },
   {
@@ -544,6 +544,7 @@ function LiveCaseStudy() {
     bi('🚛 240 km/h “truck”', "🚛 240 км/год «фура»"),
     bi("💰 6M UAH 3-way matching gap", "💰 розрив 3-Way Matching 6 млн грн"),
     bi("🔒 274 ➔ 0 PII leaks after anonymization", "🔒 274 ➔ 0 витоків PII після анонімізації"),
+    bi("🏛️ Court-grade findings: alibi contradiction + pressure campaign + reward anomaly", "🏛️ Висновки судового рівня: протиріччя алібі + кампанія тиску + аномалія винагороди"),
   ];
 
   return (
@@ -586,8 +587,8 @@ function Introduction() {
       <div className="glass mt-8 rounded-2xl p-8 md:p-10">
         <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
           {t(bi(
-            "An air-gapped hardware-and-software appliance for corporate forensics. You plug it in, load the archive, and get a reality map in 48 hours. Inside, 22 deterministic behavioral risk transistors decompose any scheme into its fundamental fraud atoms across six vectors — legal, financial, HR, supply chain, security, and multimodal evidence. No cloud, no consulting army, no onboarding marathon.",
-            "Автономний програмно-апаратний комплекс для корпоративного форензіка. Ви підключаєте його, завантажуєте архів і за 48 годин отримуєте карту реальності. Усередині — 22 детерміновані поведінкові транзистори ризику, що розкладають будь-яку схему на фундаментальні атоми шахрайства за шістьма векторами: юридичним, фінансовим, кадровим, логістичним, безпековим і мультимодальним. Без хмари, без армії консультантів, без місяців впровадження."
+            "An air-gapped hardware-and-software appliance for corporate forensics. You plug it in, load the archive, and get a reality map in 48 hours. Inside, 26 deterministic behavioral risk transistors decompose any scheme into its fundamental fraud atoms across six vectors — legal, financial, HR, supply chain, security, and multimodal evidence. No cloud, no consulting army, no onboarding marathon.",
+            "Автономний програмно-апаратний комплекс для корпоративного форензіка. Ви підключаєте його, завантажуєте архів і за 48 годин отримуєте карту реальності. Усередині — 26 детермінованих поведінкових транзисторів ризику, що розкладають будь-яку схему на фундаментальні атоми шахрайства за шістьма векторами: юридичним, фінансовим, кадровим, логістичним, безпековим і мультимодальним. Без хмари, без армії консультантів, без місяців впровадження."
           ))}
         </p>
       </div>
@@ -707,8 +708,8 @@ function Roi() {
       </div>
       <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
         {t(bi(
-          "214 automated regression tests · 22 risk transistors (16 FCE + 6 OrgRecon) · 7 fraud archetypes · 40+ forensic modules",
-          "214 автоматизованих регрес-тестів · 22 транзистори ризику (16 FCE + 6 OrgRecon) · 7 архетипів шахрайства · 40+ форензик-модулів"
+          "214 automated regression tests · 26 risk transistors (16 FCE + 10 OrgRecon) · 7 fraud archetypes · 40+ forensic modules",
+          "214 автоматизованих регрес-тестів · 26 транзисторів ризику (16 FCE + 10 OrgRecon) · 7 архетипів шахрайства · 40+ форензик-модулів"
         ))}
       </div>
     </section>
@@ -1010,8 +1011,8 @@ const solutions: SolutionDef[] = [
     eyebrow: bi("HR Forensics & Org Design", "HR-форензік та оргдизайн"),
     title: bi("SABIR OrgRecon — Evidence-Based Org Reconstruction", "SABIR OrgRecon — документальна реконструкція оргструктури"),
     body: bi(
-      "Rebuilds the real organizational structure from orders, payroll records, proxies and 47 MinJust corporate schemas — then runs 6 dedicated HR risk transistors over it.",
-      "Відновлює реальну оргструктуру з наказів, зарплатних відомостей, довіреностей та 47 корпоративних схем МінЮсту — і проганяє її через 6 спеціалізованих HR-транзисторів ризику."
+      "Rebuilds the real organizational structure from orders, payroll records, proxies and 47 MinJust corporate schemas — then runs 10 HR risk transistors over it, including 4 court-grade detectors that produce admissible evidence.",
+      "Відновлює реальну оргструктуру з наказів, зарплатних відомостей, довіреностей та 47 корпоративних схем МінЮсту — і проганяє її через 10 HR-транзисторів ризику, зокрема 4 детектори судового рівня, що дають прийнятні докази."
     ),
     bullets: [
       bi("Ghost employees and payroll anomalies detected against documentary evidence.", "«Мертві душі» та аномалії фонду оплати праці, підтверджені документами."),
@@ -1160,7 +1161,7 @@ const trustItems: { icon: any; title: Bi }[] = [
   { icon: Brain, title: bi("Human-Gated Silent Learning (no model update without operator approval)", "Тихе самонавчання з людським контролем (без затвердження оператора модель не оновлюється)") },
   { icon: Building, title: bi("SABIR OrgRecon on 47 MinJust corporate schemas", "SABIR OrgRecon на 47 корпоративних схемах МінЮсту") },
   { icon: Camera, title: bi("Multimodal Evidence: ATM photo captures + audio interrogation transcripts", "Мультимодальні докази: фотофіксації банкоматів та стенограми аудіозаписів") },
-  { icon: Zap, title: bi("22 Behavioral Risk Transistors (16 FCE + 6 OrgRecon)", "22 поведінкові транзистори ризику (16 FCE + 6 OrgRecon)") },
+  { icon: Zap, title: bi("26 Behavioral Risk Transistors (16 FCE + 10 OrgRecon)", "26 поведінкових транзисторів ризику (16 FCE + 10 OrgRecon)") },
   { icon: Server, title: bi("100% air-gapped on-premise execution on a dedicated hardware appliance", "100% автономне локальне виконання на виділеному апаратному модулі") },
 ];
 
@@ -1185,8 +1186,8 @@ function TrustCenter() {
         </div>
         <div className="glass mt-4 rounded-2xl p-5 text-center text-sm font-semibold leading-relaxed text-white">
           {t(bi(
-            "22 risk transistors · 6 coverage vectors · 47 MinJust schemas · 274 ➔ 0 PII leaks · 48-hour reality map · 0 cloud calls",
-            "22 транзистори ризику · 6 векторів покриття · 47 схем МінЮсту · 274 ➔ 0 витоків PII · карта реальності за 48 годин · 0 звернень до хмари"
+            "26 risk transistors · 6 coverage vectors · 47 MinJust schemas · 274 ➔ 0 PII leaks · 48-hour reality map · 0 cloud calls",
+            "26 транзисторів ризику · 6 векторів покриття · 47 схем МінЮсту · 274 ➔ 0 витоків PII · карта реальності за 48 годин · 0 звернень до хмари"
           ))}
         </div>
       </div>
