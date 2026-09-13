@@ -1,19 +1,52 @@
+# SABIR VAULT robots.txt
+# Air-gapped corporate forensics platform — sabirvault.com
+
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /app/
+Disallow: /.well-known/
 
-# Allow AI Search Engines for Generative Optimization (GEO)
+# ─── AI Search Engines (GEO / Generative Optimization) ───
+# ChatGPT training
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT Search (live answers in chat)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude
 User-agent: ClaudeBot
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# Google AI Overviews / Gemini
 User-agent: Google-Extended
 Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# ─── Social Media (OG previews on share) ───
+User-agent: facebookexternal-hit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ─── Block training scrapers (opt-out from datasets) ───
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
 
 Sitemap: https://sabirvault.com/sitemap.xml
