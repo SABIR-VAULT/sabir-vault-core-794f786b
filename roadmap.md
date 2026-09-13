@@ -16,3 +16,10 @@
 - [x] SEO / meta tags (EN; route head metadata is static so UA meta not localized)
 - [x] Footer build chip v7.5-hybrid
 - [x] QA: no "стовп", no "забалансові", no "Fortune 500", no mobile overflow
+
+## Founder’s Note and social identity
+- [ ] Import founder portrait as a CDN asset
+- [ ] Add bilingual Founder’s Note before Trust Center
+- [ ] Add Person, Organization, and WebSite structured data
+- [ ] Correct GitHub link and add LinkedIn link
+- [ ] Validate language switching, section order, structured data, and responsive layout
