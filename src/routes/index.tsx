@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
               name: "Sabir Dushayev",
               alternateName: ["Sabir Dushaev", "Sobir Dushayev", "Сабір Душаєв", "Собір Душаєв"],
               jobTitle: "Founder & Lead Architect",
-              image: "https://sabirvault.com/assets/sabir-dushayev-founder.jpg",
+              image: "https://sabirvault.com/__l5e/assets-v1/e53dd441-561b-4aa1-a4a0-f92baf12b16a/sabir-dushayev-founder.jpg",
               url: "https://sabirvault.com",
               sameAs: ["https://www.linkedin.com/in/sabirvault/"],
               worksFor: { "@id": "https://sabirvault.com/#organization" },
