@@ -5,6 +5,7 @@ import { useLang, bi, type Bi } from "@/lib/i18n";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Privacy Policy — SABIR VAULT" },
       { name: "description", content: "How SABIR VAULT collects, processes, and protects personal data submitted through enterprise inquiry forms." },
       { property: "og:title", content: "Privacy Policy — SABIR VAULT" },
