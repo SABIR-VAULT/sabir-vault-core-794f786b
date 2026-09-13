@@ -5,11 +5,12 @@ import {
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
   Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Truck,
-  Camera, Brain, EyeOff, Building, Handshake, X, Check, Wheat,
+  Camera, Brain, EyeOff, Building, Handshake, X, Check, Wheat, Linkedin,
 } from "lucide-react";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
 import { useLang, bi, type Bi } from "@/lib/i18n";
+import founderPortrait from "@/assets/sabir-dushayev-founder.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +26,46 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: "Transform unstructured archives into mathematically verified graphs of legal risks, financial flows, org structures, supply chains, and multimodal evidence in 48 hours." },
     ],
     links: [{ rel: "canonical", href: "https://sabirvault.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://sabirvault.com/#founder",
+              name: "Sabir Dushayev",
+              alternateName: ["Sabir Dushaev", "Sobir Dushayev", "Сабір Душаєв", "Собір Душаєв"],
+              jobTitle: "Founder & Lead Architect",
+              image: "https://sabirvault.com/assets/sabir-dushayev-founder.jpg",
+              url: "https://sabirvault.com",
+              sameAs: ["https://www.linkedin.com/in/sabirvault/"],
+              worksFor: { "@id": "https://sabirvault.com/#organization" },
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://sabirvault.com/#organization",
+              name: "SABIR VAULT",
+              url: "https://sabirvault.com",
+              logo: "https://sabirvault.com/favicon.ico",
+              email: "contact@sabirvault.com",
+              description: "Autonomous air-gapped corporate forensics and document intelligence platform.",
+              founder: { "@id": "https://sabirvault.com/#founder" },
+              sameAs: ["https://github.com/SABIR-VAULT"],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://sabirvault.com/#website",
+              url: "https://sabirvault.com",
+              name: "SABIR VAULT — Corporate Forensics. It Just Works.",
+              inLanguage: ["en", "uk"],
+              publisher: { "@id": "https://sabirvault.com/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Landing,
 });
@@ -47,6 +88,7 @@ function Landing() {
       <Deliverables />
       <Solutions />
       <Deployment />
+      <FoundersNote />
       <TrustCenter />
       <Partnership />
       <Disclaimer />
@@ -1155,6 +1197,87 @@ function DeployCard({ icon: Icon, title, body, tag, highlight, model, ctaLabel }
 
 
 /* ============================================================ */
+/* FOUNDER'S NOTE                                                */
+/* ============================================================ */
+
+function FoundersNote() {
+  const { t } = useLang();
+  return (
+    <section className="relative overflow-hidden">
+      <div className="pointer-events-none absolute left-[8%] top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#38bdf8]/[0.06] blur-3xl" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid items-center gap-12 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.5fr)] md:gap-16">
+          <div className="mx-auto w-full max-w-sm">
+            <div className="glass group aspect-[4/5] overflow-hidden rounded-2xl border-slate-800/80 shadow-2xl shadow-black/30">
+              <img
+                src={founderPortrait.url}
+                alt={t(bi(
+                  "Sabir Dushayev — Founder & Lead Systems Architect of SABIR VAULT",
+                  "Сабір Душаєв — засновник та головний архітектор SABIR VAULT"
+                ))}
+                width="512"
+                height="640"
+                loading="lazy"
+                className="h-full w-full object-cover grayscale contrast-125 transition duration-500 group-hover:grayscale-0"
+              />
+            </div>
+          </div>
+
+          <div className="relative min-w-0">
+            <div className="inline-flex items-center rounded-full border border-[#38bdf8]/30 bg-[#38bdf8]/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#38bdf8]">
+              {t(bi("Founder's Note", "Слово засновника"))}
+            </div>
+            <h2 className="mt-6 text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
+              {t(bi(
+                "Deterministic Truth Over Probabilistic Guesses.",
+                "Детермінована правда замість ймовірнісних здогадок."
+              ))}
+            </h2>
+            <div aria-hidden="true" className="pointer-events-none absolute -left-3 top-20 select-none font-serif text-[9rem] leading-none text-[#38bdf8]/10 md:-left-10 md:top-16 md:text-[12rem]">
+              “
+            </div>
+            <blockquote className="relative mt-8 space-y-6 font-serif text-xl leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
+              <p>
+                {t(bi(
+                  "“Corporate intelligence and forensics cannot tolerate two things: cloud leaks and neural network hallucinations. When multi-million-dollar assets or judicial evidence are at stake, you cannot upload sensitive archives to third-party clouds or rely on probabilistic chatbot approximations.”",
+                  "«Корпоративна розвідка та форензік не терплять двох речей: хмарних витоків і нейромережевих фантазій. Коли на кону стоять мільйонні активи або доказова база для суду, ви не можете дозволити собі завантажувати архіви на чужі сервери чи вірити здогадкам чат-ботів.»"
+                ))}
+              </p>
+              <p>
+                {t(bi(
+                  "“We built SABIR VAULT on an uncompromising philosophy: ",
+                  "«Ми створили SABIR VAULT із чіткою філософією: "
+                ))}
+                <span className="text-[#38bdf8] [text-shadow:0_0_20px_rgba(56,189,248,0.22)]">
+                  {t(bi(
+                    "100% data sovereignty within your perimeter and sterile, deterministic truth",
+                    "100% суверенітет даних усередині вашого периметру та стерильна детермінована правда"
+                  ))}
+                </span>
+                {t(bi(
+                  ". The engine pinpoints risk atoms where others only see stacks of paper, but the ultimate strategic control and decisions always remain in your hands.”",
+                  ". Система виявляє осередки ризику там, де інші бачать лише стопку паперів, але остаточний контроль і стратегічні рішення завжди залишаються за вами.»"
+                ))}
+              </p>
+            </blockquote>
+            <div className="mt-9 border-l-2 border-[#38bdf8]/50 pl-5">
+              <div className="font-semibold text-white">{t(bi("Sabir Dushayev", "Сабір Душаєв"))}</div>
+              <div className="mt-1 text-sm text-slate-400">
+                {t(bi("Founder & Lead Systems Architect, SABIR VAULT", "Засновник та головний архітектор SABIR VAULT"))}
+              </div>
+              <div className="mt-2 text-xs italic text-slate-500">
+                {t(bi("(Officially registered: Sobir Dushayev)", "(Офіційно за документами: Собір Душаєв)"))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+/* ============================================================ */
 /* TRUST CENTER                                                  */
 /* ============================================================ */
 
@@ -1289,9 +1412,14 @@ function Footer() {
             <Mail className="h-3.5 w-3.5" /> contact@sabirvault.com
           </a>
           
-          {/* GitHub Docs */}
-          <a href="https://github.com/SABIR-VAULT/sabirvault-docs" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white transition">
+          {/* GitHub */}
+          <a href="https://github.com/SABIR-VAULT" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white transition">
             <Github className="h-3.5 w-3.5" /> GitHub
+          </a>
+
+          {/* LinkedIn */}
+          <a href="https://www.linkedin.com/in/sabirvault/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white transition">
+            <Linkedin className="h-3.5 w-3.5" /> LinkedIn
           </a>
           
           {/* Privacy Policy */}
