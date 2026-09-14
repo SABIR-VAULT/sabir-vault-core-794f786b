@@ -18,8 +18,8 @@
 - [x] QA: no "стовп", no "забалансові", no "Fortune 500", no mobile overflow
 
 ## Founder’s Note and social identity
-- [ ] Import founder portrait as a CDN asset
-- [ ] Add bilingual Founder’s Note before Trust Center
-- [ ] Add Person, Organization, and WebSite structured data
-- [ ] Correct GitHub link and add LinkedIn link
-- [ ] Validate language switching, section order, structured data, and responsive layout
+- [x] Import founder portrait as a CDN asset
+- [x] Add bilingual Founder’s Note before Trust Center
+- [x] Add Person, Organization, and WebSite structured data
+- [x] Correct GitHub link and add LinkedIn link
+- [x] Validate language switching, section order, structured data, and responsive layout

@@ -1217,7 +1217,7 @@ function FoundersNote() {
                 ))}
                 width="512"
                 height="640"
-                loading="lazy"
+                loading="eager"
                 className="h-full w-full object-cover grayscale contrast-125 transition duration-500 group-hover:grayscale-0"
               />
             </div>
