@@ -5,8 +5,10 @@ import {
   CheckCircle2, Download, Github, Mail, ShieldAlert, Zap, KeyRound,
   FileSearch, GitBranch, Network, ScrollText, Landmark, Bug, Fingerprint,
   Boxes, Database, Scale, Calculator, Presentation, Bot, Globe, Puzzle, Truck,
-  Camera, Brain, EyeOff, Building, Handshake, X, Check, Wheat, Linkedin,
+  Camera, Brain, EyeOff, Building, Handshake, X, Check, Wheat, Linkedin, ChevronDown, Menu,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useContactDialog } from "@/components/ContactDialog";
 import { useSolutionDialog, type SolutionDef } from "@/components/SolutionDialog";
 import { useLang, bi, type Bi } from "@/lib/i18n";
@@ -138,11 +140,12 @@ function Nav() {
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
           <a href="#pillars" className="hover:text-white transition">{t(bi("Platform", "Платформа"))}</a>
           <a href="#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
-          <a href="#solutions" className="hover:text-white transition">{t(bi("Solutions", "Рішення"))}</a>
+          <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="gap-1 text-muted-foreground hover:text-foreground">{t(bi("Solutions", "Рішення"))}<ChevronDown size={14}/></Button></DropdownMenuTrigger><DropdownMenuContent align="start" className="w-72"><DropdownMenuItem asChild><a href="#solutions">{t(bi("All Solutions", "Усі рішення"))}</a></DropdownMenuItem><DropdownMenuItem asChild><Link to="/memory">{t(bi("Corporate Memory & Team Integrity", "Пам'ять компанії та аудит команди"))}</Link></DropdownMenuItem></DropdownMenuContent></DropdownMenu>
           <Link to="/security-service" className="hover:text-white transition">{t(bi("For Security Service", "Для СБ"))}</Link>
           <a href="#deployment" className="hover:text-white transition">{t(bi("Engagement", "Співпраця"))}</a>
         </nav>
         <div className="flex items-center gap-3">
+          <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" size="icon" className="md:hidden" aria-label={t(bi("Open navigation", "Відкрити навігацію"))}><Menu size={18}/></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuItem asChild><a href="#solutions">{t(bi("Solutions", "Рішення"))}</a></DropdownMenuItem><DropdownMenuItem asChild><Link to="/memory">{t(bi("Corporate Memory & Team Integrity", "Пам'ять компанії та аудит команди"))}</Link></DropdownMenuItem><DropdownMenuItem asChild><Link to="/security-service">{t(bi("For Security Service", "Для СБ"))}</Link></DropdownMenuItem></DropdownMenuContent></DropdownMenu>
           <LangSwitcher />
           <QuoteButton
             title={undefined}
