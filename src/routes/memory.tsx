@@ -1,0 +1,94 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Activity, ArrowRight, ChevronDown, Clock3, Database, FileCheck2, FileClock, FileSearch, Fingerprint, GitBranch, HardDrive, LockKeyhole, Network, ScanEye, Server, ShieldCheck, TrendingUp, UserRoundCheck, UsersRound, Waypoints } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { useContactDialog } from "@/components/ContactDialog";
+import { bi, useLang, type Bi } from "@/lib/i18n";
+
+export const Route = createFileRoute("/memory")({
+  head: () => ({
+    meta: [
+      { title: "Corporate Memory & Insider Risk | SABIR VAULT" },
+      { name: "description", content: "Explore SABIR VAULT's air-gapped corporate memory appliance, 9 employee risk detectors, and 14-day on-premise evaluation." },
+      { property: "og:title", content: "Corporate Memory & Insider Risk | SABIR VAULT" },
+      { property: "og:description", content: "Sovereign process mining and insider risk intelligence from company-owned documents, entirely on-premise." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://sabirvault.com/memory" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://sabirvault.com/memory" }],
+  }),
+  component: MemoryPage,
+});
+
+const pains = [
+  {
+    icon: UsersRound,
+    title: bi('The "Feudal" Employee Trap', "Пастка «співробітника-феодала»"),
+    text: bi("Key procurement or sales managers hold pricing, unwritten rules, and client relationships in their heads, creating operational blackmail and salary manipulation. Passive Knowledge Mining reconstructs their exact business algorithms from historical primary documents into an immutable Knowledge Graph.", "Менеджери тримають спец-умови, негласні правила та зв'язки в голові, шантажуючи бізнес своєю незамінністю. Пасивний аудит відновлює їхні точні алгоритми та приховані знижки з первинних документів у незмінний Граф Знань."),
+  },
+  {
+    icon: Waypoints,
+    title: bi("Hidden Kickbacks & Process Bypass", "Приховані відкати та обхід регламентів"),
+    text: bi("Preferential discounts to unrated vendors, approvals conducted in off-hours, and required sign-off steps bypassed manually. 9 discrete T_EMP behavioral transistors calculate individual Risk Voltage per employee with mathematical proof.", "Преференційні знижки пов'язаним компаніям, проведення угод уночі та ручний обхід закриваючих актів. 9 дискретних транзисторів T_EMP розраховують персональну напругу ризику для кожного співробітника з математичним доказом."),
+  },
+  {
+    icon: Database,
+    title: bi("Mass Database Extraction on Departure", "Масове викачування бази перед звільненням"),
+    text: bi("Key personnel downloading client dossiers and pricing templates 2 weeks before resigning to join competitors. Real-time batch anomaly alerts highlight abnormal extraction spikes (>5x daily average) instantly.", "Співробітник зливає клієнтську базу та шаблони цін за 2 тижні до переходу до конкурентів. Алгоритми виявляють аномальні сплески вивантажень (>5x від денної норми за 15 хвилин) миттєво."),
+  },
+];
+
+const transistors = [
+  { icon: Clock3, label: bi("Off-Hours Activity (22:00–06:00 & weekend file manipulation)", "Нічна активність (маніпуляції з файлами о 22:00–06:00 та у вихідні)") },
+  { icon: FileCheck2, label: bi("Process Bypass (Payments made without signed acceptance acts)", "Обхід регламенту (оплата без закриваючого акта)") },
+  { icon: TrendingUp, label: bi("Non-Standard Terms (Discounts >20% deviating from personal median)", "Нетипові умови (знижки >20% з відхиленням від власної норми)") },
+  { icon: UserRoundCheck, label: bi("Single-Handler Monopoly (100% vendor concentration on one person)", "Монополія на клієнта (100% угод контрагента замкнуті на одного менеджера)") },
+  { icon: Fingerprint, label: bi("Author/Device Spoofing (External laptops, pirate editors, unverified users)", "Підміна автора (робота зі сторонніх пристроїв, піратські редактори)") },
+  { icon: GitBranch, label: bi("DNA Version Alteration (Silent IBAN/amount edits under same Doc_GUID)", "Підміна ДНК документу (тиха зміна реквізитів або суми без дод. угоди)") },
+  { icon: Database, label: bi("Mass Extraction (Sudden 5x database scraping before resignation)", "Масова викачка бази (сплеск у 5+ разів за 15 хв перед звільненням)") },
+  { icon: FileClock, label: bi("SLA Dangling (Projects frozen in Pending >14 days without reason)", "Зависання проектів (штучна заморозка понад 14 днів, тихий саботаж)") },
+  { icon: Network, label: bi("Affiliated Routing (Bilateral micro-collusion between specific peers)", "Кругова змова (перенаправлення візування завжди своєму колезі)") },
+];
+
+function SectionHeading({ eyebrow, title }: { eyebrow: Bi; title: Bi }) {
+  const { t } = useLang();
+  return <div><p className="text-xs font-semibold uppercase tracking-widest text-primary">{t(eyebrow)}</p><h2 className="mt-4 max-w-3xl font-semibold text-3xl text-foreground md:text-4xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>{t(title)}</h2></div>;
+}
+
+function MemoryPage() {
+  const { lang, setLang, t } = useLang();
+  const { open } = useContactDialog();
+  const [selected, setSelected] = useState(0);
+  const pilot = () => open({ model: "pilot", title: t(bi("14-Day Free On-Premise Evaluation — Corporate Memory", "14-денний безкоштовний локальний тест — Пам'ять компанії")) });
+  return <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-6">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5"><span className="grid size-8 shrink-0 place-items-center rounded-md bg-gradient-to-br from-primary to-gold"><span className="size-3 rounded-sm bg-background" /></span><span className="min-w-0"><span className="block text-sm font-semibold text-foreground">SABIR VAULT</span><span className="block text-[9px] uppercase text-muted-foreground">Digital Dossiers</span></span></Link>
+        <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+          <Link to="/" className="hover:text-foreground">{t(bi("Platform", "Платформа"))}</Link>
+          <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="gap-1 text-muted-foreground hover:text-foreground">{t(bi("Solutions", "Рішення"))}<ChevronDown size={14}/></Button></DropdownMenuTrigger><DropdownMenuContent align="start" className="w-72"><DropdownMenuItem asChild><Link to="/memory">{t(bi("Corporate Memory & Team Integrity", "Пам'ять компанії та аудит команди"))}</Link></DropdownMenuItem><DropdownMenuItem asChild><Link to="/security-service">{t(bi("For Security Service", "Для СБ"))}</Link></DropdownMenuItem></DropdownMenuContent></DropdownMenu>
+          <Link to="/whitepaper" className="hover:text-foreground">{t(bi("White Paper", "Верифікація"))}</Link>
+        </nav>
+        <div className="flex shrink-0 items-center gap-2"><div className="inline-flex overflow-hidden rounded-md border border-border">{(["en", "ua"] as const).map(code => <Button key={code} type="button" variant="ghost" size="sm" aria-pressed={lang === code} onClick={() => setLang(code)} className={`rounded-none px-2.5 uppercase ${lang === code ? "bg-primary/15 text-primary" : "text-muted-foreground"}`}>{code}</Button>)}</div><Button onClick={pilot} size="sm" className="hidden sm:inline-flex">{t(bi("Start Pilot", "Запустити тест"))}</Button></div>
+      </div>
+    </header>
+    <main>
+      <section className="relative overflow-hidden border-b border-border"><div className="absolute inset-0 grid-bg opacity-40"/><div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32"><div className="max-w-5xl animate-rise"><p className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary">{t(bi("Sovereign Process Mining & Insider Risk Appliance", "Суверенний апаратний комплекс аудиту процесів та цифрового сліду"))}</p><h1 className="mt-8 max-w-5xl text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>{t(bi('Eliminate the Monopoly of "Irreplaceable" Employees. ', 'Ліквідуйте монополію «незамінних» співробітників. '))}<span className="text-primary">{t(bi("Your Company’s Memory, Fully Sovereign.", "Пам'ять компанії — під вашим повним суверенітетом."))}</span></h1><p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{t(bi("What happens if the key manager holding all operational knowledge leaves tomorrow? SABIR VAULT decodes 1,000+ historical contracts, invoices, and approvals to reconstruct an unassailable Knowledge Graph and 9-bit risk signatures — locally in 48 hours without installing spyware. (Scalable to 10,000+ files via Mac Studio or dedicated GPU stations).", "Що буде, якщо ключовий менеджер, на якому тримаються процеси, піде завтра? SABIR VAULT оцифровує 1 000+ контрактів, накладних та віз, відновлюючи непохитний Граф Знань та 9-бітні профілі ризику — локально за 48 годин без шпигунських програм. (Масштабується до 10 000+ документів на станціях Mac Studio або GPU-серверах)."))}</p><div className="mt-9 flex flex-wrap gap-3"><Button onClick={pilot} size="lg" className="h-auto min-h-12 whitespace-normal px-5 py-3 text-left">{t(bi("Start 14-Day On-Premise Pilot", "Замовити 14-денний локальний тест"))}<ArrowRight /></Button><Button asChild variant="outline" size="lg" className="h-auto min-h-12 whitespace-normal border-border bg-card/50 px-5 py-3"><a href="#transistors">{t(bi("Explore 9 T_EMP Transistors", "Дослідити 9 транзисторів T_EMP"))}</a></Button></div></div></div></section>
+      <section className="mx-auto max-w-7xl px-6 py-24"><SectionHeading eyebrow={bi("The challenge", "Проблема")} title={bi("What institutional memory really protects.", "Що насправді захищає пам'ять компанії.")}/><div className="mt-12 grid gap-5 md:grid-cols-3">{pains.map((p,i)=><article key={i} className="glass glass-hover rounded-lg p-7"><div className="grid size-11 place-items-center rounded-full border border-primary/20 bg-primary/10 text-primary"><p.icon size={19} strokeWidth={1.5}/></div><h3 className="mt-6 text-lg font-semibold text-foreground">{t(p.title)}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(p.text)}</p></article>)}</div></section>
+      <section className="border-y border-border bg-card/30"><div className="mx-auto max-w-7xl px-6 py-24"><SectionHeading eyebrow={bi("Live forensic dossier", "Живе форензик-досьє")} title={bi("Personal Team X-Ray (Risk Voltage Rating)", "Персональний рентген команди (Рейтинг напруги ризику)")}/><div className="mt-10 grid gap-4 sm:grid-cols-3">{[["0",bi("CRITICAL RISK", "КРИТИЧНИЙ РИЗИК"),"text-destructive"],["2",bi("WATCHLIST (HIGH)", "УВАГА (ЗОНА ПІДОЗРИ)"),"text-gold"],["3",bi("BASELINE STANDARD", "ЕТАЛОННИЙ СТАНДАРТ"),"text-emerald-400"]].map(([n,label,color],i)=><div key={i} className="glass rounded-lg px-5 py-4"><div className={`text-3xl font-semibold ${color}`}>{n as string}</div><div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{t(label as Bi)}</div></div>)}</div><div className="mt-6 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">{[
+        { name: bi("Oleksiy (Procurement Lead)", "Олексій (Закупник)"), badge: bi("45.0 V · HIGH RISK", "45.0 V · ВИСОКИЙ РИЗИК"), detail: bi("Detected Anomaly: T_EMP_01 (Night activity 23:45) · T_EMP_03 (25% discount to unrated vendor) · T_EMP_04 (100% single-handler monopoly on counterparty).", "Виявлені аномалії: T_EMP_01 (Нічна активність 23:45) · T_EMP_03 (Знижка 25% без погодження) · T_EMP_04 (Монополія 100% угод на одну особу)."), tone: "border-gold/40 text-gold" },
+        { name: bi("Ivan (Commercial Director)", "Іван (Комерційний директор)"), badge: bi("5.0 V · BASELINE NORMAL", "5.0 V · ЕТАЛОННА НОРМА"), detail: bi("Digital signature fully complies with legitimate corporate standards over 24 months.", "Цифровий слід повністю відповідає легітимному корпоративному стандарту за 24 місяці."), tone: "border-emerald-500/40 text-emerald-400" },
+      ].map((employee,i)=><Button key={i} variant="ghost" onClick={()=>setSelected(i)} aria-pressed={selected===i} className={`glass h-auto min-w-0 flex-col items-start whitespace-normal rounded-lg border p-6 text-left hover:bg-primary/5 ${selected===i ? employee.tone : "border-border text-foreground"}`}><span className="flex w-full flex-wrap items-center justify-between gap-3"><span className="font-semibold text-foreground">{t(employee.name)}</span><span className={`rounded-full border px-2.5 py-1 text-xs ${employee.tone}`}>{t(employee.badge)}</span></span><span className="mt-4 text-sm font-normal leading-relaxed text-muted-foreground">{t(employee.detail)}</span></Button>)}</div><p className="mt-5 text-xs text-muted-foreground">{t(bi("Illustrative dossier · Select an employee to inspect their risk signature", "Ілюстративне досьє · Оберіть працівника, щоб переглянути профіль ризику"))}</p><div className="mt-3 flex items-center gap-3 border-t border-border pt-5"><Activity size={19} className="shrink-0 text-primary"/><span className="text-sm text-foreground">{selected===0 ? t(bi("3 evidence-linked anomalies in Oleksiy’s signature", "3 аномалії з доказами у профілі Олексія")) : t(bi("No anomalous signals in Ivan’s 24-month signature", "У 24-місячному профілі Івана аномалій немає"))}</span></div></div></section>
+      <section id="transistors" className="mx-auto max-w-7xl scroll-mt-20 px-6 py-24"><SectionHeading eyebrow={bi("9 behavioral detectors", "9 поведінкових детекторів")} title={bi("The T_EMP transistor matrix.", "Матриця транзисторів T_EMP.")}/><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{transistors.map((item,i)=><article key={i} className="glass glass-hover flex min-w-0 gap-4 rounded-lg p-5"><div className="grid size-10 shrink-0 place-items-center rounded-full border border-primary/20 bg-primary/10 text-primary"><item.icon size={18} strokeWidth={1.5}/></div><div className="min-w-0"><p className="text-xs font-semibold tracking-widest text-primary">T_EMP_{String(i+1).padStart(2,"0")}</p><h3 className="mt-2 text-sm font-medium leading-relaxed text-foreground">{t(item.label)}</h3></div></article>)}</div></section>
+      <section className="border-y border-border bg-card/30"><div className="mx-auto max-w-7xl px-6 py-24"><SectionHeading eyebrow={bi("100% legal & on-premise", "100% законно та локально")} title={bi("Intelligence without surveillance.", "Аналітика без стеження.")}/><div className="mt-12 grid gap-5 md:grid-cols-3">{[
+        { icon: ScanEye, heading: bi("Zero Spyware", "Без шпигунських програм"), body: bi("No keyloggers, screen recording, or employee mic surveillance.", "Жодних кейлогерів, записів екрана чи стеження через мікрофони.") },
+        { icon: FileSearch, heading: bi("Evidence-First", "Спочатку докази"), body: bi("Analyzes only official historical document artifacts owned by the company.", "Аналіз суто офіційних корпоративних документів компанії.") },
+        { icon: Server, heading: bi("Scalable Execution", "Масштабована обробка"), body: bi("Analyzes 1,000 documents in 48h on a standard Mac Mini. Scales processing speed up to 10x when deployed on dedicated Mac Studio or private GPU nodes. Zero cloud dependencies.", "Обробка 1 000 документів за 48 годин на базовому Mac Mini. Прискорює обробку до 10 разів при розгортанні на Mac Studio чи автономних GPU-серверах. Нуль залежностей від хмари.") },
+      ].map((item,i)=><article key={i} className="glass rounded-lg p-7"><div className="grid size-11 place-items-center rounded-full border border-primary/20 bg-primary/10 text-primary"><item.icon size={19} strokeWidth={1.5}/></div><h3 className="mt-5 text-lg font-semibold text-foreground">{t(item.heading)}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(item.body)}</p></article>)}</div></div></section>
+      <section className="mx-auto max-w-7xl px-6 py-24 md:py-32"><div className="max-w-3xl"><p className="text-xs font-semibold uppercase tracking-widest text-primary">{t(bi("14-day evaluation", "14-денний тест"))}</p><h2 className="mt-5 text-3xl font-semibold text-foreground md:text-4xl" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>{t(bi("Turn Your Personnel Dependency into Permanent Digital Capital.", "Перетворіть залежність від персоналу на постійний цифровий капітал компанії."))}</h2><p className="mt-5 text-base leading-relaxed text-muted-foreground">{t(bi("Deploy a 14-day evaluation on your local machine or request a turnkey hardware unit. Ingest 1,000 documents and uncover initial risk anomalies within 48 hours under your complete physical control.", "Розгорніть 14-денний тестовий контур на власному комп'ютері або замовте готовий модуль у ваш офіс. Завантажте 1 000 документів і виявіть перші аномалії вже за 48 годин під вашим повним фізичним контролем."))}</p><Button onClick={pilot} size="lg" className="mt-8 h-auto min-h-12 whitespace-normal px-5 py-3">{t(bi("Start 14-Day Free Evaluation", "Розпочати 14-денний безкоштовний тест"))}<ArrowRight/></Button></div></section>
+    </main>
+    <footer className="border-t border-border bg-card/30"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-xs text-muted-foreground"><Link to="/" className="font-semibold text-foreground">SABIR VAULT</Link><span>© {new Date().getFullYear()} SABIR VAULT</span><a href="mailto:contact@sabirvault.com" className="hover:text-foreground">contact@sabirvault.com</a></div></footer>
+  </div>;
+}
