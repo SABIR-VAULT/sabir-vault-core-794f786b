@@ -3,8 +3,10 @@ import { useLang, bi, type Bi } from "@/lib/i18n";
 import { useContactDialog } from "@/components/ContactDialog";
 import {
   Users, Network, Wallet, FileText, Scale, Clock, FolderOpen, Brain,
-  Lock, Key, UserCheck, ShieldCheck, Zap, Calculator, Play,
+  Lock, Key, UserCheck, ShieldCheck, Zap, Calculator, Play, ChevronDown, Menu,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export const Route = createFileRoute("/security-service")({
   head: () => ({
@@ -299,12 +301,13 @@ function Header() {
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
           <a href="/#pillars" className="hover:text-white transition">{t(bi("Platform", "Платформа"))}</a>
           <a href="/#pipeline" className="hover:text-white transition">{t(bi("Workflow", "Конвеєр"))}</a>
-          <a href="/#solutions" className="hover:text-white transition">{t(bi("Solutions", "Рішення"))}</a>
+          <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="gap-1 text-muted-foreground hover:text-foreground">{t(bi("Solutions", "Рішення"))}<ChevronDown size={14}/></Button></DropdownMenuTrigger><DropdownMenuContent align="start" className="w-72"><DropdownMenuItem asChild><a href="/#solutions">{t(bi("All Solutions", "Усі рішення"))}</a></DropdownMenuItem><DropdownMenuItem asChild><Link to="/memory">{t(bi("Corporate Memory & Team Integrity", "Пам'ять компанії та аудит команди"))}</Link></DropdownMenuItem></DropdownMenuContent></DropdownMenu>
           <Link to="/security-service" className="text-white transition">{t(bi("For Security Service", "Для СБ"))}</Link>
           <a href="/#deployment" className="hover:text-white transition">{t(bi("Engagement", "Співпраця"))}</a>
           <Link to="/whitepaper" className="hover:text-white transition">{t(bi("White Paper", "Верифікація"))}</Link>
         </nav>
         <div className="flex items-center gap-3">
+          <DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" size="icon" className="md:hidden" aria-label={t(bi("Open navigation", "Відкрити навігацію"))}><Menu size={18}/></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuItem asChild><Link to="/memory">{t(bi("Corporate Memory & Team Integrity", "Пам'ять компанії та аудит команди"))}</Link></DropdownMenuItem><DropdownMenuItem asChild><a href="/#solutions">{t(bi("All Solutions", "Усі рішення"))}</a></DropdownMenuItem></DropdownMenuContent></DropdownMenu>
           <LangSwitcher />
           <button
             type="button"
