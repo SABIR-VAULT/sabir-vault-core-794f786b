@@ -30,6 +30,7 @@
   --color-ring: var(--ring);
   --color-cyan: var(--cyan);
   --color-gold: var(--gold);
+  --color-success: var(--success);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -56,6 +57,7 @@
   --ring: oklch(0.78 0.14 220);
   --cyan: oklch(0.78 0.14 220);
   --gold: oklch(0.78 0.15 75);
+  --success: oklch(0.72 0.17 155);
   --bg-deep: #090d16;
   --bg-panel: #131c2e;
 }
