@@ -13,6 +13,7 @@ import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MemoryRouteImport } from './routes/memory'
+import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhitepaperRoute = WhitepaperRouteImport.update({
@@ -35,6 +36,11 @@ const MemoryRoute = MemoryRouteImport.update({
   path: '/memory',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogisticsRoute = LogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
@@ -65,12 +74,25 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/memory' | '/privacy' | '/security-service' | '/whitepaper'
+  fullPaths:
+    | '/'
+    | '/logistics'
+    | '/memory'
+    | '/privacy'
+    | '/security-service'
+    | '/whitepaper'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/memory' | '/privacy' | '/security-service' | '/whitepaper'
+  to:
+    | '/'
+    | '/logistics'
+    | '/memory'
+    | '/privacy'
+    | '/security-service'
+    | '/whitepaper'
   id:
     | '__root__'
     | '/'
+    | '/logistics'
     | '/memory'
     | '/privacy'
     | '/security-service'
@@ -79,6 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LogisticsRoute: typeof LogisticsRoute
   MemoryRoute: typeof MemoryRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityServiceRoute: typeof SecurityServiceRoute
@@ -115,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MemoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/logistics': {
+      id: '/logistics'
+      path: '/logistics'
+      fullPath: '/logistics'
+      preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -127,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LogisticsRoute: LogisticsRoute,
   MemoryRoute: MemoryRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityServiceRoute: SecurityServiceRoute,
