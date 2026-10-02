@@ -32,4 +32,4 @@
 ## Supply Chain & Logistics page
 - [x] Create bilingual /logistics page from the uploaded brief
 - [x] Add bilingual Solutions navigation entry across relevant headers
-- [ ] Verify EN/UA content, desktop/mobile layout, and evaluation action
+- [x] Verify EN/UA content, desktop/mobile layout, and evaluation action
