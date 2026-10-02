@@ -25,6 +25,11 @@
 - [x] Validate language switching, section order, structured data, and responsive layout
 
 ## Corporate Memory Vault page
-- [ ] Create bilingual /memory page with the six requested content blocks and interactive Team X-Ray
-- [ ] Add bilingual Solutions navigation entry for the new page
+- [x] Create bilingual /memory page with the six requested content blocks and interactive Team X-Ray
+- [x] Add bilingual Solutions navigation entry for the new page
 - [ ] Verify EN/UA content, desktop/mobile layout, and pilot action
+
+## Supply Chain & Logistics page
+- [ ] Create bilingual /logistics page from the uploaded brief
+- [ ] Add bilingual Solutions navigation entry across relevant headers
+- [ ] Verify EN/UA content, desktop/mobile layout, and evaluation action
