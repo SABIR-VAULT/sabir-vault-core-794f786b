@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep `/memory` and `/logistics` as bilingual solution routes sharing the landing page's semantic design tokens and contact pilot flow, so solution pages remain visually and behaviorally consistent.
