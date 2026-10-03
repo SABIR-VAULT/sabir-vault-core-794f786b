@@ -14,6 +14,7 @@ import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MemoryRouteImport } from './routes/memory'
 import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as CfoRouteImport } from './routes/cfo'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhitepaperRoute = WhitepaperRouteImport.update({
@@ -41,6 +42,11 @@ const LogisticsRoute = LogisticsRouteImport.update({
   path: '/logistics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CfoRoute = CfoRouteImport.update({
+  id: '/cfo',
+  path: '/cfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
   '/privacy': typeof PrivacyRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/cfo'
     | '/logistics'
     | '/memory'
     | '/privacy'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/cfo'
     | '/logistics'
     | '/memory'
     | '/privacy'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/cfo'
     | '/logistics'
     | '/memory'
     | '/privacy'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CfoRoute: typeof CfoRoute
   LogisticsRoute: typeof LogisticsRoute
   MemoryRoute: typeof MemoryRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LogisticsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cfo': {
+      id: '/cfo'
+      path: '/cfo'
+      fullPath: '/cfo'
+      preLoaderRoute: typeof CfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CfoRoute: CfoRoute,
   LogisticsRoute: LogisticsRoute,
   MemoryRoute: MemoryRoute,
   PrivacyRoute: PrivacyRoute,
