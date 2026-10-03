@@ -9,31 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WhitepaperRouteImport } from './routes/whitepaper'
-import { Route as SecurityServiceRouteImport } from './routes/security-service'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as MemoryRouteImport } from './routes/memory'
-import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as MemoryRouteImport } from './routes/memory'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SecurityServiceRouteImport } from './routes/security-service'
+import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 
-const WhitepaperRoute = WhitepaperRouteImport.update({
-  id: '/whitepaper',
-  path: '/whitepaper',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityServiceRoute = SecurityServiceRouteImport.update({
-  id: '/security-service',
-  path: '/security-service',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MemoryRoute = MemoryRouteImport.update({
-  id: '/memory',
-  path: '/memory',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LogisticsRoute = LogisticsRouteImport.update({
@@ -41,9 +26,24 @@ const LogisticsRoute = LogisticsRouteImport.update({
   path: '/logistics',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const MemoryRoute = MemoryRouteImport.update({
+  id: '/memory',
+  path: '/memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityServiceRoute = SecurityServiceRouteImport.update({
+  id: '/security-service',
+  path: '/security-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhitepaperRoute = WhitepaperRouteImport.update({
+  id: '/whitepaper',
+  path: '/whitepaper',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -110,32 +110,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/whitepaper': {
-      id: '/whitepaper'
-      path: '/whitepaper'
-      fullPath: '/whitepaper'
-      preLoaderRoute: typeof WhitepaperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security-service': {
-      id: '/security-service'
-      path: '/security-service'
-      fullPath: '/security-service'
-      preLoaderRoute: typeof SecurityServiceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/memory': {
-      id: '/memory'
-      path: '/memory'
-      fullPath: '/memory'
-      preLoaderRoute: typeof MemoryRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/logistics': {
@@ -145,11 +124,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LogisticsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/memory': {
+      id: '/memory'
+      path: '/memory'
+      fullPath: '/memory'
+      preLoaderRoute: typeof MemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-service': {
+      id: '/security-service'
+      path: '/security-service'
+      fullPath: '/security-service'
+      preLoaderRoute: typeof SecurityServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whitepaper': {
+      id: '/whitepaper'
+      path: '/whitepaper'
+      fullPath: '/whitepaper'
+      preLoaderRoute: typeof WhitepaperRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
