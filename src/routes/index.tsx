@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { DecisionPhilosophy } from "@/components/DecisionPhilosophy";
 import {
   Lock, ShieldCheck, BarChart3, Users, Building2, Link2, Wallet,
   UsersRound, Search, Server, Package, ArrowRight, FileText, ScanLine,
@@ -87,6 +88,7 @@ function Landing() {
       <Pillars />
       <Roi />
       <Pipeline />
+      <DecisionPhilosophy />
       <Deliverables />
       <Solutions />
       <Deployment />
