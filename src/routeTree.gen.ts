@@ -15,6 +15,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MemoryRouteImport } from './routes/memory'
 import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as CfoRouteImport } from './routes/cfo'
+import { Route as AgroRouteImport } from './routes/agro'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhitepaperRoute = WhitepaperRouteImport.update({
@@ -47,6 +48,11 @@ const CfoRoute = CfoRouteImport.update({
   path: '/cfo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgroRoute = AgroRouteImport.update({
+  id: '/agro',
+  path: '/agro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,6 +61,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agro': typeof AgroRoute
   '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agro': typeof AgroRoute
   '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agro': typeof AgroRoute
   '/cfo': typeof CfoRoute
   '/logistics': typeof LogisticsRoute
   '/memory': typeof MemoryRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/agro'
     | '/cfo'
     | '/logistics'
     | '/memory'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/agro'
     | '/cfo'
     | '/logistics'
     | '/memory'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/agro'
     | '/cfo'
     | '/logistics'
     | '/memory'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgroRoute: typeof AgroRoute
   CfoRoute: typeof CfoRoute
   LogisticsRoute: typeof LogisticsRoute
   MemoryRoute: typeof MemoryRoute
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CfoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agro': {
+      id: '/agro'
+      path: '/agro'
+      fullPath: '/agro'
+      preLoaderRoute: typeof AgroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgroRoute: AgroRoute,
   CfoRoute: CfoRoute,
   LogisticsRoute: LogisticsRoute,
   MemoryRoute: MemoryRoute,
