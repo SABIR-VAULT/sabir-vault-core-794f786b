@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep `/memory` and `/logistics` as bilingual solution routes sharing the landing page's semantic design tokens and contact pilot flow, so solution pages remain visually and behaviorally consistent.
+- Insights articles live under `src/routes/insights/` with bilingual bodies as lightweight markdown in `src/lib/insights-*.ts`, rendered by `ArticleBody` and wrapped in the shared `SiteHeader`/`SiteFooter`, so new articles need no new layout code.
