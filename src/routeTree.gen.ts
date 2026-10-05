@@ -17,6 +17,8 @@ import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as CfoRouteImport } from './routes/cfo'
 import { Route as AgroRouteImport } from './routes/agro'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 
 const WhitepaperRoute = WhitepaperRouteImport.update({
   id: '/whitepaper',
@@ -58,6 +60,17 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsFrankensteinSyndromeRoute =
+  InsightsFrankensteinSyndromeRouteImport.update({
+    id: '/insights/frankenstein-syndrome',
+    path: '/insights/frankenstein-syndrome',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +81,8 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +93,8 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights': typeof InsightsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +106,8 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +120,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/frankenstein-syndrome'
+    | '/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +132,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/frankenstein-syndrome'
+    | '/insights'
   id:
     | '__root__'
     | '/'
@@ -121,6 +144,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/frankenstein-syndrome'
+    | '/insights/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +157,8 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
+  InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +219,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/frankenstein-syndrome': {
+      id: '/insights/frankenstein-syndrome'
+      path: '/insights/frankenstein-syndrome'
+      fullPath: '/insights/frankenstein-syndrome'
+      preLoaderRoute: typeof InsightsFrankensteinSyndromeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +245,8 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
+  InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
