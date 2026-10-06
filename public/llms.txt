@@ -21,6 +21,12 @@ SABIR VAULT is a deterministic corporate forensics appliance that decomposes com
 - **https://sabirvault.com/cfo** — *Corporate Finance & AML Forensics:* Uncovers VAT carousels, circular money transfers (A -> B -> C -> A), structuring below 400,000 UAH (Law #361-IX), and delta margin leaks (e.g. 6.0M UAH Baltic Grain gap).
 - **https://sabirvault.com/agro** — *Agroholdings & Land Assets Integrity:* Cross-reconciles 10,000+ land leases (паї), elevator intake acts, and machinery logs. Uncovers cluster directors' proxy supplier networks and grain shrinkage theft.
 
+## Insights (Research Articles)
+
+- **https://sabirvault.com/insights** — Research & perspectives hub (EN/UA).
+- **https://sabirvault.com/insights/frankenstein-syndrome** — *The Frankenstein Syndrome:* why company growth breaks operations and how to fix spreadsheet chaos without a $20,000 custom ERP.
+- **https://sabirvault.com/insights/taming-local-ai** — *How to Tame Local AI in an Air-Gapped Environment:* why LLMs cannot be trusted without a deterministic skeleton; local LLMs on Apple Silicon constrained by 26 deterministic behavioral transistors and a relational SQLite engine.
+
 ## Unique Capabilities
 
 ### 1. Air-Gapped Deployment & Hardware Appliance

@@ -9,45 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WhitepaperRouteImport } from './routes/whitepaper'
-import { Route as SecurityServiceRouteImport } from './routes/security-service'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as MemoryRouteImport } from './routes/memory'
-import { Route as LogisticsRouteImport } from './routes/logistics'
-import { Route as CfoRouteImport } from './routes/cfo'
-import { Route as AgroRouteImport } from './routes/agro'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgroRouteImport } from './routes/agro'
+import { Route as CfoRouteImport } from './routes/cfo'
+import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as MemoryRouteImport } from './routes/memory'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SecurityServiceRouteImport } from './routes/security-service'
+import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
+import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
 
-const WhitepaperRoute = WhitepaperRouteImport.update({
-  id: '/whitepaper',
-  path: '/whitepaper',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityServiceRoute = SecurityServiceRouteImport.update({
-  id: '/security-service',
-  path: '/security-service',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MemoryRoute = MemoryRouteImport.update({
-  id: '/memory',
-  path: '/memory',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LogisticsRoute = LogisticsRouteImport.update({
-  id: '/logistics',
-  path: '/logistics',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CfoRoute = CfoRouteImport.update({
-  id: '/cfo',
-  path: '/cfo',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgroRoute = AgroRouteImport.update({
@@ -55,9 +31,34 @@ const AgroRoute = AgroRouteImport.update({
   path: '/agro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CfoRoute = CfoRouteImport.update({
+  id: '/cfo',
+  path: '/cfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticsRoute = LogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemoryRoute = MemoryRouteImport.update({
+  id: '/memory',
+  path: '/memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityServiceRoute = SecurityServiceRouteImport.update({
+  id: '/security-service',
+  path: '/security-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhitepaperRoute = WhitepaperRouteImport.update({
+  id: '/whitepaper',
+  path: '/whitepaper',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
@@ -71,6 +72,11 @@ const InsightsFrankensteinSyndromeRoute =
     path: '/insights/frankenstein-syndrome',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsTamingLocalAiRoute = InsightsTamingLocalAiRouteImport.update({
+  id: '/insights/taming-local-ai',
+  path: '/insights/taming-local-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights': typeof InsightsIndexRoute
 }
 export interface FileRoutesById {
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRouteTypes {
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights'
   id:
     | '__root__'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights/'
   fileRoutesById: FileRoutesById
 }
@@ -158,51 +170,17 @@ export interface RootRouteChildren {
   SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
+  InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/whitepaper': {
-      id: '/whitepaper'
-      path: '/whitepaper'
-      fullPath: '/whitepaper'
-      preLoaderRoute: typeof WhitepaperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security-service': {
-      id: '/security-service'
-      path: '/security-service'
-      fullPath: '/security-service'
-      preLoaderRoute: typeof SecurityServiceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/memory': {
-      id: '/memory'
-      path: '/memory'
-      fullPath: '/memory'
-      preLoaderRoute: typeof MemoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistics': {
-      id: '/logistics'
-      path: '/logistics'
-      fullPath: '/logistics'
-      preLoaderRoute: typeof LogisticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cfo': {
-      id: '/cfo'
-      path: '/cfo'
-      fullPath: '/cfo'
-      preLoaderRoute: typeof CfoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agro': {
@@ -212,11 +190,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgroRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cfo': {
+      id: '/cfo'
+      path: '/cfo'
+      fullPath: '/cfo'
+      preLoaderRoute: typeof CfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistics': {
+      id: '/logistics'
+      path: '/logistics'
+      fullPath: '/logistics'
+      preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memory': {
+      id: '/memory'
+      path: '/memory'
+      fullPath: '/memory'
+      preLoaderRoute: typeof MemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-service': {
+      id: '/security-service'
+      path: '/security-service'
+      fullPath: '/security-service'
+      preLoaderRoute: typeof SecurityServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whitepaper': {
+      id: '/whitepaper'
+      path: '/whitepaper'
+      fullPath: '/whitepaper'
+      preLoaderRoute: typeof WhitepaperRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/': {
@@ -233,6 +246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsFrankensteinSyndromeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/taming-local-ai': {
+      id: '/insights/taming-local-ai'
+      path: '/insights/taming-local-ai'
+      fullPath: '/insights/taming-local-ai'
+      preLoaderRoute: typeof InsightsTamingLocalAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -246,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
+  InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
