@@ -35,5 +35,5 @@
 - [x] Verify EN/UA content, desktop/mobile layout, and evaluation action
 
 ## Insights
-- [ ] Second article /insights/taming-local-ai + hub card + sitemap + llms.txt
-- [ ] 3 inline links in Frankenstein article (/logistics, /cfo, /memory)
+- [x] Second article /insights/taming-local-ai + hub card + sitemap + llms.txt
+- [x] 3 inline links in Frankenstein article (/logistics, /cfo, /memory)
