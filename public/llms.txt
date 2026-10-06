@@ -19,6 +19,7 @@ SABIR VAULT is a deterministic corporate forensics appliance that decomposes com
 - **https://sabirvault.com/memory** — *Corporate Memory Vault & Team Integrity:* Decodes 3+ years of historical archives to eliminate "feudal" employee monopolies. 9-bit T_EMP behavioral signatures detect off-hours file tampering, unvetted kickbacks, and mass database scraping before resignation.
 - **https://sabirvault.com/logistics** — *Supply Chain & Waybill Integrity:* Automated 3-way cross-matching between Contracts, Invoices, and TTN/CMR. Detects impossible transit speeds (>150 km/h), ghost carriers (0 vehicles on balance), and weight discrepancies.
 - **https://sabirvault.com/cfo** — *Corporate Finance & AML Forensics:* Uncovers VAT carousels, circular money transfers (A -> B -> C -> A), structuring below 400,000 UAH (Law #361-IX), and delta margin leaks (e.g. 6.0M UAH Baltic Grain gap).
+- **https://sabirvault.com/solutions/executive-copilot** — *Executive Pre-Audit Copilot:* flagship C-suite page. Deterministic executive X-ray: contracts, acts, bank statements and HR orders cross-matched into one picture of margin, liabilities and hidden counterparties. Deployed locally in 15 minutes; verified threat map within 48 hours (up to 5,000 documents).
 - **https://sabirvault.com/agro** — *Agroholdings & Land Assets Integrity:* Cross-reconciles 10,000+ land leases (паї), elevator intake acts, and machinery logs. Uncovers cluster directors' proxy supplier networks and grain shrinkage theft.
 
 ## Insights (Research Articles)

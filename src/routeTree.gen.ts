@@ -20,6 +20,7 @@ import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
+import { Route as SolutionsExecutiveCopilotRouteImport } from './routes/solutions/executive-copilot'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -77,6 +78,12 @@ const InsightsTamingLocalAiRoute = InsightsTamingLocalAiRouteImport.update({
   path: '/insights/taming-local-ai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SolutionsExecutiveCopilotRoute =
+  SolutionsExecutiveCopilotRouteImport.update({
+    id: '/solutions/executive-copilot',
+    path: '/solutions/executive-copilot',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
+  '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -102,6 +110,7 @@ export interface FileRoutesByTo {
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
+  '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
   '/insights': typeof InsightsIndexRoute
 }
 export interface FileRoutesById {
@@ -116,6 +125,7 @@ export interface FileRoutesById {
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
+  '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRouteTypes {
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
+    | '/solutions/executive-copilot'
     | '/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
+    | '/solutions/executive-copilot'
     | '/insights'
   id:
     | '__root__'
@@ -157,6 +169,7 @@ export interface FileRouteTypes {
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
+    | '/solutions/executive-copilot'
     | '/insights/'
   fileRoutesById: FileRoutesById
 }
@@ -171,6 +184,7 @@ export interface RootRouteChildren {
   WhitepaperRoute: typeof WhitepaperRoute
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
   InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
+  SolutionsExecutiveCopilotRoute: typeof SolutionsExecutiveCopilotRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
@@ -253,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsTamingLocalAiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/solutions/executive-copilot': {
+      id: '/solutions/executive-copilot'
+      path: '/solutions/executive-copilot'
+      fullPath: '/solutions/executive-copilot'
+      preLoaderRoute: typeof SolutionsExecutiveCopilotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -267,6 +288,7 @@ const rootRouteChildren: RootRouteChildren = {
   WhitepaperRoute: WhitepaperRoute,
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
   InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
+  SolutionsExecutiveCopilotRoute: SolutionsExecutiveCopilotRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
