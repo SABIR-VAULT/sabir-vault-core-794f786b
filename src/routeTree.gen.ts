@@ -9,45 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WhitepaperRouteImport } from './routes/whitepaper'
-import { Route as SecurityServiceRouteImport } from './routes/security-service'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as MemoryRouteImport } from './routes/memory'
-import { Route as LogisticsRouteImport } from './routes/logistics'
-import { Route as CfoRouteImport } from './routes/cfo'
-import { Route as AgroRouteImport } from './routes/agro'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgroRouteImport } from './routes/agro'
+import { Route as CfoRouteImport } from './routes/cfo'
+import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as MemoryRouteImport } from './routes/memory'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SecurityServiceRouteImport } from './routes/security-service'
+import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 
-const WhitepaperRoute = WhitepaperRouteImport.update({
-  id: '/whitepaper',
-  path: '/whitepaper',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityServiceRoute = SecurityServiceRouteImport.update({
-  id: '/security-service',
-  path: '/security-service',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MemoryRoute = MemoryRouteImport.update({
-  id: '/memory',
-  path: '/memory',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LogisticsRoute = LogisticsRouteImport.update({
-  id: '/logistics',
-  path: '/logistics',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CfoRoute = CfoRouteImport.update({
-  id: '/cfo',
-  path: '/cfo',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgroRoute = AgroRouteImport.update({
@@ -55,9 +30,34 @@ const AgroRoute = AgroRouteImport.update({
   path: '/agro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CfoRoute = CfoRouteImport.update({
+  id: '/cfo',
+  path: '/cfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticsRoute = LogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemoryRoute = MemoryRouteImport.update({
+  id: '/memory',
+  path: '/memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityServiceRoute = SecurityServiceRouteImport.update({
+  id: '/security-service',
+  path: '/security-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhitepaperRoute = WhitepaperRouteImport.update({
+  id: '/whitepaper',
+  path: '/whitepaper',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
@@ -163,46 +163,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/whitepaper': {
-      id: '/whitepaper'
-      path: '/whitepaper'
-      fullPath: '/whitepaper'
-      preLoaderRoute: typeof WhitepaperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security-service': {
-      id: '/security-service'
-      path: '/security-service'
-      fullPath: '/security-service'
-      preLoaderRoute: typeof SecurityServiceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/memory': {
-      id: '/memory'
-      path: '/memory'
-      fullPath: '/memory'
-      preLoaderRoute: typeof MemoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistics': {
-      id: '/logistics'
-      path: '/logistics'
-      fullPath: '/logistics'
-      preLoaderRoute: typeof LogisticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cfo': {
-      id: '/cfo'
-      path: '/cfo'
-      fullPath: '/cfo'
-      preLoaderRoute: typeof CfoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agro': {
@@ -212,11 +177,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgroRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cfo': {
+      id: '/cfo'
+      path: '/cfo'
+      fullPath: '/cfo'
+      preLoaderRoute: typeof CfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistics': {
+      id: '/logistics'
+      path: '/logistics'
+      fullPath: '/logistics'
+      preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memory': {
+      id: '/memory'
+      path: '/memory'
+      fullPath: '/memory'
+      preLoaderRoute: typeof MemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-service': {
+      id: '/security-service'
+      path: '/security-service'
+      fullPath: '/security-service'
+      preLoaderRoute: typeof SecurityServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whitepaper': {
+      id: '/whitepaper'
+      path: '/whitepaper'
+      fullPath: '/whitepaper'
+      preLoaderRoute: typeof WhitepaperRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/': {
