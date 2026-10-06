@@ -9,7 +9,7 @@ const isLinkable = (p: string): p is Linkable => (LINKABLE as readonly string[])
 function inline(text: string): ReactNode[] {
   return text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean).map((p, i) => {
     const link = p.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (link && isLinkable(link[2])) return <Link key={i} to={link[2]} className="text-primary underline-offset-4 hover:underline">{link[1]}</Link>;
+    if (link && isLinkable(link[2])) return <Link key={i} to={link[2]} className="text-[#00F0FF] underline-offset-4 hover:underline">{link[1]}</Link>;
     return p.startsWith("**") ? <strong key={i} className="font-semibold text-foreground">{p.slice(2, -2)}</strong>
     : p.startsWith("*") ? <em key={i} className="text-foreground/90">{p.slice(1, -1)}</em>
     : <Fragment key={i}>{p}</Fragment>;
