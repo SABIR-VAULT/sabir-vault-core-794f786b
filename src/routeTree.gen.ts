@@ -19,6 +19,7 @@ import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
+import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -71,6 +72,11 @@ const InsightsFrankensteinSyndromeRoute =
     path: '/insights/frankenstein-syndrome',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsTamingLocalAiRoute = InsightsTamingLocalAiRouteImport.update({
+  id: '/insights/taming-local-ai',
+  path: '/insights/taming-local-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights': typeof InsightsIndexRoute
 }
 export interface FileRoutesById {
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
+  '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRouteTypes {
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights'
   id:
     | '__root__'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/security-service'
     | '/whitepaper'
     | '/insights/frankenstein-syndrome'
+    | '/insights/taming-local-ai'
     | '/insights/'
   fileRoutesById: FileRoutesById
 }
@@ -158,6 +170,7 @@ export interface RootRouteChildren {
   SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
+  InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
@@ -233,6 +246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsFrankensteinSyndromeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/taming-local-ai': {
+      id: '/insights/taming-local-ai'
+      path: '/insights/taming-local-ai'
+      fullPath: '/insights/taming-local-ai'
+      preLoaderRoute: typeof InsightsTamingLocalAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -246,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
+  InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
