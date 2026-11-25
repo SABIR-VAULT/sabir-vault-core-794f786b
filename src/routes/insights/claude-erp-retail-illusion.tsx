@@ -115,7 +115,7 @@ function ArticlePage() {
           <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">{t(bi("Read Article","Читати статтю"))}<ArrowRight size={16} className="transition-transform group-hover:translate-x-1"/></span>
         </Link>)}
       </section>
-      <section className="mx-auto max-w-5xl px-6 pb-24">
+      <section className="mx-auto max-w-3xl px-6 pb-24">
         <div className="glass rounded-2xl border-primary/30 p-8 md:p-12">
           <h2 className="text-2xl font-semibold md:text-3xl" style={F}>{t(bi("Stop Guessing Your Retail Margins. Run a Sovereign Audit.","Припиніть вгадувати маржу. Запустіть суверенний аудит."))}</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{t(bi("Connect your 1C / ERP exports and primary invoices inside a 100% air-gapped node. Uncover trapped cash and discrepancies in 48 hours.","Поєднайте вивантаження 1С та первинні накладні в 100% автономному контурі. Знайдіть заморожені гроші та розходження за 48 годин."))}</p>
