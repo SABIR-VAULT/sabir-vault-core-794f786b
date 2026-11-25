@@ -31,6 +31,18 @@ function InsightsPage() {
       </div></div></section>
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-6 lg:grid-cols-2">
+        <Link to="/insights/claude-erp-retail-illusion" className="group glass glass-hover block rounded-2xl p-8 md:p-10 lg:col-span-2">
+          <article>
+            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary">{t(bi("Retail Forensics & AI","Ритейл-форензик та AI"))}</span>
+              <span className="inline-flex items-center gap-1.5"><Clock size={14} strokeWidth={1.5}/>{t(bi("6 min read","6 хв читання"))}</span>
+              <span className="inline-flex items-center gap-1.5"><Calendar size={14} strokeWidth={1.5}/>{t(bi("November 2026","Листопад 2026"))}</span>
+            </div>
+            <h2 className="mt-6 max-w-4xl text-2xl font-semibold leading-snug text-foreground md:text-2xl" style={{fontFamily:'"Plus Jakarta Sans", Inter, sans-serif'}}>{t(bi("The \"Claude Agent for ERP\" Illusion: Why Connecting Cloud LLMs to 1C Breaks Retail Math — and How to Actually Recover Trapped Cash","«ШІ-агент на Claude для 1С»: чому це небезпечна ілюзія і як насправді витягнути гроші зі звітів ритейлу"))}</h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">{t(bi("Retailers want to plug Claude directly into 1C or ERP exports to analyze inventory. Why probabilistic models fail on 5,000+ SKUs, leak margins to the cloud, and how a Deterministic Shield + Local VLM recovers frozen capital.","Бізнес хоче підключити Claude до вивантажень 1С для аналізу залишків та маржі. Чому хмарні LLM галюцинують на тисячах SKU і як зв'язка Deterministic Shield + Local VLM повертає заморожений капітал."))}</p>
+            <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">{t(bi("Read Article","Читати статтю"))}<ArrowRight size={16} className="transition-transform group-hover:translate-x-1"/></span>
+          </article>
+        </Link>
         <Link to="/insights/taming-local-ai" className="group glass glass-hover block rounded-2xl p-8 md:p-10">
           <article>
             <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">

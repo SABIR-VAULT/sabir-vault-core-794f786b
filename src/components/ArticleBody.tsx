@@ -2,14 +2,15 @@ import { Fragment, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 
 // Internal pages an article may link to with [text](/path).
-const LINKABLE = ["/memory", "/logistics", "/cfo", "/agro", "/insights", "/insights/frankenstein-syndrome", "/insights/taming-local-ai"] as const;
+const LINKABLE = ["/memory", "/logistics", "/cfo", "/agro", "/insights", "/insights/frankenstein-syndrome", "/insights/taming-local-ai", "/insights/claude-erp-retail-illusion"] as const;
 type Linkable = (typeof LINKABLE)[number];
 const isLinkable = (p: string): p is Linkable => (LINKABLE as readonly string[]).includes(p);
 
-function inline(text: string): ReactNode[] {
-  return text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean).map((p, i) => {
+export function inline(text: string): ReactNode[] {
+  return text.split(/(`[^`]+`|\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean).map((p, i) => {
     const link = p.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link && isLinkable(link[2])) return <Link key={i} to={link[2]} className="text-[#00F0FF] underline-offset-4 hover:underline">{link[1]}</Link>;
+    if (p.startsWith("`")) return <code key={i} className="rounded bg-secondary px-1.5 py-0.5 font-mono text-[0.9em] text-primary">{p.slice(1, -1)}</code>;
     return p.startsWith("**") ? <strong key={i} className="font-semibold text-foreground">{p.slice(2, -2)}</strong>
     : p.startsWith("*") ? <em key={i} className="text-foreground/90">{p.slice(1, -1)}</em>
     : <Fragment key={i}>{p}</Fragment>;

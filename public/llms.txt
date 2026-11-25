@@ -32,6 +32,7 @@ SABIR VAULT is a deterministic corporate forensics appliance that decomposes com
 - **https://sabirvault.com/insights** — Research & perspectives hub (EN/UA).
 - **https://sabirvault.com/insights/frankenstein-syndrome** — *The Frankenstein Syndrome:* Why company growth breaks operations and how to fix spreadsheet chaos without a $20,000 custom ERP.
 - **https://sabirvault.com/insights/taming-local-ai** — *How to Tame Local AI in an Air-Gapped Environment:* Why LLMs cannot be trusted without a deterministic skeleton; local LLMs on Apple Silicon constrained by 26 deterministic behavioral transistors and a relational SQLite engine.
+- **https://sabirvault.com/insights/claude-erp-retail-illusion** — *The "Claude Agent for ERP" Illusion:* Why connecting cloud LLMs to 1C/ERP exports breaks retail math and leaks margins; Deterministic Shield + air-gapped Local VLM for dead-stock, stockout, POS anomaly and 3-way invoice matching.
 
 ## Unique Capabilities
 

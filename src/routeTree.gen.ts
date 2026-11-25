@@ -18,6 +18,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as InsightsClaudeErpRetailIllusionRouteImport } from './routes/insights/claude-erp-retail-illusion'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
 import { Route as SolutionsExecutiveCopilotRouteImport } from './routes/solutions/executive-copilot'
@@ -67,6 +68,12 @@ const InsightsIndexRoute = InsightsIndexRouteImport.update({
   path: '/insights/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsClaudeErpRetailIllusionRoute =
+  InsightsClaudeErpRetailIllusionRouteImport.update({
+    id: '/insights/claude-erp-retail-illusion',
+    path: '/insights/claude-erp-retail-illusion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InsightsFrankensteinSyndromeRoute =
   InsightsFrankensteinSyndromeRouteImport.update({
     id: '/insights/frankenstein-syndrome',
@@ -94,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
@@ -108,6 +116,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
@@ -123,6 +132,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
@@ -167,6 +179,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
@@ -182,6 +195,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
+  InsightsClaudeErpRetailIllusionRoute: typeof InsightsClaudeErpRetailIllusionRoute
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
   InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
   SolutionsExecutiveCopilotRoute: typeof SolutionsExecutiveCopilotRoute
@@ -253,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/claude-erp-retail-illusion': {
+      id: '/insights/claude-erp-retail-illusion'
+      path: '/insights/claude-erp-retail-illusion'
+      fullPath: '/insights/claude-erp-retail-illusion'
+      preLoaderRoute: typeof InsightsClaudeErpRetailIllusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/insights/frankenstein-syndrome': {
       id: '/insights/frankenstein-syndrome'
       path: '/insights/frankenstein-syndrome'
@@ -286,6 +307,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
+  InsightsClaudeErpRetailIllusionRoute: InsightsClaudeErpRetailIllusionRoute,
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
   InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
   SolutionsExecutiveCopilotRoute: SolutionsExecutiveCopilotRoute,
