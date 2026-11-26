@@ -37,3 +37,9 @@
 ## Insights
 - [x] Second article /insights/taming-local-ai + hub card + sitemap + llms.txt
 - [x] 3 inline links in Frankenstein article (/logistics, /cfo, /memory)
+
+## Multilingual SSR routing
+- [ ] Add 13 Ukrainian mirrors with shared page content and route-aware navigation
+- [ ] Localize SSR language, metadata, canonicals, hreflang and structured data
+- [ ] Complete sitemap and Ukrainian AI directory links
+- [ ] Test all page pairs and desktop/mobile navigation

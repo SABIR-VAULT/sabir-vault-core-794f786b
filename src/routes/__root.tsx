@@ -7,6 +7,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useLocation,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -16,6 +17,7 @@ import { ContactDialogProvider } from "@/components/ContactDialog";
 import { SolutionDialogProvider } from "@/components/SolutionDialog";
 import { LanguageProvider } from "@/lib/i18n";
 import { Toaster } from "@/components/ui/sonner";
+import { languageForPath } from "@/lib/localization";
 
 function NotFoundComponent() {
   return (
@@ -87,15 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "keywords", content: "LegalTech, Forensic Audit, Digital Dossier, Pre-Audit, 3-Way Matching, Entity Extraction, Document Processing, Knowledge Graph, Compliance, Air-Gapped, SABIR VAULT" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "SABIR VAULT" },
-      { property: "og:image", content: "https://sabirvault.com/og-image.png" },
-      { property: "og:image:secure_url", content: "https://sabirvault.com/og-image.png" },
-      { property: "og:image:type", content: "image/png" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "SABIR VAULT — See What Is Actually Happening Inside Your Business" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://sabirvault.com/og-image.png" },
-      { name: "twitter:image:src", content: "https://sabirvault.com/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -138,8 +132,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useLocation({ select: location => location.pathname });
   return (
-    <html lang="en">
+    <html lang={languageForPath(pathname) === "ua" ? "uk" : "en"}>
       <head>
         <HeadContent />
       </head>

@@ -1,4 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
+import { useLocation, useNavigate } from "@tanstack/react-router";
+import { languageForPath, switchLanguagePath } from "@/lib/localization";
 
 export type Lang = "en" | "ua";
 export type Bi = { en: string; ua: string };
@@ -16,7 +18,14 @@ const LangCtx = createContext<Ctx>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const lang = languageForPath(location.pathname);
+  const setLang = (nextLang: Lang) => {
+    const to = switchLanguagePath(location.pathname, nextLang);
+    if (!to || nextLang === lang) return;
+    void navigate({ to, search: true, hash: location.hash, resetScroll: false });
+  };
   return (
     <LangCtx.Provider value={{ lang, setLang, t: (b) => b[lang] }}>
       {children}

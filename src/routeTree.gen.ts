@@ -22,6 +22,19 @@ import { Route as InsightsClaudeErpRetailIllusionRouteImport } from './routes/in
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
 import { Route as SolutionsExecutiveCopilotRouteImport } from './routes/solutions/executive-copilot'
+import { Route as UaIndexRouteImport } from './routes/ua.index'
+import { Route as UaAgroRouteImport } from './routes/ua.agro'
+import { Route as UaCfoRouteImport } from './routes/ua.cfo'
+import { Route as UaLogisticsRouteImport } from './routes/ua.logistics'
+import { Route as UaMemoryRouteImport } from './routes/ua.memory'
+import { Route as UaPrivacyRouteImport } from './routes/ua.privacy'
+import { Route as UaSecurityServiceRouteImport } from './routes/ua.security-service'
+import { Route as UaWhitepaperRouteImport } from './routes/ua.whitepaper'
+import { Route as UaInsightsIndexRouteImport } from './routes/ua.insights.index'
+import { Route as UaInsightsClaudeErpRetailIllusionRouteImport } from './routes/ua.insights.claude-erp-retail-illusion'
+import { Route as UaInsightsFrankensteinSyndromeRouteImport } from './routes/ua.insights.frankenstein-syndrome'
+import { Route as UaInsightsTamingLocalAiRouteImport } from './routes/ua.insights.taming-local-ai'
+import { Route as UaSolutionsExecutiveCopilotRouteImport } from './routes/ua.solutions.executive-copilot'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -91,6 +104,74 @@ const SolutionsExecutiveCopilotRoute =
     path: '/solutions/executive-copilot',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UaIndexRoute = UaIndexRouteImport.update({
+  id: '/ua/',
+  path: '/ua/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaAgroRoute = UaAgroRouteImport.update({
+  id: '/ua/agro',
+  path: '/ua/agro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaCfoRoute = UaCfoRouteImport.update({
+  id: '/ua/cfo',
+  path: '/ua/cfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaLogisticsRoute = UaLogisticsRouteImport.update({
+  id: '/ua/logistics',
+  path: '/ua/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaMemoryRoute = UaMemoryRouteImport.update({
+  id: '/ua/memory',
+  path: '/ua/memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaPrivacyRoute = UaPrivacyRouteImport.update({
+  id: '/ua/privacy',
+  path: '/ua/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaSecurityServiceRoute = UaSecurityServiceRouteImport.update({
+  id: '/ua/security-service',
+  path: '/ua/security-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaWhitepaperRoute = UaWhitepaperRouteImport.update({
+  id: '/ua/whitepaper',
+  path: '/ua/whitepaper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaInsightsIndexRoute = UaInsightsIndexRouteImport.update({
+  id: '/ua/insights/',
+  path: '/ua/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaInsightsClaudeErpRetailIllusionRoute =
+  UaInsightsClaudeErpRetailIllusionRouteImport.update({
+    id: '/ua/insights/claude-erp-retail-illusion',
+    path: '/ua/insights/claude-erp-retail-illusion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UaInsightsFrankensteinSyndromeRoute =
+  UaInsightsFrankensteinSyndromeRouteImport.update({
+    id: '/ua/insights/frankenstein-syndrome',
+    path: '/ua/insights/frankenstein-syndrome',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UaInsightsTamingLocalAiRoute = UaInsightsTamingLocalAiRouteImport.update({
+  id: '/ua/insights/taming-local-ai',
+  path: '/ua/insights/taming-local-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UaSolutionsExecutiveCopilotRoute =
+  UaSolutionsExecutiveCopilotRouteImport.update({
+    id: '/ua/solutions/executive-copilot',
+    path: '/ua/solutions/executive-copilot',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -105,7 +186,20 @@ export interface FileRoutesByFullPath {
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
+  '/ua/agro': typeof UaAgroRoute
+  '/ua/cfo': typeof UaCfoRoute
+  '/ua/logistics': typeof UaLogisticsRoute
+  '/ua/memory': typeof UaMemoryRoute
+  '/ua/privacy': typeof UaPrivacyRoute
+  '/ua/security-service': typeof UaSecurityServiceRoute
+  '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights/': typeof InsightsIndexRoute
+  '/ua/': typeof UaIndexRoute
+  '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
+  '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
+  '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
+  '/ua/solutions/executive-copilot': typeof UaSolutionsExecutiveCopilotRoute
+  '/ua/insights/': typeof UaInsightsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -120,7 +214,20 @@ export interface FileRoutesByTo {
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
+  '/ua/agro': typeof UaAgroRoute
+  '/ua/cfo': typeof UaCfoRoute
+  '/ua/logistics': typeof UaLogisticsRoute
+  '/ua/memory': typeof UaMemoryRoute
+  '/ua/privacy': typeof UaPrivacyRoute
+  '/ua/security-service': typeof UaSecurityServiceRoute
+  '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights': typeof InsightsIndexRoute
+  '/ua': typeof UaIndexRoute
+  '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
+  '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
+  '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
+  '/ua/solutions/executive-copilot': typeof UaSolutionsExecutiveCopilotRoute
+  '/ua/insights': typeof UaInsightsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -136,7 +243,20 @@ export interface FileRoutesById {
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
   '/solutions/executive-copilot': typeof SolutionsExecutiveCopilotRoute
+  '/ua/agro': typeof UaAgroRoute
+  '/ua/cfo': typeof UaCfoRoute
+  '/ua/logistics': typeof UaLogisticsRoute
+  '/ua/memory': typeof UaMemoryRoute
+  '/ua/privacy': typeof UaPrivacyRoute
+  '/ua/security-service': typeof UaSecurityServiceRoute
+  '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights/': typeof InsightsIndexRoute
+  '/ua/': typeof UaIndexRoute
+  '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
+  '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
+  '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
+  '/ua/solutions/executive-copilot': typeof UaSolutionsExecutiveCopilotRoute
+  '/ua/insights/': typeof UaInsightsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -153,7 +273,20 @@ export interface FileRouteTypes {
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
+    | '/ua/agro'
+    | '/ua/cfo'
+    | '/ua/logistics'
+    | '/ua/memory'
+    | '/ua/privacy'
+    | '/ua/security-service'
+    | '/ua/whitepaper'
     | '/insights/'
+    | '/ua/'
+    | '/ua/insights/claude-erp-retail-illusion'
+    | '/ua/insights/frankenstein-syndrome'
+    | '/ua/insights/taming-local-ai'
+    | '/ua/solutions/executive-copilot'
+    | '/ua/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -168,7 +301,20 @@ export interface FileRouteTypes {
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
+    | '/ua/agro'
+    | '/ua/cfo'
+    | '/ua/logistics'
+    | '/ua/memory'
+    | '/ua/privacy'
+    | '/ua/security-service'
+    | '/ua/whitepaper'
     | '/insights'
+    | '/ua'
+    | '/ua/insights/claude-erp-retail-illusion'
+    | '/ua/insights/frankenstein-syndrome'
+    | '/ua/insights/taming-local-ai'
+    | '/ua/solutions/executive-copilot'
+    | '/ua/insights'
   id:
     | '__root__'
     | '/'
@@ -183,7 +329,20 @@ export interface FileRouteTypes {
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
     | '/solutions/executive-copilot'
+    | '/ua/agro'
+    | '/ua/cfo'
+    | '/ua/logistics'
+    | '/ua/memory'
+    | '/ua/privacy'
+    | '/ua/security-service'
+    | '/ua/whitepaper'
     | '/insights/'
+    | '/ua/'
+    | '/ua/insights/claude-erp-retail-illusion'
+    | '/ua/insights/frankenstein-syndrome'
+    | '/ua/insights/taming-local-ai'
+    | '/ua/solutions/executive-copilot'
+    | '/ua/insights/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -199,7 +358,20 @@ export interface RootRouteChildren {
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
   InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
   SolutionsExecutiveCopilotRoute: typeof SolutionsExecutiveCopilotRoute
+  UaAgroRoute: typeof UaAgroRoute
+  UaCfoRoute: typeof UaCfoRoute
+  UaLogisticsRoute: typeof UaLogisticsRoute
+  UaMemoryRoute: typeof UaMemoryRoute
+  UaPrivacyRoute: typeof UaPrivacyRoute
+  UaSecurityServiceRoute: typeof UaSecurityServiceRoute
+  UaWhitepaperRoute: typeof UaWhitepaperRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
+  UaIndexRoute: typeof UaIndexRoute
+  UaInsightsClaudeErpRetailIllusionRoute: typeof UaInsightsClaudeErpRetailIllusionRoute
+  UaInsightsFrankensteinSyndromeRoute: typeof UaInsightsFrankensteinSyndromeRoute
+  UaInsightsTamingLocalAiRoute: typeof UaInsightsTamingLocalAiRoute
+  UaSolutionsExecutiveCopilotRoute: typeof UaSolutionsExecutiveCopilotRoute
+  UaInsightsIndexRoute: typeof UaInsightsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -295,6 +467,97 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsExecutiveCopilotRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ua/': {
+      id: '/ua/'
+      path: '/ua'
+      fullPath: '/ua/'
+      preLoaderRoute: typeof UaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/agro': {
+      id: '/ua/agro'
+      path: '/ua/agro'
+      fullPath: '/ua/agro'
+      preLoaderRoute: typeof UaAgroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/cfo': {
+      id: '/ua/cfo'
+      path: '/ua/cfo'
+      fullPath: '/ua/cfo'
+      preLoaderRoute: typeof UaCfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/logistics': {
+      id: '/ua/logistics'
+      path: '/ua/logistics'
+      fullPath: '/ua/logistics'
+      preLoaderRoute: typeof UaLogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/memory': {
+      id: '/ua/memory'
+      path: '/ua/memory'
+      fullPath: '/ua/memory'
+      preLoaderRoute: typeof UaMemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/privacy': {
+      id: '/ua/privacy'
+      path: '/ua/privacy'
+      fullPath: '/ua/privacy'
+      preLoaderRoute: typeof UaPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/security-service': {
+      id: '/ua/security-service'
+      path: '/ua/security-service'
+      fullPath: '/ua/security-service'
+      preLoaderRoute: typeof UaSecurityServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/whitepaper': {
+      id: '/ua/whitepaper'
+      path: '/ua/whitepaper'
+      fullPath: '/ua/whitepaper'
+      preLoaderRoute: typeof UaWhitepaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/insights/': {
+      id: '/ua/insights/'
+      path: '/ua/insights'
+      fullPath: '/ua/insights/'
+      preLoaderRoute: typeof UaInsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/insights/claude-erp-retail-illusion': {
+      id: '/ua/insights/claude-erp-retail-illusion'
+      path: '/ua/insights/claude-erp-retail-illusion'
+      fullPath: '/ua/insights/claude-erp-retail-illusion'
+      preLoaderRoute: typeof UaInsightsClaudeErpRetailIllusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/insights/frankenstein-syndrome': {
+      id: '/ua/insights/frankenstein-syndrome'
+      path: '/ua/insights/frankenstein-syndrome'
+      fullPath: '/ua/insights/frankenstein-syndrome'
+      preLoaderRoute: typeof UaInsightsFrankensteinSyndromeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/insights/taming-local-ai': {
+      id: '/ua/insights/taming-local-ai'
+      path: '/ua/insights/taming-local-ai'
+      fullPath: '/ua/insights/taming-local-ai'
+      preLoaderRoute: typeof UaInsightsTamingLocalAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ua/solutions/executive-copilot': {
+      id: '/ua/solutions/executive-copilot'
+      path: '/ua/solutions/executive-copilot'
+      fullPath: '/ua/solutions/executive-copilot'
+      preLoaderRoute: typeof UaSolutionsExecutiveCopilotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -311,7 +574,21 @@ const rootRouteChildren: RootRouteChildren = {
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
   InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
   SolutionsExecutiveCopilotRoute: SolutionsExecutiveCopilotRoute,
+  UaAgroRoute: UaAgroRoute,
+  UaCfoRoute: UaCfoRoute,
+  UaLogisticsRoute: UaLogisticsRoute,
+  UaMemoryRoute: UaMemoryRoute,
+  UaPrivacyRoute: UaPrivacyRoute,
+  UaSecurityServiceRoute: UaSecurityServiceRoute,
+  UaWhitepaperRoute: UaWhitepaperRoute,
   InsightsIndexRoute: InsightsIndexRoute,
+  UaIndexRoute: UaIndexRoute,
+  UaInsightsClaudeErpRetailIllusionRoute:
+    UaInsightsClaudeErpRetailIllusionRoute,
+  UaInsightsFrankensteinSyndromeRoute: UaInsightsFrankensteinSyndromeRoute,
+  UaInsightsTamingLocalAiRoute: UaInsightsTamingLocalAiRoute,
+  UaSolutionsExecutiveCopilotRoute: UaSolutionsExecutiveCopilotRoute,
+  UaInsightsIndexRoute: UaInsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

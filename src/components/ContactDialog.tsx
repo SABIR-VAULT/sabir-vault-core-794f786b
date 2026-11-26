@@ -1,3 +1,4 @@
+import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { useState, createContext, useContext, ReactNode } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -412,11 +413,11 @@ export function ContactDialogProvider({ children }: { children: ReactNode }) {
                 <p className="text-center text-xs text-muted-foreground/70">
                   {lang === "ua" ? (
                     <>Натискаючи кнопку, ви погоджуєтеся з нашою{" "}
-                      <a href="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Політикою конфіденційності</a>.
+                      <Link to="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Політикою конфіденційності</Link>.
                     </>
                   ) : (
                     <>By submitting this form, you agree to our{" "}
-                      <a href="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Privacy Policy</a>.
+                      <Link to="/privacy" className="underline underline-offset-2 hover:text-[#38bdf8]">Privacy Policy</Link>.
                     </>
                   )}
                 </p>
