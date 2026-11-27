@@ -43,3 +43,6 @@
 - [ ] Localize SSR language, metadata, canonicals, hreflang and structured data
 - [ ] Complete sitemap and Ukrainian AI directory links
 - [ ] Test all page pairs and desktop/mobile navigation
+
+## Fourth article
+- [ ] Add fourth bilingual article with EN and /ua pages, hub card, sitemap and llms.txt
