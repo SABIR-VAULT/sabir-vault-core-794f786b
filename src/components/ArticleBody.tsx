@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 
 // Internal pages an article may link to with [text](/path).
-const LINKABLE = ["/memory", "/logistics", "/cfo", "/agro", "/insights", "/insights/frankenstein-syndrome", "/insights/taming-local-ai", "/insights/claude-erp-retail-illusion"] as const;
+const LINKABLE = ["/memory", "/logistics", "/cfo", "/agro", "/insights", "/insights/frankenstein-syndrome", "/insights/taming-local-ai", "/insights/claude-erp-retail-illusion", "/insights/barcode-scanner-warehouse-illusion"] as const;
 type Linkable = (typeof LINKABLE)[number];
 const isLinkable = (p: string): p is Linkable => (LINKABLE as readonly string[]).includes(p);
 

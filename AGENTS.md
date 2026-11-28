@@ -16,3 +16,4 @@
 - Derive language from the router pathname and use `LocalizedLink` for cross-page links; this makes SSR, language switches, and navigation agree without browser storage.
 - Centralize paired leaf metadata and article dates in `src/lib/seo.ts`; this keeps canonicals, hreflang, and localized structured data consistent.
 - Preserve existing page-specific sitemap dates; omit new dates unless a page-specific content timestamp is supplied, so build times never masquerade as content changes.
+- Scope article-specific color overrides to a page class in global CSS; semantic utilities then honor the brief without changing the existing site's theme.

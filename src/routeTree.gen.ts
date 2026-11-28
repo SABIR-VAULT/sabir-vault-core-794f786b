@@ -18,6 +18,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SecurityServiceRouteImport } from './routes/security-service'
 import { Route as WhitepaperRouteImport } from './routes/whitepaper'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as InsightsBarcodeScannerWarehouseIllusionRouteImport } from './routes/insights/barcode-scanner-warehouse-illusion'
 import { Route as InsightsClaudeErpRetailIllusionRouteImport } from './routes/insights/claude-erp-retail-illusion'
 import { Route as InsightsFrankensteinSyndromeRouteImport } from './routes/insights/frankenstein-syndrome'
 import { Route as InsightsTamingLocalAiRouteImport } from './routes/insights/taming-local-ai'
@@ -31,6 +32,7 @@ import { Route as UaPrivacyRouteImport } from './routes/ua.privacy'
 import { Route as UaSecurityServiceRouteImport } from './routes/ua.security-service'
 import { Route as UaWhitepaperRouteImport } from './routes/ua.whitepaper'
 import { Route as UaInsightsIndexRouteImport } from './routes/ua.insights.index'
+import { Route as UaInsightsBarcodeScannerWarehouseIllusionRouteImport } from './routes/ua.insights.barcode-scanner-warehouse-illusion'
 import { Route as UaInsightsClaudeErpRetailIllusionRouteImport } from './routes/ua.insights.claude-erp-retail-illusion'
 import { Route as UaInsightsFrankensteinSyndromeRouteImport } from './routes/ua.insights.frankenstein-syndrome'
 import { Route as UaInsightsTamingLocalAiRouteImport } from './routes/ua.insights.taming-local-ai'
@@ -81,6 +83,12 @@ const InsightsIndexRoute = InsightsIndexRouteImport.update({
   path: '/insights/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsBarcodeScannerWarehouseIllusionRoute =
+  InsightsBarcodeScannerWarehouseIllusionRouteImport.update({
+    id: '/insights/barcode-scanner-warehouse-illusion',
+    path: '/insights/barcode-scanner-warehouse-illusion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InsightsClaudeErpRetailIllusionRoute =
   InsightsClaudeErpRetailIllusionRouteImport.update({
     id: '/insights/claude-erp-retail-illusion',
@@ -149,6 +157,12 @@ const UaInsightsIndexRoute = UaInsightsIndexRouteImport.update({
   path: '/ua/insights/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UaInsightsBarcodeScannerWarehouseIllusionRoute =
+  UaInsightsBarcodeScannerWarehouseIllusionRouteImport.update({
+    id: '/ua/insights/barcode-scanner-warehouse-illusion',
+    path: '/ua/insights/barcode-scanner-warehouse-illusion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const UaInsightsClaudeErpRetailIllusionRoute =
   UaInsightsClaudeErpRetailIllusionRouteImport.update({
     id: '/ua/insights/claude-erp-retail-illusion',
@@ -182,6 +196,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/barcode-scanner-warehouse-illusion': typeof InsightsBarcodeScannerWarehouseIllusionRoute
   '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
@@ -195,6 +210,7 @@ export interface FileRoutesByFullPath {
   '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights/': typeof InsightsIndexRoute
   '/ua/': typeof UaIndexRoute
+  '/ua/insights/barcode-scanner-warehouse-illusion': typeof UaInsightsBarcodeScannerWarehouseIllusionRoute
   '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
   '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
   '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
@@ -210,6 +226,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/barcode-scanner-warehouse-illusion': typeof InsightsBarcodeScannerWarehouseIllusionRoute
   '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
@@ -223,6 +240,7 @@ export interface FileRoutesByTo {
   '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights': typeof InsightsIndexRoute
   '/ua': typeof UaIndexRoute
+  '/ua/insights/barcode-scanner-warehouse-illusion': typeof UaInsightsBarcodeScannerWarehouseIllusionRoute
   '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
   '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
   '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
@@ -239,6 +257,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/security-service': typeof SecurityServiceRoute
   '/whitepaper': typeof WhitepaperRoute
+  '/insights/barcode-scanner-warehouse-illusion': typeof InsightsBarcodeScannerWarehouseIllusionRoute
   '/insights/claude-erp-retail-illusion': typeof InsightsClaudeErpRetailIllusionRoute
   '/insights/frankenstein-syndrome': typeof InsightsFrankensteinSyndromeRoute
   '/insights/taming-local-ai': typeof InsightsTamingLocalAiRoute
@@ -252,6 +271,7 @@ export interface FileRoutesById {
   '/ua/whitepaper': typeof UaWhitepaperRoute
   '/insights/': typeof InsightsIndexRoute
   '/ua/': typeof UaIndexRoute
+  '/ua/insights/barcode-scanner-warehouse-illusion': typeof UaInsightsBarcodeScannerWarehouseIllusionRoute
   '/ua/insights/claude-erp-retail-illusion': typeof UaInsightsClaudeErpRetailIllusionRoute
   '/ua/insights/frankenstein-syndrome': typeof UaInsightsFrankensteinSyndromeRoute
   '/ua/insights/taming-local-ai': typeof UaInsightsTamingLocalAiRoute
@@ -269,6 +289,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/barcode-scanner-warehouse-illusion'
     | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
@@ -282,6 +303,7 @@ export interface FileRouteTypes {
     | '/ua/whitepaper'
     | '/insights/'
     | '/ua/'
+    | '/ua/insights/barcode-scanner-warehouse-illusion'
     | '/ua/insights/claude-erp-retail-illusion'
     | '/ua/insights/frankenstein-syndrome'
     | '/ua/insights/taming-local-ai'
@@ -297,6 +319,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/barcode-scanner-warehouse-illusion'
     | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
@@ -310,6 +333,7 @@ export interface FileRouteTypes {
     | '/ua/whitepaper'
     | '/insights'
     | '/ua'
+    | '/ua/insights/barcode-scanner-warehouse-illusion'
     | '/ua/insights/claude-erp-retail-illusion'
     | '/ua/insights/frankenstein-syndrome'
     | '/ua/insights/taming-local-ai'
@@ -325,6 +349,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security-service'
     | '/whitepaper'
+    | '/insights/barcode-scanner-warehouse-illusion'
     | '/insights/claude-erp-retail-illusion'
     | '/insights/frankenstein-syndrome'
     | '/insights/taming-local-ai'
@@ -338,6 +363,7 @@ export interface FileRouteTypes {
     | '/ua/whitepaper'
     | '/insights/'
     | '/ua/'
+    | '/ua/insights/barcode-scanner-warehouse-illusion'
     | '/ua/insights/claude-erp-retail-illusion'
     | '/ua/insights/frankenstein-syndrome'
     | '/ua/insights/taming-local-ai'
@@ -354,6 +380,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SecurityServiceRoute: typeof SecurityServiceRoute
   WhitepaperRoute: typeof WhitepaperRoute
+  InsightsBarcodeScannerWarehouseIllusionRoute: typeof InsightsBarcodeScannerWarehouseIllusionRoute
   InsightsClaudeErpRetailIllusionRoute: typeof InsightsClaudeErpRetailIllusionRoute
   InsightsFrankensteinSyndromeRoute: typeof InsightsFrankensteinSyndromeRoute
   InsightsTamingLocalAiRoute: typeof InsightsTamingLocalAiRoute
@@ -367,6 +394,7 @@ export interface RootRouteChildren {
   UaWhitepaperRoute: typeof UaWhitepaperRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
   UaIndexRoute: typeof UaIndexRoute
+  UaInsightsBarcodeScannerWarehouseIllusionRoute: typeof UaInsightsBarcodeScannerWarehouseIllusionRoute
   UaInsightsClaudeErpRetailIllusionRoute: typeof UaInsightsClaudeErpRetailIllusionRoute
   UaInsightsFrankensteinSyndromeRoute: typeof UaInsightsFrankensteinSyndromeRoute
   UaInsightsTamingLocalAiRoute: typeof UaInsightsTamingLocalAiRoute
@@ -437,6 +465,13 @@ declare module '@tanstack/react-router' {
       path: '/insights'
       fullPath: '/insights/'
       preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/barcode-scanner-warehouse-illusion': {
+      id: '/insights/barcode-scanner-warehouse-illusion'
+      path: '/insights/barcode-scanner-warehouse-illusion'
+      fullPath: '/insights/barcode-scanner-warehouse-illusion'
+      preLoaderRoute: typeof InsightsBarcodeScannerWarehouseIllusionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/claude-erp-retail-illusion': {
@@ -530,6 +565,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UaInsightsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ua/insights/barcode-scanner-warehouse-illusion': {
+      id: '/ua/insights/barcode-scanner-warehouse-illusion'
+      path: '/ua/insights/barcode-scanner-warehouse-illusion'
+      fullPath: '/ua/insights/barcode-scanner-warehouse-illusion'
+      preLoaderRoute: typeof UaInsightsBarcodeScannerWarehouseIllusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ua/insights/claude-erp-retail-illusion': {
       id: '/ua/insights/claude-erp-retail-illusion'
       path: '/ua/insights/claude-erp-retail-illusion'
@@ -570,6 +612,8 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SecurityServiceRoute: SecurityServiceRoute,
   WhitepaperRoute: WhitepaperRoute,
+  InsightsBarcodeScannerWarehouseIllusionRoute:
+    InsightsBarcodeScannerWarehouseIllusionRoute,
   InsightsClaudeErpRetailIllusionRoute: InsightsClaudeErpRetailIllusionRoute,
   InsightsFrankensteinSyndromeRoute: InsightsFrankensteinSyndromeRoute,
   InsightsTamingLocalAiRoute: InsightsTamingLocalAiRoute,
@@ -583,6 +627,8 @@ const rootRouteChildren: RootRouteChildren = {
   UaWhitepaperRoute: UaWhitepaperRoute,
   InsightsIndexRoute: InsightsIndexRoute,
   UaIndexRoute: UaIndexRoute,
+  UaInsightsBarcodeScannerWarehouseIllusionRoute:
+    UaInsightsBarcodeScannerWarehouseIllusionRoute,
   UaInsightsClaudeErpRetailIllusionRoute:
     UaInsightsClaudeErpRetailIllusionRoute,
   UaInsightsFrankensteinSyndromeRoute: UaInsightsFrankensteinSyndromeRoute,

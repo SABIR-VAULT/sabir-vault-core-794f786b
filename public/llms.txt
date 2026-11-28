@@ -29,6 +29,8 @@ SABIR VAULT is a deterministic corporate forensics appliance that decomposes com
 
 ## Insights (Research Articles)
 
+- **https://sabirvault.com/insights/barcode-scanner-warehouse-illusion** — *Why a $500 Barcode Scanner Won't Fix Warehouse Shrinkage:* Independent invoice-to-dock, scan timing, lot integrity and shift/write-off verification on existing ERP exports and local scanners.
+
 - **https://sabirvault.com/insights** — Research & perspectives hub (EN/UA).
 - **https://sabirvault.com/insights/frankenstein-syndrome** — *The Frankenstein Syndrome:* Why company growth breaks operations and how to fix spreadsheet chaos without a $20,000 custom ERP.
 - **https://sabirvault.com/insights/taming-local-ai** — *How to Tame Local AI in an Air-Gapped Environment:* Why LLMs cannot be trusted without a deterministic skeleton; local LLMs on Apple Silicon constrained by 26 deterministic behavioral transistors and a relational SQLite engine.
@@ -143,6 +145,7 @@ SABIR VAULT — це суверенний програмно-апаратний 
 5. **https://sabirvault.com/ua/agro** — *Агрохолдинги та земельні банки:* Зведення 10 000+ договорів оренди паїв, накладних елеваторів та списань палива. Розкриття кишенькових фірм родичів директорів кластерів (IN-LAW PROXY) та крадіжок зерна.
 
 ### Аналітика та дослідження українською:
+- **https://sabirvault.com/ua/insights/barcode-scanner-warehouse-illusion** — Чому ТЗД за 20 000 грн не зупинить недостачі на складі: незалежна звірка накладних, приймання, сканувань і списань по змінах.
 - **https://sabirvault.com/ua/insights** — Аналітичний хаб: корпоративний форензік, локальний ШІ та суверенний аудит.
 - **https://sabirvault.com/ua/insights/frankenstein-syndrome** — Синдром Франкенштейна: хаос у таблицях та витік маржі без власної ERP за $20 000.
 - **https://sabirvault.com/ua/insights/taming-local-ai** — Як приборкати локальний ШІ у закритому контурі через детермінований математичний каркас.

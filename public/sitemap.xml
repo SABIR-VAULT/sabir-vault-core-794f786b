@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://sabirvault.com/insights</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sabirvault.com/insights" />
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://sabirvault.com/ua/insights</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sabirvault.com/insights" />
@@ -229,5 +229,23 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://sabirvault.com/privacy" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://sabirvault.com/ua/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sabirvault.com/privacy" />
+  </url>
+  <url>
+    <loc>https://sabirvault.com/insights/barcode-scanner-warehouse-illusion</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabirvault.com/insights/barcode-scanner-warehouse-illusion" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sabirvault.com/ua/insights/barcode-scanner-warehouse-illusion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sabirvault.com/insights/barcode-scanner-warehouse-illusion" />
+  </url>
+  <url>
+    <loc>https://sabirvault.com/ua/insights/barcode-scanner-warehouse-illusion</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabirvault.com/insights/barcode-scanner-warehouse-illusion" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sabirvault.com/ua/insights/barcode-scanner-warehouse-illusion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sabirvault.com/insights/barcode-scanner-warehouse-illusion" />
   </url>
 </urlset>

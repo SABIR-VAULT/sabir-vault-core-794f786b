@@ -18,6 +18,18 @@ export default function InsightsPage() {
       </div></div></section>
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-6 lg:grid-cols-2">
+        <Link to="/insights/barcode-scanner-warehouse-illusion" className="group glass glass-hover block rounded-2xl p-8 md:p-10 lg:col-span-2">
+          <article>
+            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary">{t(bi("Warehouse & Logistics","Склад та логістика"))}</span>
+              <span className="inline-flex items-center gap-1.5"><Clock size={14} strokeWidth={1.5}/>{t(bi("5 min read","5 хв читання"))}</span>
+              <span className="inline-flex items-center gap-1.5"><Calendar size={14} strokeWidth={1.5}/>{t(bi("November 2026","Листопад 2026"))}</span>
+            </div>
+            <h2 className="mt-6 max-w-4xl font-display text-2xl font-semibold leading-snug text-foreground">{t(bi("Why a $500 Barcode Scanner Won't Fix Warehouse Shrinkage","Чому ТЗД за 20 000 грн не зупинить недостачі на складі"))}</h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">{t(bi("Handheld scanners stop accidental picking mix-ups, not dock receiving gaps, single-label scanning, or pre-audit write-offs. How to control the full chain from invoice to stocktake.","Сканер штрихкодів прибирає випадковий пересорт на збірці, але не бачить недовозів на прийманні, фіктивного пікання та списань на бій перед ревізією."))}</p>
+            <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">{t(bi("Read Article","Читати статтю"))}<ArrowRight size={16} className="transition-transform group-hover:translate-x-1"/></span>
+          </article>
+        </Link>
         <Link to="/insights/claude-erp-retail-illusion" className="group glass glass-hover block rounded-2xl p-8 md:p-10 lg:col-span-2">
           <article>
             <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">

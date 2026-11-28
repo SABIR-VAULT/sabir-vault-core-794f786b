@@ -64,6 +64,17 @@ export const PAGE_SEO: Record<PagePath, PageSeo> = {
       published: "2026-11-25", modified: "2026-11-25",
     },
   },
+  "/insights/barcode-scanner-warehouse-illusion": {
+    title: { en: "Why Barcode Scanners Won't Stop Warehouse Loss | SABIR VAULT", ua: "Чому ТЗД за 20 000 грн не зупинить недостачі | SABIR VAULT" },
+    description: {
+      en: "Buying a $500 handheld scanner won't fix inventory shrinkage. How to spot receiving gaps, fake scans, and shift patterns across 1C/ERP.",
+      ua: "Купівля ТЗД не закриває дірки на складі. Як знаходити розриви між накладною, прийманням в 1С, фіктивним скануванням та інвентаризацією.",
+    },
+    article: {
+      headline: { en: "Why a $500 Barcode Scanner Won't Fix Warehouse Shrinkage", ua: "Чому ТЗД за 20 000 грн не зупинить недостачі на складі" },
+      published: "2026-11-27", modified: "2026-11-27",
+    },
+  },
   "/solutions/executive-copilot": {
     title: { en: "Executive Pre-Audit Copilot | SABIR VAULT", ua: "Виконавчий Pre-Audit Копілот | SABIR VAULT" },
     description: {

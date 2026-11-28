@@ -2,7 +2,7 @@ export const SITE_ORIGIN = "https://sabirvault.com";
 
 export const PAGE_PATHS = [
   "/", "/insights", "/insights/frankenstein-syndrome", "/insights/taming-local-ai",
-  "/insights/claude-erp-retail-illusion", "/solutions/executive-copilot",
+  "/insights/claude-erp-retail-illusion", "/insights/barcode-scanner-warehouse-illusion", "/solutions/executive-copilot",
   "/cfo", "/logistics", "/agro", "/memory", "/security-service", "/whitepaper", "/privacy",
 ] as const;
 
@@ -17,6 +17,7 @@ const mirrors = {
   "/insights/frankenstein-syndrome": "/ua/insights/frankenstein-syndrome",
   "/insights/taming-local-ai": "/ua/insights/taming-local-ai",
   "/insights/claude-erp-retail-illusion": "/ua/insights/claude-erp-retail-illusion",
+  "/insights/barcode-scanner-warehouse-illusion": "/ua/insights/barcode-scanner-warehouse-illusion",
   "/solutions/executive-copilot": "/ua/solutions/executive-copilot",
   "/cfo": "/ua/cfo", "/logistics": "/ua/logistics", "/agro": "/ua/agro",
   "/memory": "/ua/memory", "/security-service": "/ua/security-service",
